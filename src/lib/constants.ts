@@ -72,7 +72,7 @@ export const SENTIENT_METHOD = [
   {
     title: "Observe",
     description:
-      "Map how work actually moves through people, systems, approvals, data, exceptions, and decisions.",
+      "Map how work actually moves through teams, systems, approvals, data, exceptions, and decisions.",
   },
   {
     title: "Diagnose",
@@ -105,42 +105,50 @@ export const SERVICES = [
   {
     title: "Operational Excellence Audits",
     description:
-      "Structured discovery that uncovers inefficiencies, quantifies impact, and prioritizes operational improvements by ROI.",
+      "Process, systems, data, and cost analysis that identifies real operational constraints and prioritizes measurable improvement work.",
+    image: "/images/workflow-map.png",
   },
   {
     title: "Workflow Optimization",
     description:
-      "Redesign of approvals, handoffs, exceptions, ownership, and standards so work moves with less friction.",
+      "Redesign of approvals, handoffs, exceptions, ownership, and controls so work moves with less friction and clearer accountability.",
+    image: "/images/workflow-map.png",
   },
   {
     title: "Business Systems Engineering",
     description:
-      "Integrated systems architecture that connects tools, data, teams, and decision paths into one operating model.",
+      "Software engineering, integrations, APIs, and platform architecture that connect tools, teams, data, and decision paths.",
+    image: "/images/software-systems.png",
   },
   {
     title: "Automation & Intelligent Operations",
     description:
-      "Targeted automation for repetitive work, routing, checks, notifications, data movement, and decision support.",
+      "Automation, AI-assisted workflows, rules engines, and decision support systems that reduce manual effort and cycle time.",
+    image: "/images/ai-modelling.png",
   },
   {
     title: "Visibility & Reporting",
     description:
-      "Dashboards, operating metrics, alerting, and reporting systems that give leaders real-time operational control.",
+      "Data engineering, metrics layers, dashboards, alerts, and reporting systems that give leaders operational control.",
+    image: "/images/data-engineering.png",
   },
   {
     title: "Cloud & Infrastructure Modernization",
     description:
-      "Reliable, scalable infrastructure that supports operational performance without unnecessary complexity or cost.",
+      "Cloud architecture, infrastructure modernization, reliability engineering, and secure environments for operational systems.",
+    image: "/images/command-center.png",
   },
   {
     title: "Cost Optimization",
     description:
-      "Analysis of workflows, systems, vendors, and utilization to reduce waste while protecting capability.",
+      "Modelling of labor, workflow, vendor, infrastructure, and system costs to reduce waste while protecting capability.",
+    image: "/images/ai-modelling.png",
   },
   {
     title: "Custom Operational Platforms",
     description:
-      "Purpose-built internal platforms for organizations whose operational advantage cannot be bought off the shelf.",
+      "Purpose-built software platforms for operations that need custom workflows, data models, automation, and reporting.",
+    image: "/images/software-systems.png",
   },
 ] as const;
 
@@ -170,24 +178,24 @@ export const INDUSTRIES = [
 export const CASE_STUDIES = [
   {
     title: "Reporting Operating Model",
-    metric: "92%",
-    result: "less manual reporting effort",
+    metric: "Faster",
+    result: "leadership reporting cycles",
     description:
-      "A leadership reporting workflow is redesigned from fragmented spreadsheets into a governed operational dashboard.",
+      "Fragmented spreadsheet reporting is redesigned into governed data pipelines, metric definitions, and executive dashboards.",
   },
   {
     title: "Approval Flow Redesign",
-    metric: "5d to 12h",
-    result: "approval turnaround improvement",
+    metric: "Clearer",
+    result: "decision ownership",
     description:
-      "A multi-stage approval path is converted into a measured workflow with routing, escalation, and clear ownership.",
+      "Multi-stage approvals are converted into measured workflows with routing, escalation logic, and accountability controls.",
   },
   {
-    title: "Onboarding Operations System",
-    metric: "300+",
-    result: "annual staff hours recovered",
+    title: "Operations Platform Architecture",
+    metric: "Connected",
+    result: "systems and data flows",
     description:
-      "HR, IT, facilities, and compliance handoffs are connected into a reliable operational onboarding system.",
+      "Disconnected tools are connected through integrations, operational data models, automation, and visibility layers.",
   },
 ] as const;
 

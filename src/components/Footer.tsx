@@ -9,12 +9,12 @@ export default function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
             <div className="flex items-center gap-3">
-              <span className="relative h-12 w-44">
+              <span className="relative h-14 w-64">
                 <Image
                   src="/sentientlogo.png"
                   alt="Sentient Engineering"
                   fill
-                  sizes="176px"
+                  sizes="256px"
                   className="object-contain"
                 />
               </span>

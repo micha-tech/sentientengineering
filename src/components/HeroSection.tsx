@@ -35,7 +35,7 @@ function OperationalSystemVisual() {
         <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-3xl">
           <Image
             src="/images/workflow-map.png"
-            alt="Hands reviewing a monochrome operational workflow map"
+            alt="Monochrome operational workflow map arranged on a dark desk"
             fill
             sizes="100vw"
             className="object-cover"

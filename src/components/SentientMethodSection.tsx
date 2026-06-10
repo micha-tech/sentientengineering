@@ -19,7 +19,7 @@ export default function SentientMethodSection() {
             />
             <ImagePanel
               src="/images/workflow-map.png"
-              alt="Hands arranging a monochrome process map for workflow optimization"
+              alt="Monochrome process map and operational documents on a dark desk"
               caption="Workflow diagnosis"
               className="hidden lg:block"
             />

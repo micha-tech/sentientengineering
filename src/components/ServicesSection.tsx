@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SERVICES } from "@/lib/constants";
 import Container from "./Container";
 import ImagePanel from "./ImagePanel";
@@ -13,8 +14,8 @@ export default function ServicesSection() {
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <SectionHeading
             eyebrow="Services"
-            title="Engineering work, systems, data, and infrastructure around operational outcomes."
-            description="Each engagement is shaped by the operating constraint: cost, speed, visibility, quality, risk, accountability, or scale."
+            title="Engineering operations through software, data, automation, AI, and infrastructure."
+            description="We use technology as an operating lever: software engineering, data engineering, AI/ML, modelling, automation, and cloud systems are applied where they solve measurable business problems."
           />
           <ImagePanel
             src="/images/command-center.png"
@@ -32,7 +33,16 @@ export default function ServicesSection() {
               transition={{ delay: index * 0.035, duration: 0.45 }}
               className="premium-card group rounded-3xl p-6 transition duration-300 hover:border-white/20"
             >
-              <div className="mb-10 h-px w-full bg-gradient-to-r from-white/40 via-white/10 to-transparent" />
+              <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.08] bg-black">
+                <Image
+                  src={service.image}
+                  alt={`${service.title} visual`}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover opacity-85 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              </div>
               <h3 className="text-xl font-medium tracking-tight text-white">
                 {service.title}
               </h3>

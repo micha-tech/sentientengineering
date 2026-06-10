@@ -23,7 +23,7 @@ export default function PositioningSection() {
           </div>
           <ImagePanel
             src="/images/operations-review.png"
-            alt="Executives reviewing monochrome operational dashboards in a dark boardroom"
+            alt="Empty dark boardroom with monochrome operational dashboards"
             caption="Operational performance review"
             priority
           />
