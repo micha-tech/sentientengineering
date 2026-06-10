@@ -33,17 +33,17 @@ export default function Navbar() {
             className="group flex min-w-0 items-center gap-3"
             aria-label={`${COMPANY.name} home`}
           >
-            <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] subtle-glow">
+            <span className="relative h-10 w-36 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] subtle-glow sm:w-44">
               <Image
                 src="/sentientlogo.png"
-                alt=""
+                alt="Sentient Engineering"
                 fill
-                sizes="40px"
-                className="object-cover"
+                sizes="(min-width: 640px) 176px, 144px"
+                className="object-contain px-2"
                 priority
               />
             </span>
-            <span className="truncate text-sm font-medium tracking-tight text-white">
+            <span className="sr-only">
               {COMPANY.name}
             </span>
           </Link>
