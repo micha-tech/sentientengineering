@@ -3,18 +3,27 @@
 import { motion } from "framer-motion";
 import { SENTIENT_METHOD } from "@/lib/constants";
 import Container from "./Container";
+import ImagePanel from "./ImagePanel";
 import SectionHeading from "./SectionHeading";
 
 export default function SentientMethodSection() {
   return (
     <section id="method" className="section-shell bg-black py-20 sm:py-28">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <SectionHeading
-            eyebrow="The Sentient Method"
-            title="A disciplined path from operating reality to engineered performance."
-            description="We do not start with software requirements. We start by understanding the work, proving the impact, and designing the operating system the business needs."
-          />
+        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div className="grid gap-8">
+            <SectionHeading
+              eyebrow="The Sentient Method"
+              title="From operating reality to engineered performance."
+              description="We start by understanding the work, proving the impact, and designing the operating system the business needs."
+            />
+            <ImagePanel
+              src="/images/workflow-map.png"
+              alt="Hands arranging a monochrome process map for workflow optimization"
+              caption="Workflow diagnosis"
+              className="hidden lg:block"
+            />
+          </div>
           <div className="relative">
             <div className="absolute left-5 top-0 hidden h-full w-px bg-white/[0.08] sm:block" />
             <div className="grid gap-4">

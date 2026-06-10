@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Container from "./Container";
 
 function OperationalSystemVisual() {
@@ -30,9 +31,44 @@ function OperationalSystemVisual() {
     <div className="premium-card relative overflow-hidden rounded-[1.75rem] p-4 sm:p-6">
       <div className="absolute inset-0 hairline-grid opacity-80" />
       <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.055] blur-3xl" />
+      <div className="relative sm:hidden">
+        <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-3xl">
+          <Image
+            src="/images/workflow-map.png"
+            alt="Hands reviewing a monochrome operational workflow map"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+          <div className="absolute bottom-3 left-3 right-3 rounded-2xl border border-white/[0.08] bg-black/55 px-3 py-2 backdrop-blur-md">
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-400">
+              Operational Flow
+            </p>
+          </div>
+        </div>
+        <div className="grid gap-2">
+          {["Observe", "Diagnose", "Engineer", "Optimize"].map((step, index) => (
+            <motion.div
+              key={step}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.25 + index * 0.08, duration: 0.4 }}
+              className="flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-black/45 px-4 py-3"
+            >
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-xs font-medium text-black">
+                {index + 1}
+              </span>
+              <span className="text-sm font-medium text-white">{step}</span>
+              <span className="ml-auto h-px w-10 bg-white/20" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
       <svg
         viewBox="0 0 100 78"
-        className="relative h-auto w-full"
+        className="relative hidden h-auto w-full sm:block"
         role="img"
         aria-label="Animated operational system diagram"
       >

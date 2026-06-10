@@ -3,17 +3,25 @@
 import { motion } from "framer-motion";
 import { SERVICES } from "@/lib/constants";
 import Container from "./Container";
+import ImagePanel from "./ImagePanel";
 import SectionHeading from "./SectionHeading";
 
 export default function ServicesSection() {
   return (
     <section id="services" className="section-shell bg-black py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="Services"
-          title="Engineering work, systems, data, and infrastructure around operational outcomes."
-          description="Each engagement is shaped by the operating constraint: cost, speed, visibility, quality, risk, accountability, or scale."
-        />
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <SectionHeading
+            eyebrow="Services"
+            title="Engineering work, systems, data, and infrastructure around operational outcomes."
+            description="Each engagement is shaped by the operating constraint: cost, speed, visibility, quality, risk, accountability, or scale."
+          />
+          <ImagePanel
+            src="/images/command-center.png"
+            alt="Monochrome operational command center with dashboards and system visibility"
+            caption="Visibility across the operating system"
+          />
+        </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {SERVICES.map((service, index) => (
             <motion.article
