@@ -27,18 +27,18 @@ export default function Navbar() {
       }`}
     >
       <Container>
-        <nav className="flex h-16 items-center justify-between md:h-20">
+        <nav className="flex h-20 items-center justify-between md:h-24">
           <Link
             href="/"
             className="group flex min-w-0 items-center gap-3"
             aria-label={`${COMPANY.name} home`}
           >
-            <span className="relative h-12 w-48 shrink-0 sm:w-56 md:w-64">
+            <span className="relative h-[clamp(3.25rem,8vw,4.75rem)] w-[clamp(13.5rem,42vw,24rem)] shrink-0">
               <Image
-                src="/sentientlogo.png"
+                src="/sentientlogo-wordmark.png"
                 alt="Sentient Engineering"
                 fill
-                sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 192px"
+                sizes="(min-width: 1024px) 384px, 42vw"
                 className="object-contain"
                 priority
               />

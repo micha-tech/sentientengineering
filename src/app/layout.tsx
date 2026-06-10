@@ -17,7 +17,7 @@ const jsonLd = {
       "@id": `${META.url}/#organization`,
       name: META.siteName,
       url: META.url,
-      logo: `${META.url}/sentientlogo.png`,
+      logo: `${META.url}/sentientlogo-wordmark.png`,
       description: META.description,
     },
     {
@@ -25,7 +25,7 @@ const jsonLd = {
       "@id": `${META.url}/#professional-service`,
       name: META.siteName,
       url: META.url,
-      image: `${META.url}/sentientlogo.png`,
+      image: `${META.url}/sentientlogo-wordmark.png`,
       description: META.description,
       areaServed: "Worldwide",
       serviceType: "Operations Engineering",
@@ -85,10 +85,10 @@ export const metadata: Metadata = {
     url: META.url,
     images: [
       {
-        url: "/sentientlogo.png",
-        width: 1536,
-        height: 1024,
-        alt: "Sentient Engineering logo",
+        url: "/sentientlogo-wordmark.png",
+        width: 890,
+        height: 230,
+        alt: "Sentient Engineering wordmark",
       },
     ],
   },
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     title: META.title,
     description: META.description,
     creator: META.twitterHandle,
-    images: ["/sentientlogo.png"],
+    images: ["/sentientlogo-wordmark.png"],
   },
   robots: {
     index: true,
