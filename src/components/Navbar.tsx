@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { COMPANY, NAV_LINKS } from "@/lib/constants";
@@ -32,10 +33,15 @@ export default function Navbar() {
             className="group flex min-w-0 items-center gap-3"
             aria-label={`${COMPANY.name} home`}
           >
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.04] subtle-glow">
-              <span className="text-sm font-semibold tracking-[-0.04em] text-white">
-                SE
-              </span>
+            <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] subtle-glow">
+              <Image
+                src="/sentientlogo.png"
+                alt=""
+                fill
+                sizes="40px"
+                className="object-cover"
+                priority
+              />
             </span>
             <span className="truncate text-sm font-medium tracking-tight text-white">
               {COMPANY.name}

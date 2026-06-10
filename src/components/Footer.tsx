@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { COMPANY, NAV_LINKS } from "@/lib/constants";
 import Container from "./Container";
 
@@ -8,10 +9,14 @@ export default function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/[0.04]">
-                <span className="text-sm font-semibold tracking-[-0.04em] text-white">
-                  SE
-                </span>
+              <span className="relative h-10 w-10 overflow-hidden rounded-xl border border-white/10 bg-white/[0.04]">
+                <Image
+                  src="/sentientlogo.png"
+                  alt=""
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
               </span>
               <p className="text-sm font-medium text-white">{COMPANY.name}</p>
             </div>
