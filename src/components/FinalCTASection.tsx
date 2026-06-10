@@ -1,52 +1,38 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Container from "./Container";
 
 export default function FinalCTASection() {
   return (
-    <section className="relative py-24 md:py-32 bg-[#0F172A] overflow-hidden">
-      <div className="absolute inset-0 bg-grid-dark opacity-30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px]" />
-
-      <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-[#F8FAFC] mb-6 leading-[1.15]">
-            Ready to Engineer Better Operations?
-          </h2>
-          <p className="text-lg md:text-xl text-[#CBD5E1] leading-relaxed mb-10 max-w-2xl mx-auto">
-            Let&apos;s identify where inefficiencies are slowing your business
-            and design systems that unlock measurable performance improvements.
+    <section id="audit" className="section-shell bg-black py-20 sm:py-28">
+      <Container>
+        <div className="premium-card relative isolate overflow-hidden rounded-[2rem] px-5 py-12 text-center sm:px-8 sm:py-16 lg:px-16">
+          <div className="absolute left-1/2 top-0 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-white/[0.08] blur-3xl" />
+          <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-500">
+            Start with clarity
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <h2 className="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+            Find the operational constraints limiting cost, speed, visibility,
+            and scale.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+            An Operations Audit gives leadership a clear view of where
+            performance is leaking, what it costs, and which improvements should
+            happen first.
+          </p>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-accent/25"
+              href="mailto:hello@sentientengineering.com?subject=Operations%20Audit%20Request"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-black transition hover:bg-zinc-200"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
               Book an Operations Audit
             </a>
             <a
-              href={`mailto:hello@sentientengineering.com`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white/10 text-[#CBD5E1] font-medium text-sm hover:bg-white/5 hover:text-[#F8FAFC] transition-all"
+              href="mailto:hello@sentientengineering.com?subject=Discuss%20an%20Operational%20Challenge"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-6 text-sm font-medium text-white transition hover:bg-white/[0.08]"
             >
-              hello@sentientengineering.com
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
+              Discuss Your Challenge
             </a>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

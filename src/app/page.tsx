@@ -10,27 +10,25 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ThoughtLeadershipSection from "@/components/ThoughtLeadershipSection";
 import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
-import ContactSection from "@/components/ContactSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <HeroSection />
-      <PositioningSection />
-      <OperationalPainSection />
-      <SentientMethodSection />
-      <ServicesSection />
-      <IndustriesSection />
-      <OutcomesSection />
-      <CaseStudiesSection />
-      <ThoughtLeadershipSection />
-      <FAQSection />
-      <FinalCTASection />
-      <ContactSection />
-      <NewsletterSignup />
+      <main>
+        <HeroSection />
+        <PositioningSection />
+        <OperationalPainSection />
+        <SentientMethodSection />
+        <ServicesSection />
+        <OutcomesSection />
+        <IndustriesSection />
+        <CaseStudiesSection />
+        <ThoughtLeadershipSection />
+        <FAQSection />
+        <FinalCTASection />
+      </main>
       <Footer />
     </>
   );

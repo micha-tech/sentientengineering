@@ -1,79 +1,42 @@
-"use client";
-
-import Link from "next/link";
 import { COMPANY, NAV_LINKS } from "@/lib/constants";
 import Container from "./Container";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] border-t border-white/5">
-      <Container className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              </div>
-              <span className="text-sm font-semibold text-[#F8FAFC]">
-                {COMPANY.name}
+    <footer className="border-t border-white/[0.08] bg-black py-10">
+      <Container>
+        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/[0.04]">
+                <span className="text-sm font-semibold tracking-[-0.04em] text-white">
+                  SE
+                </span>
               </span>
-            </Link>
-            <p className="text-sm text-[#64748B] max-w-md leading-relaxed">
-              {COMPANY.description}
+              <p className="text-sm font-medium text-white">{COMPANY.name}</p>
+            </div>
+            <p className="mt-4 max-w-md text-sm leading-6 text-zinc-500">
+              Operations engineering for businesses that need less friction,
+              better visibility, and systems built for scale.
             </p>
           </div>
-
-          <div>
-            <h4 className="text-xs font-semibold text-[#F8FAFC] uppercase tracking-widest mb-4">
-              Navigate
-            </h4>
+          <nav className="flex flex-wrap gap-x-5 gap-y-3" aria-label="Footer">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-sm text-[#64748B] hover:text-[#CBD5E1] transition-colors py-1.5"
+                className="text-sm text-zinc-500 transition hover:text-white"
               >
                 {link.label}
               </a>
             ))}
-          </div>
-
-          <div>
-            <h4 className="text-xs font-semibold text-[#F8FAFC] uppercase tracking-widest mb-4">
-              Contact
-            </h4>
-            <p className="text-sm text-[#64748B] leading-relaxed">
-              {COMPANY.address}
-            </p>
-            <a
-              href={`mailto:${COMPANY.email}`}
-              className="block text-sm text-[#64748B] hover:text-[#CBD5E1] transition-colors mt-2"
-            >
-              {COMPANY.email}
-            </a>
-          </div>
+          </nav>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-[#475569]">
-            &copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
-          </p>
-          <p className="text-xs text-[#475569]">
-            Technology is not the goal. Operational performance is.
-          </p>
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/[0.08] pt-6 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Sentient Engineering.</p>
+          <a className="transition hover:text-zinc-300" href={`mailto:${COMPANY.email}`}>
+            {COMPANY.email}
+          </a>
         </div>
       </Container>
     </footer>

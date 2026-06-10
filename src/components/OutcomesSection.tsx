@@ -1,60 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Container from "./Container";
 import { OUTCOMES } from "@/lib/constants";
+import Container from "./Container";
+import SectionHeading from "./SectionHeading";
 
 export default function OutcomesSection() {
   return (
-    <section id="outcomes" className="relative py-24 md:py-32 bg-[#1E293B]">
-      <div className="absolute inset-0 bg-grid opacity-10" />
-
-      <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-[#F8FAFC] mb-4">
-            Outcomes That Matter
-          </h2>
-          <p className="text-lg text-[#CBD5E1] max-w-2xl mx-auto">
-            Every engagement is measured against the business outcomes that drive
-            real value for your organization.
-          </p>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {OUTCOMES.map((outcome, i) => (
-            <motion.div
-              key={outcome.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="relative p-6 rounded-xl bg-[#0F172A]/50 border border-white/5 overflow-hidden group hover:border-accent/30 transition-all duration-300"
-            >
-              <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full" />
-
-              <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-base font-bold text-[#F8FAFC] mb-2">
-                  {outcome.title}
-                </h3>
-                <p className="text-xs text-[#64748B] leading-relaxed">
-                  {outcome.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+    <section id="results" className="section-shell bg-black py-20 sm:py-28">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <SectionHeading
+            eyebrow="Outcomes"
+            title="The work is judged by operational performance."
+            description="The deliverable is not a deck, a dashboard, or an app. The deliverable is a better operating system for the business."
+          />
+          <div className="premium-card rounded-[2rem] p-4 sm:p-6">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {OUTCOMES.map((outcome, index) => (
+                <motion.div
+                  key={outcome}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.04, duration: 0.4 }}
+                  className="rounded-2xl border border-white/[0.08] bg-black/40 p-4"
+                >
+                  <span className="mb-8 block h-1.5 w-1.5 rounded-full bg-white/70" />
+                  <h3 className="text-base font-medium text-white">{outcome}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </Container>
     </section>

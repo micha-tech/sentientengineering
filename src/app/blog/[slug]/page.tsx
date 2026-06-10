@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Container from "@/components/Container";
 import { ARTICLES } from "@/lib/constants";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
+
+const ARTICLE_BODY: Record<string, string[]> = {
+  "hidden-cost-operational-friction": [
+    "Operational friction is the invisible tax paid by growing organizations. It appears in approval queues, duplicate data entry, unclear ownership, delayed reports, status meetings, exceptions, and rework.",
+    "The financial impact is rarely visible as one obvious line item. Instead, it spreads across payroll, missed delivery dates, slower customer response, lower management confidence, and decisions made from incomplete information.",
+    "The first job of operations engineering is to make that cost visible. Once cycle time, handoff delay, rework, and exception volume are measured, leaders can decide which constraints deserve investment.",
+  ],
+  "automation-is-not-an-operations-strategy": [
+    "Automation can be powerful, but it is not a strategy by itself. When a business automates a poorly designed workflow, the result is often a faster version of the same operational problem.",
+    "The better sequence is to observe the workflow, diagnose the constraint, simplify the process, define ownership, measure the expected impact, and then automate the parts that should actually be automated.",
+    "Good automation removes friction from a coherent operating model. Bad automation locks confusion into the organization at scale.",
+  ],
+  "what-leaders-should-measure-before-they-scale": [
+    "Scale exposes the quality of an operating model. Processes that feel manageable at a smaller size can fracture when volume, headcount, geography, and customer expectations increase.",
+    "Before scaling, leaders should understand cycle time, throughput, queue depth, rework rate, exception volume, cost per workflow, and the points where decisions repeatedly stall.",
+    "These measurements create a clearer growth plan. They show where to standardize, where to automate, where to redesign ownership, and where better visibility is required.",
+  ],
+};
 
 export async function generateStaticParams() {
   return ARTICLES.map((article) => ({ slug: article.slug }));
@@ -13,8 +32,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = ARTICLES.find((a) => a.slug === slug);
-  if (!article) return {};
+  const article = ARTICLES.find((item) => item.slug === slug);
+
+  if (!article) {
+    return {};
+  }
 
   return {
     title: article.title,
@@ -36,82 +58,64 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = ARTICLES.find((a) => a.slug === slug);
+  const article = ARTICLES.find((item) => item.slug === slug);
 
   if (!article) {
     notFound();
   }
 
-  const bodyContent: Record<string, string> = {
-    "why-digital-transformation-projects-fail": `
-      <p>Over 70% of digital transformation projects fail to achieve their objectives. The common narrative blames technology — poor implementation, wrong tools, inadequate skills. But in our experience working with dozens of organizations, the real cause is almost never technological.</p>
-      <p>The fundamental problem is that most organizations attempt to digitize broken processes. They implement sophisticated software systems on top of workflows that are fragmented, inconsistent, and poorly understood. The result is expensive digital chaos.</p>
-      <p>True digital transformation must begin with operational analysis. Before selecting any technology, organizations need to understand their current workflows, identify the root causes of inefficiency, and design processes that are optimized for the digital environment.</p>
-      <p>Technology should be the last decision, not the first.</p>
-    `,
-    "hidden-cost-operational-friction": `
-      <p>Operational friction is the invisible tax that every organization pays. It doesn't appear on any financial statement, yet it directly impacts profitability, growth, and competitiveness.</p>
-      <p>Consider the cost of a single approval bottleneck. A decision that takes five days instead of two hours delays project initiation, holds up resources, and reduces organizational agility. Multiply this by hundreds of decisions across dozens of workflows, and the cumulative cost is staggering.</p>
-      <p>We've developed methodologies to quantify these hidden costs. By measuring cycle times, handoff delays, rework rates, and waiting periods, we can calculate the exact financial impact of operational friction.</p>
-      <p>The first step to eliminating hidden costs is making them visible.</p>
-    `,
-    "automation-without-process-design": `
-      <p>Automation is one of the most powerful tools in operations engineering. It eliminates repetitive work, reduces errors, and accelerates delivery. But automation has a dangerous trap: it amplifies whatever process it automates.</p>
-      <p>Automating a broken process doesn't fix it — it simply produces broken results faster and more reliably. We've seen organizations implement sophisticated RPA (Robotic Process Automation) only to discover they had automated workflows that shouldn't exist in the first place.</p>
-      <p>The correct sequence is: understand the process, redesign it for efficiency, validate the new design, and then automate. Process design must precede automation investment.</p>
-      <p>When done correctly, automation delivers transformative results. When done incorrectly, it locks inefficiency into your operations at scale.</p>
-    `,
-    "technology-should-follow-operations": `
-      <p>In our experience, the most common cause of operational inefficiency is technology-led decision making. Organizations select software based on features, brand recognition, or industry trends — without first understanding what their operations actually need.</p>
-      <p>The result is a stack of expensive tools that don't work well together, require manual data transfer, and force employees to adapt their workflows to the limitations of the software.</p>
-      <p>The alternative is an operations-led approach: understand your workflows, identify your requirements, and then select technology that serves your operational needs. This approach consistently delivers better outcomes at lower cost.</p>
-      <p>Technology is a tool, not a strategy. When operations lead, technology enables. When technology leads, operations suffer.</p>
-    `,
-  };
+  const paragraphs = ARTICLE_BODY[article.slug] ?? [
+    "This insight is being prepared by Sentient Engineering.",
+  ];
 
   return (
-    <main className="min-h-screen bg-[#0F172A]">
-      <article className="mx-auto w-full max-w-3xl px-6 md:px-12 lg:px-16 pt-32 pb-20">
-        <nav className="mb-12">
+    <main className="min-h-screen bg-black">
+      <Container className="pt-28 pb-20 sm:pt-32">
+        <article className="mx-auto max-w-3xl">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-[#64748B] hover:text-[#CBD5E1] transition-colors"
+            className="inline-flex rounded-full border border-white/[0.1] px-4 py-2 text-sm text-zinc-400 transition hover:bg-white/[0.05] hover:text-white"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            Back to Insights
+            Back to insights
           </Link>
-        </nav>
 
-        <time className="text-xs text-[#64748B] font-mono">
-          {article.date}
-        </time>
-        <h1 className="text-3xl md:text-5xl font-bold text-[#F8FAFC] mt-4 mb-6 leading-[1.15]">
-          {article.title}
-        </h1>
-        <p className="text-lg text-[#CBD5E1] mb-10">
-          {article.description}
-        </p>
+          <header className="mt-12 border-b border-white/[0.08] pb-10">
+            <time className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+              {new Intl.DateTimeFormat("en", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              }).format(new Date(`${article.date}T00:00:00`))}
+            </time>
+            <h1 className="mt-5 text-balance text-4xl font-semibold tracking-[-0.04em] text-white sm:text-6xl">
+              {article.title}
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-zinc-400">
+              {article.description}
+            </p>
+          </header>
 
-        <div
-          className="prose prose-invert prose-sm max-w-none text-[#CBD5E1] leading-relaxed space-y-6"
-          dangerouslySetInnerHTML={{
-            __html:
-              bodyContent[article.slug] ||
-              "<p>This article is coming soon. Please check back later.</p>",
-          }}
-        />
+          <div className="mt-10 space-y-7 text-base leading-8 text-zinc-300">
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-medium text-sm hover:bg-blue-700 transition-colors"
-          >
-            Back to Home
-          </Link>
-        </div>
-      </article>
+          <div className="mt-14 rounded-3xl border border-white/[0.08] bg-white/[0.035] p-6">
+            <p className="text-sm leading-7 text-zinc-400">
+              Sentient Engineering helps leadership teams translate operational
+              friction into measurable priorities, then engineer the systems that
+              improve performance.
+            </p>
+            <Link
+              href="/#audit"
+              className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
+            >
+              Book an Operations Audit
+            </Link>
+          </div>
+        </article>
+      </Container>
     </main>
   );
 }

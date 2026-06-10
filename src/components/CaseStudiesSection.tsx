@@ -1,64 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Container from "./Container";
 import { CASE_STUDIES } from "@/lib/constants";
+import Container from "./Container";
+import SectionHeading from "./SectionHeading";
 
 export default function CaseStudiesSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-[#0F172A]">
+    <section className="section-shell bg-black py-20 sm:py-28">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="text-xs font-medium text-accent uppercase tracking-wider">
-              Case Studies
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#F8FAFC] mb-4">
-            Measurable results from real engagements
-          </h2>
-          <p className="text-lg text-[#CBD5E1] max-w-2xl mx-auto">
-            These illustrative examples demonstrate the type and scale of results
-            our clients achieve through operations engineering.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {CASE_STUDIES.map((study, i) => (
-            <motion.div
+        <SectionHeading
+          eyebrow="Illustrative Results"
+          title="Examples of the operating improvements we engineer."
+          description="These placeholders show the type of measurable outcomes an operations-first engagement is designed to produce."
+        />
+        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+          {CASE_STUDIES.map((study, index) => (
+            <motion.article
               key={study.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group relative p-8 rounded-xl bg-white/[0.03] border border-white/5 hover:border-accent/30 transition-all duration-500"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ delay: index * 0.06, duration: 0.45 }}
+              className="premium-card rounded-3xl p-6"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-[32px]" />
-
-              <div className="relative z-10">
-                <span className="inline-block text-xs font-medium text-accent bg-accent/10 px-2.5 py-1 rounded-full mb-4">
-                  {study.label}
-                </span>
-
-                <h3 className="text-2xl font-bold text-[#38BDF8] mb-3">
-                  {study.result}
-                </h3>
-
-                <h4 className="text-sm font-semibold text-[#F8FAFC] mb-2">
-                  {study.title}
-                </h4>
-                <p className="text-sm text-[#64748B] leading-relaxed">
-                  {study.description}
-                </p>
-              </div>
-            </motion.div>
+              <p className="mb-8 inline-flex rounded-full border border-white/[0.08] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-500">
+                Illustrative Results
+              </p>
+              <h3 className="text-xl font-medium text-white">{study.title}</h3>
+              <p className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-white">
+                {study.metric}
+              </p>
+              <p className="mt-2 text-sm font-medium text-zinc-300">{study.result}</p>
+              <p className="mt-5 text-sm leading-7 text-zinc-400">
+                {study.description}
+              </p>
+            </motion.article>
           ))}
         </div>
       </Container>
