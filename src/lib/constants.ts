@@ -1,16 +1,16 @@
 export const COMPANY = {
   name: "Sentient Engineering",
-  tagline: "Engineering Better Operations.",
+  tagline: "Engineering Better Operations",
   description:
-    "We help businesses identify operational inefficiencies, quantify their impact, and engineer intelligent systems that reduce cost, improve productivity, increase visibility, reduce risk, and accelerate growth.",
+    "We engineer business systems that reduce friction, improve efficiency, and accelerate growth. Sentient Engineering is an operations engineering firm — not a software company, not an AI consultancy, not a cloud provider. We help organizations improve operational performance through intelligent systems, automation, and disciplined process design.",
   email: "hello@sentientengineering.com",
   url: "https://sentientengineering.com",
 } as const;
 
 export const META = {
-  title: "Sentient Engineering | Engineering Better Operations",
+  title: "Sentient Engineering | Operations Engineering Firm",
   description:
-    "Sentient Engineering helps organizations improve operational efficiency through process analysis, automation, software systems, cloud infrastructure, AI, and business systems engineering.",
+    "Sentient Engineering helps organizations improve operational performance through intelligent systems, automation, and disciplined process design. We are an operations engineering firm — not a software company.",
   siteName: "Sentient Engineering",
   url: COMPANY.url,
   locale: "en_US",
@@ -153,13 +153,12 @@ export const SERVICES = [
 ] as const;
 
 export const OUTCOMES = [
-  "Reduce Costs",
-  "Increase Productivity",
-  "Improve Visibility",
-  "Reduce Risk",
-  "Improve Accountability",
-  "Accelerate Delivery",
-  "Scale Operations",
+  { metric: "Lower", label: "Operating Costs", detail: "Through waste elimination and resource optimization" },
+  { metric: "Faster", label: "Execution Cycles", detail: "Compressed approval, handoff, and delivery timelines" },
+  { metric: "Higher", label: "Revenue Throughput", detail: "Removing bottlenecks that constrain capacity" },
+  { metric: "Better", label: "Operational Visibility", detail: "Real-time insight into performance and constraints" },
+  { metric: "Reduced", label: "Business Risk", detail: "Eliminating single points of failure and undocumented dependencies" },
+  { metric: "More", label: "Predictable Outcomes", detail: "Consistent delivery through repeatable, measured processes" },
 ] as const;
 
 export const INDUSTRIES = [

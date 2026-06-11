@@ -186,9 +186,10 @@ export default function HeroSection() {
                 Engineering Better Operations.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-                We help organizations uncover operational inefficiencies,
-                eliminate bottlenecks, and implement intelligent systems that
-                reduce costs, improve productivity, and accelerate growth.
+                We help organizations improve operational performance through
+                intelligent systems, automation, and disciplined process design.
+                Lower operating costs. Faster execution. Better visibility.
+                Reduced risk.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a

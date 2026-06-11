@@ -14,8 +14,8 @@ export default function ServicesSection() {
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <SectionHeading
             eyebrow="Services"
-            title="Engineering operations through software, data, automation, AI, and infrastructure."
-            description="We use technology as an operating lever: software engineering, data engineering, AI/ML, modelling, automation, and cloud systems are applied where they solve measurable business problems."
+            title="Operational capabilities that improve business performance."
+            description="Every engagement is organized around a business outcome. We apply process design, automation, systems engineering, and technology where they solve measurable operational problems — never for their own sake."
           />
           <ImagePanel
             src="/images/command-center.png"
