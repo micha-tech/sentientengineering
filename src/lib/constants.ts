@@ -103,52 +103,46 @@ export const SENTIENT_METHOD = [
 
 export const SERVICES = [
   {
-    title: "Operational Excellence Audits",
+    title: "Reduce Operational Costs",
     description:
-      "Process, systems, data, and cost analysis that identifies real operational constraints and prioritizes measurable improvement work.",
+      "Identify inefficiencies and implement technology solutions that lower operating expenses.",
     image: "/images/workflow-map.png",
   },
   {
-    title: "Workflow Optimization",
+    title: "Increase Operational Efficiency",
     description:
-      "Redesign of approvals, handoffs, exceptions, ownership, and controls so work moves with less friction and clearer accountability.",
+      "Streamline workflows and optimize business processes for maximum productivity.",
     image: "/images/workflow-map.png",
   },
   {
-    title: "Business Systems Engineering",
+    title: "Automate Business Processes",
     description:
-      "Software engineering, integrations, APIs, and platform architecture that connect tools, teams, data, and decision paths.",
-    image: "/images/software-systems.png",
-  },
-  {
-    title: "Automation & Intelligent Operations",
-    description:
-      "Automation, AI-assisted workflows, rules engines, and decision support systems that reduce manual effort and cycle time.",
+      "Replace manual work with intelligent automation that scales with your business.",
     image: "/images/ai-modelling.png",
   },
   {
-    title: "Visibility & Reporting",
+    title: "Build Custom Business Systems",
     description:
-      "Data engineering, metrics layers, dashboards, alerts, and reporting systems that give leaders operational control.",
+      "Design and develop platforms tailored to your operations and workflows.",
+    image: "/images/software-systems.png",
+  },
+  {
+    title: "Unlock Business Intelligence",
+    description:
+      "Turn operational data into actionable insights and performance metrics.",
     image: "/images/data-engineering.png",
   },
   {
-    title: "Cloud & Infrastructure Modernization",
+    title: "Apply AI Where It Matters",
     description:
-      "Cloud architecture, infrastructure modernization, reliability engineering, and secure environments for operational systems.",
-    image: "/images/command-center.png",
-  },
-  {
-    title: "Cost Optimization",
-    description:
-      "Modelling of labor, workflow, vendor, infrastructure, and system costs to reduce waste while protecting capability.",
+      "Deploy practical AI solutions that solve real business challenges.",
     image: "/images/ai-modelling.png",
   },
   {
-    title: "Custom Operational Platforms",
+    title: "Modernize & Scale Operations",
     description:
-      "Purpose-built software platforms for operations that need custom workflows, data models, automation, and reporting.",
-    image: "/images/software-systems.png",
+      "Build secure, scalable technology foundations for long-term growth.",
+    image: "/images/command-center.png",
   },
 ] as const;
 

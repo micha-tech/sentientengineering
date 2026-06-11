@@ -14,8 +14,8 @@ export default function ServicesSection() {
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <SectionHeading
             eyebrow="Services"
-            title="Operational capabilities that improve business performance."
-            description="Every engagement is organized around a business outcome. We apply process design, automation, systems engineering, and technology where they solve measurable operational problems — never for their own sake."
+            title="Outcome-based services. Technology is the tool, not the product."
+            description="Every engagement is organized around a measurable business outcome — lower costs, faster operations, better decisions. We apply the right tools only where they solve real operational problems."
           />
           <ImagePanel
             src="/images/command-center.png"

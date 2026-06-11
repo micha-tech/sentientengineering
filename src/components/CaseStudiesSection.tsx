@@ -12,7 +12,7 @@ export default function CaseStudiesSection() {
         <SectionHeading
           eyebrow="Operational Transformations"
           title="What better operations look like in practice."
-          description="Each engagement connects operational diagnosis with the right technical solution: data pipelines, automation, platforms, dashboards, modelling, or infrastructure."
+          description="Each engagement connects operational diagnosis with the right solution — automation, systems, data, AI, or infrastructure — to deliver measurable business outcomes."
         />
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {CASE_STUDIES.map((study, index) => (
