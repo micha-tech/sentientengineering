@@ -18,7 +18,7 @@ export default function ServicesSection() {
             description="Every engagement is organized around a measurable business outcome — lower costs, faster operations, better decisions. We apply the right tools only where they solve real operational problems."
           />
           <ImagePanel
-            src="/images/command-center.png"
+            src="/images/dashboard.jpg"
             alt="Monochrome operational command center with dashboards and system visibility"
             caption="Visibility across the operating system"
           />

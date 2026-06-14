@@ -118,31 +118,31 @@ export const SERVICES = [
     title: "Automate Business Processes",
     description:
       "Replace manual work with intelligent automation that scales with your business.",
-    image: "/images/ai-modelling.png",
+    image: "/images/model.png",
   },
   {
     title: "Build Custom Business Systems",
     description:
       "Design and develop platforms tailored to your operations and workflows.",
-    image: "/images/software-systems.png",
+    image: "/images/software.png",
   },
   {
     title: "Unlock Business Intelligence",
     description:
       "Turn operational data into actionable insights and performance metrics.",
-    image: "/images/data-engineering.png",
+    image: "/images/business.jpg",
   },
   {
     title: "Apply AI Where It Matters",
     description:
       "Deploy practical AI solutions that solve real business challenges.",
-    image: "/images/ai-modelling.png",
+    image: "/images/model.png",
   },
   {
     title: "Modernize & Scale Operations",
     description:
       "Build secure, scalable technology foundations for long-term growth.",
-    image: "/images/command-center.png",
+    image: "/images/dashboard.jpg",
   },
 ] as const;
 

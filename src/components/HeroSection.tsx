@@ -153,13 +153,13 @@ function OperationalSystemVisual() {
           OPERATING SYSTEM
         </motion.text>
       </svg>
-      <div className="relative mt-5 grid grid-cols-3 gap-2 border-t border-white/[0.08] pt-4 text-center">
+      <div className="relative mt-5 flex flex-wrap gap-1.5 border-t border-white/[0.08] pt-4 text-center sm:grid sm:grid-cols-3 sm:gap-2">
         {["Cost", "Throughput", "Visibility"].map((metric) => (
-          <div key={metric} className="rounded-2xl bg-white/[0.035] px-2 py-3">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-500">
+          <div key={metric} className="flex-1 rounded-2xl bg-white/[0.035] px-2 py-2 sm:py-3 min-w-[80px]">
+            <p className="text-[9px] uppercase tracking-[0.18em] text-zinc-500 sm:text-[10px] sm:tracking-[0.22em]">
               {metric}
             </p>
-            <p className="mt-1 text-sm font-medium text-white">Measured</p>
+            <p className="mt-0.5 text-xs font-medium text-white sm:mt-1 sm:text-sm">Measured</p>
           </div>
         ))}
       </div>
