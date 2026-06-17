@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -19,86 +18,75 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-white/[0.08] bg-black/78 shadow-2xl shadow-black/40 backdrop-blur-xl"
-          : "bg-black/20 backdrop-blur-sm"
-      }`}
-    >
-      <Container>
-        <nav className="flex h-20 items-center justify-between md:h-24">
-          <Link
-            href="/"
-            className="group flex min-w-0 items-center gap-3"
-            aria-label={`${COMPANY.name} home`}
-          >
-            <span className="relative h-[clamp(3.25rem,8vw,4.75rem)] w-[clamp(13.5rem,42vw,24rem)] shrink-0">
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
+          scrolled
+            ? "border-b border-white/[0.08] bg-black/90 backdrop-blur-xl"
+            : "bg-black/70 backdrop-blur-md"
+        }`}
+      >
+        <Container>
+          <nav className="flex h-[4.5rem] items-center justify-between sm:h-20">
+            <Link
+              href="/"
+              className="relative h-14 w-52 shrink-0 sm:h-16 sm:w-64"
+              aria-label={`${COMPANY.name} home`}
+              onClick={() => setOpen(false)}
+            >
               <Image
                 src="/sentientlogo-wordmark.png"
                 alt="Sentient Engineering"
                 fill
-                sizes="(min-width: 1024px) 384px, 42vw"
-                className="object-contain"
+                sizes="(min-width: 640px) 256px, 208px"
+                className="object-contain object-left"
                 priority
               />
-            </span>
-            <span className="sr-only">
-              {COMPANY.name}
-            </span>
-          </Link>
+            </Link>
 
-          <div className="hidden items-center gap-7 md:flex">
-            {NAV_LINKS.map((link) => (
+            <div className="hidden items-center gap-7 lg:flex">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-zinc-400 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
               <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-zinc-400 transition-colors hover:text-white"
+                href="#audit"
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200"
               >
-                {link.label}
+                Request an Operations Audit
               </a>
-            ))}
-            <a
-              href="#audit"
-              className="rounded-full border border-white/10 bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-zinc-200"
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setOpen((value) => !value)}
+              className="grid h-11 w-11 place-items-center rounded-full border border-white/[0.12] bg-white/[0.04] text-white lg:hidden"
+              aria-label="Toggle navigation"
+              aria-expanded={open}
             >
-              Book an Audit
-            </a>
-          </div>
+              <span className="grid gap-1.5">
+                <span
+                  className={`h-px w-5 bg-white transition ${
+                    open ? "translate-y-[3px] rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`h-px w-5 bg-white transition ${
+                    open ? "-translate-y-[4px] -rotate-45" : ""
+                  }`}
+                />
+              </span>
+            </button>
+          </nav>
+        </Container>
 
-          <button
-            type="button"
-            onClick={() => setOpen((value) => !value)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white md:hidden"
-            aria-label="Toggle navigation"
-            aria-expanded={open}
-          >
-            <span className="relative h-4 w-5">
-              <motion.span
-                animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-                className="absolute left-0 top-0 h-px w-5 bg-white"
-              />
-              <motion.span
-                animate={open ? { opacity: 0 } : { opacity: 1 }}
-                className="absolute left-0 top-[7px] h-px w-5 bg-white"
-              />
-              <motion.span
-                animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                className="absolute bottom-0 left-0 h-px w-5 bg-white"
-              />
-            </span>
-          </button>
-        </nav>
-      </Container>
-
-      <AnimatePresence>
         {open ? (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-white/[0.08] bg-black/94 backdrop-blur-xl md:hidden"
-          >
+          <div className="border-t border-white/[0.08] bg-black/96 lg:hidden">
             <Container>
               <div className="grid gap-1 py-4">
                 {NAV_LINKS.map((link) => (
@@ -106,7 +94,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-xl px-2 py-3 text-base text-zinc-300 transition hover:bg-white/[0.04] hover:text-white"
+                    className="rounded-lg px-2 py-3 text-base text-zinc-300 transition hover:bg-white/[0.05] hover:text-white"
                   >
                     {link.label}
                   </a>
@@ -114,15 +102,22 @@ export default function Navbar() {
                 <a
                   href="#audit"
                   onClick={() => setOpen(false)}
-                  className="mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-medium text-black"
+                  className="mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-semibold text-black"
                 >
-                  Book an Operations Audit
+                  Request an Operations Audit
                 </a>
               </div>
             </Container>
-          </motion.div>
+          </div>
         ) : null}
-      </AnimatePresence>
-    </header>
+      </header>
+
+      <a
+        href="#audit"
+        className="fixed inset-x-4 bottom-4 z-50 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-black shadow-2xl shadow-black/50 sm:hidden"
+      >
+        Request an Operations Audit
+      </a>
+    </>
   );
 }

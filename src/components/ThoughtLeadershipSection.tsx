@@ -5,36 +5,36 @@ import SectionHeading from "./SectionHeading";
 
 export default function ThoughtLeadershipSection() {
   return (
-    <section id="insights" className="section-shell bg-black py-20 sm:py-28">
+    <section id="insights" className="section-shell bg-black py-16 sm:py-24">
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="Thought Leadership"
-            title="Clear thinking for leaders improving how work gets done."
-            description="Essays on operational friction, systems design, automation, measurement, and the practical realities of scaling execution."
+            eyebrow="Insights"
+            title="Practical operations thinking for business leaders."
+            description="Short essays on operations management, business process automation, operational excellence, AI for business, measurement, and execution."
           />
           <Link
             href="/blog"
-            className="inline-flex w-fit rounded-full border border-white/[0.12] px-5 py-3 text-sm font-medium text-white transition hover:bg-white/[0.06]"
+            className="inline-flex w-fit rounded-full border border-white/[0.12] px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.06]"
           >
-            View insights
+            Read operations insights
           </Link>
         </div>
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <div className="mt-10 grid gap-3 lg:grid-cols-3">
           {ARTICLES.map((article) => (
             <Link
               href={`/blog/${article.slug}`}
               key={article.title}
-              className="premium-card rounded-3xl p-6 transition duration-300 hover:border-white/20"
+              className="premium-card rounded-lg p-6 transition duration-200 hover:border-white/20"
             >
-              <time className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+              <time className="text-xs uppercase text-zinc-600">
                 {new Intl.DateTimeFormat("en", {
                   month: "short",
                   day: "numeric",
                   year: "numeric",
                 }).format(new Date(`${article.date}T00:00:00`))}
               </time>
-              <h3 className="mt-8 text-xl font-medium leading-7 text-white">
+              <h3 className="mt-7 text-xl font-semibold leading-7 text-white">
                 {article.title}
               </h3>
               <p className="mt-4 text-sm leading-7 text-zinc-400">

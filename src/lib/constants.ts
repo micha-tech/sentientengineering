@@ -1,16 +1,17 @@
 export const COMPANY = {
   name: "Sentient Engineering",
-  tagline: "Engineering Better Operations",
+  tagline: "Engineering Better Business Operations",
   description:
-    "We engineer business systems that reduce friction, improve efficiency, and accelerate growth. Sentient Engineering is an operations engineering firm — not a software company, not an AI consultancy, not a cloud provider. We help organizations improve operational performance through intelligent systems, automation, and disciplined process design.",
+    "Sentient Engineering is an Operations Engineering company. We improve business operations using process improvement, automation, AI, custom software, and data analytics as tools for measurable business performance.",
   email: "hello@sentientengineering.com",
   url: "https://sentientengineering.com",
 } as const;
 
 export const META = {
-  title: "Sentient Engineering | Operations Engineering Firm",
+  title:
+    "Sentient Engineering | Operations Engineering for Better Business Performance",
   description:
-    "Sentient Engineering helps organizations improve operational performance through intelligent systems, automation, and disciplined process design. We are an operations engineering firm — not a software company.",
+    "Sentient Engineering helps businesses in Nigeria, Africa, and beyond improve operations, cash flow, efficiency, productivity, visibility, and measurable business performance.",
   siteName: "Sentient Engineering",
   url: COMPANY.url,
   locale: "en_US",
@@ -18,178 +19,132 @@ export const META = {
 } as const;
 
 export const NAV_LINKS = [
+  { label: "Outcomes", href: "#outcomes" },
   { label: "Method", href: "#method" },
-  { label: "Services", href: "#services" },
-  { label: "Results", href: "#results" },
-  { label: "Insights", href: "#insights" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Tools", href: "#tools" },
+  { label: "Metrics", href: "#metrics" },
+  { label: "Industries", href: "#industries" },
 ] as const;
 
-export const PAIN_POINTS = [
+export const PROBLEMS = [
+  "Slow approvals",
+  "Manual work",
+  "Poor visibility",
+  "Delayed collections",
+  "Rework",
+  "Bottlenecks",
+  "Disconnected teams",
+  "Revenue leakage",
+] as const;
+
+export const OUTCOMES = [
   {
-    title: "Manual Processes",
-    impact:
-      "Critical work depends on handoffs, spreadsheets, inboxes, and memory instead of dependable operating systems.",
+    title: "Cash Flow",
+    description:
+      "Reduce delays in collections, improve working capital, and increase cash availability.",
   },
   {
-    title: "Approval Delays",
-    impact:
-      "Decisions wait in queues, projects lose momentum, and teams spend energy chasing status instead of advancing work.",
+    title: "Operational Efficiency",
+    description:
+      "Remove bottlenecks, unnecessary work, and process waste from everyday execution.",
   },
   {
-    title: "Data Silos",
-    impact:
-      "Information lives across disconnected tools, making every report slower and every decision less reliable.",
+    title: "Productivity",
+    description:
+      "Help teams do more valuable work with less friction, checking, chasing, and rework.",
   },
   {
-    title: "Poor Visibility",
-    impact:
-      "Leadership cannot see constraints early enough to intervene, forecast capacity, or protect delivery quality.",
+    title: "Customer Experience",
+    description:
+      "Improve response time, service consistency, delivery quality, and follow-through.",
   },
   {
-    title: "Reporting Bottlenecks",
-    impact:
-      "Teams spend days producing static updates that are already stale by the time they reach decision makers.",
+    title: "Visibility",
+    description:
+      "Give leadership clearer insight into performance, risk, ownership, and execution.",
   },
   {
-    title: "Duplicate Work",
-    impact:
-      "The same data is entered, checked, moved, and reconciled repeatedly across functions and systems.",
-  },
-  {
-    title: "Operational Risk",
-    impact:
-      "Undocumented workflows, fragile access patterns, and informal approvals create avoidable exposure.",
-  },
-  {
-    title: "Scaling Challenges",
-    impact:
-      "Processes that worked at one stage begin to fracture as volume, headcount, and complexity increase.",
+    title: "Business Performance",
+    description:
+      "Connect process improvement, automation, and systems work to measurable ROI.",
   },
 ] as const;
 
 export const SENTIENT_METHOD = [
   {
-    title: "Observe",
+    title: "Discover",
     description:
-      "Map how work actually moves through teams, systems, approvals, data, exceptions, and decisions.",
+      "We identify where time, money, and effort are being lost inside the business.",
   },
   {
     title: "Diagnose",
     description:
-      "Identify constraints, duplicated effort, hidden risk, unclear ownership, and the systems creating friction.",
+      "We map processes, measure performance, and identify bottlenecks, leakage, and weak controls.",
   },
   {
-    title: "Quantify",
+    title: "Design",
     description:
-      "Translate operational friction into cost, time, risk, revenue delay, quality impact, and leadership visibility.",
+      "We redesign operations around speed, accountability, visibility, control, and value.",
   },
   {
-    title: "Engineer",
+    title: "Build",
     description:
-      "Design workflows, controls, automations, integrations, reporting, and platforms around measurable outcomes.",
+      "We implement practical systems using workflow automation, AI, custom software, and data analytics where needed.",
   },
   {
-    title: "Implement",
+    title: "Improve",
     description:
-      "Deploy improvements in focused increments with adoption support, documentation, and operational continuity.",
-  },
-  {
-    title: "Optimize",
-    description:
-      "Install metrics, feedback loops, and continuous improvement rhythms so operations keep compounding.",
+      "We measure results, optimize performance, and help operations keep improving after launch.",
   },
 ] as const;
 
-export const SERVICES = [
-  {
-    title: "Reduce Operational Costs",
-    description:
-      "Identify inefficiencies and implement technology solutions that lower operating expenses.",
-    image: "/images/workflow-map.png",
-  },
-  {
-    title: "Increase Operational Efficiency",
-    description:
-      "Streamline workflows and optimize business processes for maximum productivity.",
-    image: "/images/workflow-map.png",
-  },
-  {
-    title: "Automate Business Processes",
-    description:
-      "Replace manual work with intelligent automation that scales with your business.",
-    image: "/images/model.png",
-  },
-  {
-    title: "Build Custom Business Systems",
-    description:
-      "Design and develop platforms tailored to your operations and workflows.",
-    image: "/images/software.png",
-  },
-  {
-    title: "Unlock Business Intelligence",
-    description:
-      "Turn operational data into actionable insights and performance metrics.",
-    image: "/images/business.jpg",
-  },
-  {
-    title: "Apply AI Where It Matters",
-    description:
-      "Deploy practical AI solutions that solve real business challenges.",
-    image: "/images/model.png",
-  },
-  {
-    title: "Modernize & Scale Operations",
-    description:
-      "Build secure, scalable technology foundations for long-term growth.",
-    image: "/images/dashboard.jpg",
-  },
+export const TOOLS = [
+  "AI for business operations",
+  "Workflow automation",
+  "Custom software development",
+  "Business systems",
+  "Data analytics",
+  "Operational dashboards",
+  "Process optimization",
+  "Systems integration",
+  "Business intelligence",
+  "Operational intelligence",
 ] as const;
 
-export const OUTCOMES = [
-  { metric: "Lower", label: "Operating Costs", detail: "Through waste elimination and resource optimization" },
-  { metric: "Faster", label: "Execution Cycles", detail: "Compressed approval, handoff, and delivery timelines" },
-  { metric: "Higher", label: "Revenue Throughput", detail: "Removing bottlenecks that constrain capacity" },
-  { metric: "Better", label: "Operational Visibility", detail: "Real-time insight into performance and constraints" },
-  { metric: "Reduced", label: "Business Risk", detail: "Eliminating single points of failure and undocumented dependencies" },
-  { metric: "More", label: "Predictable Outcomes", detail: "Consistent delivery through repeatable, measured processes" },
+export const METRICS = [
+  "Days Sales Outstanding",
+  "Cash Conversion Cycle",
+  "Lead Time",
+  "Cycle Time",
+  "Rework Rate",
+  "Customer Response Time",
+  "Operating Cost",
+  "Revenue Leakage",
+  "Productivity",
+  "Working Capital",
+  "Cash Availability",
+  "Process Efficiency",
 ] as const;
 
 export const INDUSTRIES = [
-  "Construction",
+  "SMEs",
+  "Retail and Distribution",
   "Logistics",
   "Professional Services",
+  "Construction",
   "Manufacturing",
   "Healthcare",
-  "Finance",
   "Education",
-  "Retail",
-  "Energy",
-  "SMEs",
+  "Real Estate",
+  "Field Service Businesses",
+  "Finance and Accounting Teams",
 ] as const;
 
-export const CASE_STUDIES = [
-  {
-    title: "Reporting Operating Model",
-    metric: "Faster",
-    result: "leadership reporting cycles",
-    description:
-      "Fragmented spreadsheet reporting is redesigned into governed data pipelines, metric definitions, and executive dashboards.",
-  },
-  {
-    title: "Approval Flow Redesign",
-    metric: "Clearer",
-    result: "decision ownership",
-    description:
-      "Multi-stage approvals are converted into measured workflows with routing, escalation logic, and accountability controls.",
-  },
-  {
-    title: "Operations Platform Architecture",
-    metric: "Connected",
-    result: "systems and data flows",
-    description:
-      "Disconnected tools are connected through integrations, operational data models, automation, and visibility layers.",
-  },
+export const PROOF_POINTS = [
+  "We start with how the business actually works, not with a preferred tool.",
+  "We diagnose waste, leakage, delay, visibility gaps, and weak execution controls.",
+  "We build practical operating systems that leaders and teams can use every day.",
+  "We measure improvement through cash flow, speed, productivity, quality, and control.",
 ] as const;
 
 export const ARTICLES = [
@@ -218,27 +173,27 @@ export const ARTICLES = [
 
 export const FAQS = [
   {
-    q: "What is operations engineering?",
-    a: "Operations engineering is the practice of analyzing how an organization works, identifying inefficiencies, and designing systems that improve performance. It combines process design, automation, reporting, software, infrastructure, controls, and change implementation.",
+    q: "What is Operations Engineering?",
+    a: "Operations Engineering is the discipline of diagnosing, designing, building, measuring, and improving how a business operates. It combines process improvement, business systems, workflow automation, AI, data analytics, and operational controls to improve business performance.",
   },
   {
     q: "How are you different from a software agency?",
-    a: "A software agency usually starts with a build request. Sentient Engineering starts with the operating problem: where work slows down, where cost leaks, where visibility is missing, and where risk accumulates. Technology is used only where it improves operational performance.",
+    a: "A software agency usually starts with a build request. Sentient Engineering starts with the operating problem: where money leaks, where work slows down, where visibility is missing, and where execution breaks. Technology is used only where it improves operations.",
   },
   {
     q: "What is included in an Operations Audit?",
-    a: "An Operations Audit maps workflows, interviews stakeholders, reviews systems and data flows, identifies constraints, quantifies business impact, and produces a prioritized roadmap for measurable improvement.",
+    a: "An Operations Audit reviews workflows, systems, data, performance metrics, team handoffs, bottlenecks, cash flow constraints, reporting gaps, and improvement opportunities. The output is a prioritized operations improvement roadmap.",
   },
   {
-    q: "Do you implement the solutions you recommend?",
-    a: "Yes. We can design and implement workflow changes, automations, integrations, dashboards, infrastructure improvements, and custom operational platforms when those are the right tools for the operating model.",
+    q: "Do you implement the improvements?",
+    a: "Yes. We diagnose and design the operating model, then implement the practical systems, automations, dashboards, integrations, workflows, and controls needed to improve performance.",
   },
   {
-    q: "Who do you work with?",
-    a: "We work with growing SMEs and mid-market organizations across operationally complex industries, especially teams that have outgrown manual coordination and need better systems for scale.",
+    q: "Who is this for?",
+    a: "We work with business owners, CEOs, founders, COOs, CFOs, executive teams, growth-focused SMEs, and mid-sized organizations that need stronger operational control, better cash visibility, faster execution, and measurable ROI.",
   },
   {
     q: "How is success measured?",
-    a: "Every engagement is tied to measurable operating outcomes such as cost reduction, hours recovered, faster cycle times, fewer errors, improved visibility, reduced risk, and better accountability.",
+    a: "Success is measured through operating metrics such as Days Sales Outstanding, cash conversion cycle, lead time, cycle time, customer response time, rework rate, operating cost, productivity, revenue leakage, and process efficiency.",
   },
 ] as const;

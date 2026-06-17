@@ -26,10 +26,10 @@ export default function BlogPage() {
         </Link>
 
         <header className="mt-12 max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-500">
+          <p className="text-xs font-medium uppercase text-zinc-500">
             Insights
           </p>
-          <h1 className="mt-5 text-balance text-4xl font-semibold tracking-[-0.04em] text-white sm:text-6xl">
+          <h1 className="mt-5 text-balance text-4xl font-semibold text-white sm:text-6xl">
             Operations thinking for leaders building better systems.
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
@@ -43,9 +43,9 @@ export default function BlogPage() {
             <Link
               key={article.slug}
               href={`/blog/${article.slug}`}
-              className="premium-card rounded-3xl p-6 transition duration-300 hover:border-white/20"
+              className="premium-card rounded-lg p-6 transition duration-200 hover:border-white/20"
             >
-              <time className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+              <time className="text-xs uppercase text-zinc-600">
                 {new Intl.DateTimeFormat("en", {
                   month: "short",
                   day: "numeric",

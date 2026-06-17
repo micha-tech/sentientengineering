@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import PositioningSection from "@/components/PositioningSection";
 import OperationalPainSection from "@/components/OperationalPainSection";
+import OutcomesSection from "@/components/OutcomesSection";
 import SentientMethodSection from "@/components/SentientMethodSection";
 import ServicesSection from "@/components/ServicesSection";
+import MetricsSection from "@/components/MetricsSection";
 import IndustriesSection from "@/components/IndustriesSection";
-import OutcomesSection from "@/components/OutcomesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ThoughtLeadershipSection from "@/components/ThoughtLeadershipSection";
 import FAQSection from "@/components/FAQSection";
@@ -18,11 +18,11 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <PositioningSection />
         <OperationalPainSection />
+        <OutcomesSection />
         <SentientMethodSection />
         <ServicesSection />
-        <OutcomesSection />
+        <MetricsSection />
         <IndustriesSection />
         <CaseStudiesSection />
         <ThoughtLeadershipSection />

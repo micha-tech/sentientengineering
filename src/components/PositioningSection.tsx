@@ -7,10 +7,10 @@ export default function PositioningSection() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-500">
+            <p className="text-xs font-medium uppercase text-zinc-500">
               Category
             </p>
-            <h2 className="mt-5 text-balance text-4xl font-semibold tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-5 text-balance text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
               Operations Engineering.
               <br />
               <span className="text-zinc-500">Not a software company.</span>

@@ -1,42 +1,38 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { CASE_STUDIES } from "@/lib/constants";
+import { PROOF_POINTS } from "@/lib/constants";
 import Container from "./Container";
-import SectionHeading from "./SectionHeading";
 
 export default function CaseStudiesSection() {
   return (
-    <section className="section-shell bg-black py-20 sm:py-28">
+    <section className="section-shell bg-black py-16 sm:py-24">
       <Container>
-        <SectionHeading
-          eyebrow="Operational Transformations"
-          title="What better operations look like in practice."
-          description="Each engagement connects operational diagnosis with the right solution — automation, systems, data, AI, or infrastructure — to deliver measurable business outcomes."
-        />
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
-          {CASE_STUDIES.map((study, index) => (
-            <motion.article
-              key={study.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ delay: index * 0.06, duration: 0.45 }}
-              className="premium-card rounded-3xl p-6"
-            >
-              <p className="mb-8 inline-flex rounded-full border border-white/[0.08] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-500">
-                Operations Engineering
-              </p>
-              <h3 className="text-xl font-medium text-white">{study.title}</h3>
-              <p className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-white">
-                {study.metric}
-              </p>
-              <p className="mt-2 text-sm font-medium text-zinc-300">{study.result}</p>
-              <p className="mt-5 text-sm leading-7 text-zinc-400">
-                {study.description}
-              </p>
-            </motion.article>
-          ))}
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div>
+            <p className="text-xs font-semibold uppercase text-zinc-500">
+              Why Sentient Engineering
+            </p>
+            <h2 className="mt-5 text-balance text-3xl font-semibold text-white sm:text-5xl">
+              We are not here to sell tools.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+              We are here to improve how your business operates. We combine
+              operational thinking, process improvement, automation, AI, custom
+              software, and data analytics to solve real business problems and
+              deliver measurable performance improvement.
+            </p>
+          </div>
+          <div className="grid gap-3">
+            {PROOF_POINTS.map((point, index) => (
+              <div
+                key={point}
+                className="grid gap-4 border border-white/[0.08] bg-white/[0.03] p-5 sm:grid-cols-[3rem_1fr]"
+              >
+                <span className="text-xs font-semibold uppercase text-zinc-600">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="text-base leading-7 text-zinc-200">{point}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

@@ -80,14 +80,14 @@ export default async function ArticlePage({ params }: Props) {
           </Link>
 
           <header className="mt-12 border-b border-white/[0.08] pb-10">
-            <time className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+            <time className="text-xs uppercase text-zinc-600">
               {new Intl.DateTimeFormat("en", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",
               }).format(new Date(`${article.date}T00:00:00`))}
             </time>
-            <h1 className="mt-5 text-balance text-4xl font-semibold tracking-[-0.04em] text-white sm:text-6xl">
+            <h1 className="mt-5 text-balance text-4xl font-semibold text-white sm:text-6xl">
               {article.title}
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-400">
@@ -101,7 +101,7 @@ export default async function ArticlePage({ params }: Props) {
             ))}
           </div>
 
-          <div className="mt-14 rounded-3xl border border-white/[0.08] bg-white/[0.035] p-6">
+          <div className="mt-14 rounded-lg border border-white/[0.08] bg-white/[0.035] p-6">
             <p className="text-sm leading-7 text-zinc-400">
               Sentient Engineering helps leadership teams translate operational
               friction into measurable priorities, then engineer the systems that
@@ -111,7 +111,7 @@ export default async function ArticlePage({ params }: Props) {
               href="/#audit"
               className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
             >
-              Book an Operations Audit
+              Request an Operations Audit
             </Link>
           </div>
         </article>
