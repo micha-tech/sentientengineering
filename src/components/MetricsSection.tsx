@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function MetricsSection() {
   return (
-    <section id="metrics" className="section-shell bg-black py-16 sm:py-24">
+    <section id="metrics" className="section-shell bg-white py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
           <SectionHeading
@@ -16,8 +16,9 @@ export default function MetricsSection() {
             {METRICS.map((metric) => (
               <div
                 key={metric}
-                className="min-h-24 border border-white/[0.08] bg-white/[0.03] p-4 text-sm font-medium leading-6 text-zinc-200"
+                className="min-h-24 rounded-lg border border-emerald/20 bg-emerald/5 p-4 text-sm font-semibold leading-6 text-navy"
               >
+                <span className="mb-3 block h-2 w-2 rounded-full bg-emerald" />
                 {metric}
               </div>
             ))}

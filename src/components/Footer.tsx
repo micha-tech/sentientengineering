@@ -4,7 +4,7 @@ import Container from "./Container";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.08] bg-black py-10 pb-24 sm:pb-10">
+    <footer className="border-t border-white/10 bg-navy py-10 pb-24 sm:pb-10">
       <Container>
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>
@@ -19,7 +19,7 @@ export default function Footer() {
                 />
               </span>
             </div>
-            <p className="mt-4 max-w-md text-sm leading-6 text-zinc-500">
+            <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">
               Operations Engineering for businesses that need stronger cash
               flow, better visibility, faster execution, and measurable
               performance improvement.
@@ -30,16 +30,16 @@ export default function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-zinc-500 transition hover:text-white"
+                className="text-sm text-slate-400 transition hover:text-cyan-300"
               >
                 {link.label}
               </a>
             ))}
           </nav>
         </div>
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/[0.08] pt-6 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>(c) {new Date().getFullYear()} Sentient Engineering.</p>
-          <a className="transition hover:text-zinc-300" href={`mailto:${COMPANY.email}`}>
+          <a className="transition hover:text-cyan-300" href={`mailto:${COMPANY.email}`}>
             {COMPANY.email}
           </a>
         </div>

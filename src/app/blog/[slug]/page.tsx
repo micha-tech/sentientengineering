@@ -69,47 +69,47 @@ export default async function ArticlePage({ params }: Props) {
   ];
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-background">
       <Container className="pt-28 pb-20 sm:pt-32">
         <article className="mx-auto max-w-3xl">
           <Link
             href="/blog"
-            className="inline-flex rounded-full border border-white/[0.1] px-4 py-2 text-sm text-zinc-400 transition hover:bg-white/[0.05] hover:text-white"
+            className="secondary-button min-h-0 px-4 py-2"
           >
             Back to insights
           </Link>
 
-          <header className="mt-12 border-b border-white/[0.08] pb-10">
-            <time className="text-xs uppercase text-zinc-600">
+          <header className="mt-12 border-b border-slate-200 pb-10">
+            <time className="text-xs font-semibold uppercase tracking-widest text-navy">
               {new Intl.DateTimeFormat("en", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",
               }).format(new Date(`${article.date}T00:00:00`))}
             </time>
-            <h1 className="mt-5 text-balance text-4xl font-semibold text-white sm:text-6xl">
+            <h1 className="mt-5 text-balance text-4xl font-semibold text-navy sm:text-6xl">
               {article.title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-zinc-400">
+            <p className="mt-6 text-lg leading-8 text-muted">
               {article.description}
             </p>
           </header>
 
-          <div className="mt-10 space-y-7 text-base leading-8 text-zinc-300">
+          <div className="mt-10 space-y-7 text-base leading-8 text-slate-700">
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 
-          <div className="mt-14 rounded-lg border border-white/[0.08] bg-white/[0.035] p-6">
-            <p className="text-sm leading-7 text-zinc-400">
+          <div className="premium-card mt-14 rounded-xl p-6">
+            <p className="text-sm leading-7 text-muted">
               Sentient Engineering helps leadership teams translate operational
               friction into measurable priorities, then engineer the systems that
               improve performance.
             </p>
             <Link
               href="/#audit"
-              className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
+              className="primary-button mt-5 min-h-0 px-5 py-3"
             >
               Request an Operations Audit
             </Link>

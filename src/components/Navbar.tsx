@@ -22,8 +22,8 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
           scrolled
-            ? "border-b border-white/[0.08] bg-black/90 backdrop-blur-xl"
-            : "bg-black/70 backdrop-blur-md"
+            ? "border-b border-white/10 bg-navy/95 shadow-lg shadow-black/10 backdrop-blur-xl"
+            : "bg-navy/90 backdrop-blur-md"
         }`}
       >
         <Container>
@@ -49,14 +49,14 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-zinc-400 transition-colors hover:text-white"
+                  className="text-sm text-slate-300 transition-colors hover:text-cyan-300"
                 >
                   {link.label}
                 </a>
               ))}
               <a
                 href="#audit"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200"
+                className="primary-button min-h-0 px-5 py-2.5"
               >
                 Request an Operations Audit
               </a>
@@ -86,7 +86,7 @@ export default function Navbar() {
         </Container>
 
         {open ? (
-          <div className="border-t border-white/[0.08] bg-black/96 lg:hidden">
+          <div className="border-t border-white/10 bg-navy lg:hidden">
             <Container>
               <div className="grid gap-1 py-4">
                 {NAV_LINKS.map((link) => (
@@ -94,7 +94,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-lg px-2 py-3 text-base text-zinc-300 transition hover:bg-white/[0.05] hover:text-white"
+                    className="rounded-lg px-2 py-3 text-base text-slate-200 transition hover:bg-white/[0.06] hover:text-cyan-300"
                   >
                     {link.label}
                   </a>
@@ -102,7 +102,7 @@ export default function Navbar() {
                 <a
                   href="#audit"
                   onClick={() => setOpen(false)}
-                  className="mt-2 rounded-full bg-white px-5 py-3 text-center text-sm font-semibold text-black"
+                  className="primary-button mt-2 px-5 py-3 text-center"
                 >
                   Request an Operations Audit
                 </a>
@@ -114,7 +114,7 @@ export default function Navbar() {
 
       <a
         href="#audit"
-        className="fixed inset-x-4 bottom-4 z-50 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-black shadow-2xl shadow-black/50 sm:hidden"
+        className="primary-button fixed inset-x-4 bottom-4 z-50 min-h-12 px-5 shadow-2xl shadow-navy/30 sm:hidden"
       >
         Request an Operations Audit
       </a>

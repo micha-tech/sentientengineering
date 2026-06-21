@@ -14,7 +14,7 @@ export default function ImagePanel({
   priority?: boolean;
 }) {
   return (
-    <figure className={`premium-card relative overflow-hidden rounded-lg ${className}`}>
+    <figure className={`premium-card relative overflow-hidden rounded-xl ${className}`}>
       <div className="relative aspect-[4/3] sm:aspect-[16/9]">
         <Image
           src={src}
@@ -24,10 +24,10 @@ export default function ImagePanel({
           className="object-cover"
           priority={priority}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/5 to-transparent" />
       </div>
       {caption ? (
-        <figcaption className="absolute bottom-4 left-4 right-4 border border-white/[0.08] bg-black/70 px-4 py-3 text-xs font-medium uppercase text-zinc-300 backdrop-blur-md">
+        <figcaption className="absolute bottom-4 left-4 right-4 border border-white/10 bg-navy/85 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-200 backdrop-blur-md">
           {caption}
         </figcaption>
       ) : null}

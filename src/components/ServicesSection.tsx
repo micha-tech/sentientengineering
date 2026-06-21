@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function ServicesSection() {
   return (
-    <section id="tools" className="section-shell bg-black py-16 sm:py-24">
+    <section id="tools" className="section-shell bg-background py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
@@ -14,7 +14,7 @@ export default function ServicesSection() {
               title="Business outcomes first."
               description="We use AI, automation, custom software, data analytics, dashboards, and business systems as practical tools for improving operations."
             />
-            <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-muted">
               The goal is never technology for its own sake. The goal is better
               execution, lower waste, stronger visibility, and measurable
               business performance.
@@ -30,8 +30,9 @@ export default function ServicesSection() {
           {TOOLS.map((tool) => (
             <div
               key={tool}
-              className="border border-white/[0.08] bg-white/[0.03] px-4 py-4 text-sm font-medium text-zinc-300"
+              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm"
             >
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
               {tool}
             </div>
           ))}

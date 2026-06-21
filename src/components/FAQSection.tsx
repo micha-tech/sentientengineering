@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="section-shell bg-black py-16 sm:py-24">
+    <section id="faq" className="section-shell bg-background py-16 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="FAQ"
@@ -15,15 +15,15 @@ export default function FAQSection() {
           {FAQS.map((faq) => (
             <details
               key={faq.q}
-              className="group border border-white/[0.08] bg-white/[0.03] p-5 open:bg-[#111111]"
+              className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm open:border-cyan/30"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-navy">
                 {faq.q}
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 text-zinc-400 transition group-open:rotate-45 group-open:text-white">
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-slate-200 text-navy transition group-open:rotate-45 group-open:border-cyan group-open:bg-cyan group-open:text-navy">
                   +
                 </span>
               </summary>
-              <p className="mt-4 text-sm leading-7 text-zinc-400">{faq.a}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{faq.a}</p>
             </details>
           ))}
         </div>

@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function IndustriesSection() {
   return (
-    <section id="industries" className="section-shell bg-black py-16 sm:py-24">
+    <section id="industries" className="section-shell bg-background py-16 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="Industries"
@@ -15,7 +15,7 @@ export default function IndustriesSection() {
           {INDUSTRIES.map((industry) => (
             <div
               key={industry}
-              className="border border-white/[0.08] bg-white/[0.03] px-4 py-4 text-sm font-medium text-zinc-300"
+              className="rounded-lg border border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm"
             >
               {industry}
             </div>

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function ThoughtLeadershipSection() {
   return (
-    <section id="insights" className="section-shell bg-black py-16 sm:py-24">
+    <section id="insights" className="section-shell bg-white py-16 sm:py-24">
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
@@ -15,7 +15,7 @@ export default function ThoughtLeadershipSection() {
           />
           <Link
             href="/blog"
-            className="inline-flex w-fit rounded-full border border-white/[0.12] px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.06]"
+            className="secondary-button w-fit px-5 py-3"
           >
             Read operations insights
           </Link>
@@ -25,19 +25,19 @@ export default function ThoughtLeadershipSection() {
             <Link
               href={`/blog/${article.slug}`}
               key={article.title}
-              className="premium-card rounded-lg p-6 transition duration-200 hover:border-white/20"
+              className="premium-card rounded-xl p-6 transition duration-200 hover:-translate-y-0.5 hover:border-cyan/40"
             >
-              <time className="text-xs uppercase text-zinc-600">
+              <time className="text-xs font-semibold uppercase tracking-widest text-navy">
                 {new Intl.DateTimeFormat("en", {
                   month: "short",
                   day: "numeric",
                   year: "numeric",
                 }).format(new Date(`${article.date}T00:00:00`))}
               </time>
-              <h3 className="mt-7 text-xl font-semibold leading-7 text-white">
+              <h3 className="mt-7 text-xl font-semibold leading-7 text-navy">
                 {article.title}
               </h3>
-              <p className="mt-4 text-sm leading-7 text-zinc-400">
+              <p className="mt-4 text-sm leading-7 text-muted">
                 {article.description}
               </p>
             </Link>

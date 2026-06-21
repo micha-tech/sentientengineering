@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #111111;
-  --muted: #a1a1aa;
-  --border: rgba(255, 255, 255, 0.08);
-  --soft: rgba(255, 255, 255, 0.04);
+  --background: #f8fafc;
+  --foreground: #111827;
+  --card: #ffffff;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --brand-navy: #0f172a;
+  --brand-cyan: #06b6d4;
+  --brand-cyan-dark: #0891b2;
+  --brand-emerald: #10b981;
 }
 
 @theme inline {
@@ -14,6 +17,10 @@
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-muted: var(--muted);
+  --color-navy: var(--brand-navy);
+  --color-cyan: var(--brand-cyan);
+  --color-cyan-dark: var(--brand-cyan-dark);
+  --color-emerald: var(--brand-emerald);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -24,13 +31,13 @@
 
   html {
     scroll-behavior: smooth;
-    background: #000000;
+    background: var(--background);
   }
 
   body {
     min-width: 320px;
-    background: #000000;
-    color: #ffffff;
+    background: var(--background);
+    color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -41,9 +48,34 @@
     text-decoration: none;
   }
 
+  input,
+  textarea,
+  select {
+    border: 1px solid var(--border);
+    border-radius: 0.625rem;
+    background: var(--card);
+    color: var(--foreground);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--muted);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--brand-cyan);
+  }
+
   ::selection {
-    background: rgba(255, 255, 255, 0.18);
-    color: #ffffff;
+    background: rgba(6, 182, 212, 0.24);
+    color: var(--brand-navy);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--brand-cyan);
+    outline-offset: 3px;
   }
 }
 
@@ -57,22 +89,87 @@
   }
 
   .premium-card {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)),
-      #111111;
+    background: var(--card);
     border: 1px solid var(--border);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    box-shadow: 0 18px 45px -32px rgba(15, 23, 42, 0.28);
+  }
+
+  .premium-card-dark {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .hairline-grid {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 48px 48px;
+      linear-gradient(rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.08) 1px, transparent 1px);
+    background-size: 56px 56px;
     mask-image: linear-gradient(to bottom, black, transparent 78%);
   }
 
-  .subtle-glow {
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--brand-navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    width: 1.25rem;
+    height: 2px;
+    background: var(--brand-cyan);
+    content: "";
+  }
+
+  .dark-eyebrow {
+    color: var(--brand-cyan);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--brand-cyan);
+    color: var(--brand-navy);
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: 0 12px 28px -16px rgba(6, 182, 212, 0.85);
+    transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .primary-button:hover {
+    background: var(--brand-cyan-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px -16px rgba(6, 182, 212, 0.7);
+  }
+
+  .secondary-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--brand-navy);
+    border-radius: 9999px;
+    color: var(--brand-navy);
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  }
+
+  .secondary-button:hover {
+    background: var(--brand-navy);
+    color: #ffffff;
+    transform: translateY(-1px);
   }
 }
