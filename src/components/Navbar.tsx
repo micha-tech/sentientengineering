@@ -54,12 +54,12 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#audit"
+              <Link
+                href="/diagnostic"
                 className="primary-button min-h-0 px-5 py-2.5"
               >
-                Request an Operations Audit
-              </a>
+                Start Free Diagnostic
+              </Link>
             </div>
 
             <button
@@ -99,25 +99,25 @@ export default function Navbar() {
                     {link.label}
                   </a>
                 ))}
-                <a
-                  href="#audit"
+                <Link
+                  href="/diagnostic"
                   onClick={() => setOpen(false)}
                   className="primary-button mt-2 px-5 py-3 text-center"
                 >
-                  Request an Operations Audit
-                </a>
+                  Start Free Diagnostic
+                </Link>
               </div>
             </Container>
           </div>
         ) : null}
       </header>
 
-      <a
-        href="#audit"
+      <Link
+        href="/diagnostic"
         className="primary-button fixed inset-x-4 bottom-4 z-50 min-h-12 px-5 shadow-2xl shadow-navy/30 sm:hidden"
       >
-        Request an Operations Audit
-      </a>
+        Start Free Diagnostic
+      </Link>
     </>
   );
 }

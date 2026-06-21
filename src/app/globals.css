@@ -172,4 +172,29 @@
     color: #ffffff;
     transform: translateY(-1px);
   }
+
+  .diagnostic-enter {
+    animation: diagnostic-enter 320ms ease-out both;
+  }
+}
+
+@keyframes diagnostic-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .diagnostic-enter {
+    animation: none;
+  }
 }

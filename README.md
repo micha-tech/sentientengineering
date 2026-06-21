@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Diagnostic lead delivery
+
+The Business Growth & Operations Diagnostic can deliver completed lead profiles and report summaries to any CRM or automation webhook.
+
+```bash
+DIAGNOSTIC_LEAD_WEBHOOK_URL=https://your-automation-webhook.example
+DIAGNOSTIC_LEAD_WEBHOOK_TOKEN=optional-bearer-token
+```
+
+If the webhook is not configured, the diagnostic remains fully usable and keeps submitted profile data in the browser session.
+
 ## Getting Started
 
 First, run the development server:

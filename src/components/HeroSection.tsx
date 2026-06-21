@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./Container";
 
 const heroMetrics = [
@@ -27,9 +28,9 @@ export default function HeroSection() {
               that deliver measurable business performance.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#audit" className="primary-button px-6">
-                Request an Operations Audit
-              </a>
+              <Link href="/diagnostic" className="primary-button px-6">
+                Start Free Diagnostic
+              </Link>
               <a
                 href="#outcomes"
                 className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-white/30 bg-white/[0.03] px-6 text-sm font-semibold text-white transition hover:border-cyan-300 hover:bg-white/[0.07]"
