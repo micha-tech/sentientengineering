@@ -9,14 +9,21 @@ type LeadPayload = {
     sector?: string;
     size?: string;
     challenge?: string;
+    role?: string;
+    function?: string;
+    preferredTime?: string;
   };
   result?: {
-    overall?: number;
+    opportunityScore?: number;
+    readinessScore?: number;
+    impactScore?: number;
+    riskScore?: number;
+    visibilityScore?: number;
     maturity?: string;
     risk?: string;
     opportunity?: string;
-    automationScore?: number;
   };
+  intake?: Record<string, unknown>;
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -31,7 +38,7 @@ export async function POST(request: Request) {
   }
 
   const lead = payload.lead;
-  const fields = [lead?.name, lead?.company, lead?.phone, lead?.sector, lead?.size, lead?.challenge];
+  const fields = [lead?.name, lead?.company, lead?.phone, lead?.sector, lead?.size, lead?.challenge, lead?.role, lead?.function, lead?.preferredTime];
 
   if (!lead || fields.some((field) => !field?.trim()) || !lead.email || !emailPattern.test(lead.email)) {
     return NextResponse.json({ error: "Complete business profile required." }, { status: 400 });
@@ -57,6 +64,7 @@ export async function POST(request: Request) {
         source: "sentientengineering.com/diagnostic",
         submittedAt: new Date().toISOString(),
         lead,
+        intake: payload.intake,
         result: payload.result,
       }),
       signal: AbortSignal.timeout(8000),

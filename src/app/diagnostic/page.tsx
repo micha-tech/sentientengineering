@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import BusinessDiagnostic from "@/components/diagnostic/BusinessDiagnostic";
+import AutomationAssessment from "@/components/assessment/AutomationAssessment";
 
 export const metadata: Metadata = {
-  title: "Business Growth & Operations Diagnostic",
+  title: "Automation Opportunity Assessment",
   description:
-    "Assess sales, marketing, customer support, workflow efficiency, and executive visibility to identify practical business systems and automation opportunities.",
+    "Identify the highest-value automation opportunities across sales, finance, HR, marketing, customer support, supply chain, logistics, and IT operations.",
   openGraph: {
-    title: "Business Growth & Operations Diagnostic | Sentient Engineering",
+    title: "Automation Opportunity Assessment | Sentient Engineering",
     description:
-      "Find where your business is losing sales, time, and profit with a guided executive operations assessment.",
+      "Complete a field-oriented business performance diagnostic and receive an executive automation opportunity report.",
   },
 };
 
 export default function DiagnosticPage() {
-  return <BusinessDiagnostic />;
+  return <AutomationAssessment />;
 }
