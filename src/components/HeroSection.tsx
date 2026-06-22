@@ -5,8 +5,8 @@ const banner = (
   <Image
     src="/images/automation-hero-banner.png"
     alt="Sentient Engineering business automation banner showing connected AI and technology systems"
-    width={1664}
-    height={960}
+    width={1632}
+    height={964}
     sizes="100vw"
     priority
   />
@@ -25,8 +25,8 @@ export default function HeroSection() {
         <div className="[&>img]:h-auto [&>img]:w-full">{banner}</div>
         <Link
           href="/diagnostic"
-          aria-label="Book an Automation Audit"
-          className="absolute left-[4.6%] top-[61.5%] h-[7%] w-[16%] rounded-full focus-visible:outline-white"
+          aria-label="Run an Automation Audit"
+          className="absolute left-[4.9%] top-[63%] h-[6.5%] w-[21%] rounded-full focus-visible:outline-white"
         />
       </section>
 
