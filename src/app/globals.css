@@ -42,6 +42,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   a {
@@ -148,6 +149,38 @@
     transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
   }
 
+  .ghost-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.035);
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  }
+
+  .ghost-button:hover {
+    border-color: rgba(103, 232, 249, 0.65);
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-1px);
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--brand-navy);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 182, 212, 0.5);
+    text-underline-offset: 0.35rem;
+  }
+
   .primary-button:hover {
     background: var(--brand-cyan-dark);
     transform: translateY(-1px);
@@ -176,9 +209,109 @@
   .diagnostic-enter {
     animation: diagnostic-enter 320ms ease-out both;
   }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+    background-size: 62px 62px;
+    mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.65) 60%, transparent 100%);
+  }
+
+  .hero-glow {
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.24) 0%, rgba(16, 185, 129, 0.09) 35%, transparent 70%);
+    filter: blur(24px);
+  }
+
+  .automation-window::before {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(125deg, rgba(255,255,255,.06), transparent 38%);
+    pointer-events: none;
+    content: "";
+  }
+
+  .workflow-node {
+    animation: node-enter 560ms ease both;
+  }
+
+  .flow-line {
+    background: linear-gradient(to bottom, transparent, var(--brand-cyan), var(--brand-emerald), transparent);
+    opacity: 0.4;
+  }
+
+  .metric-float {
+    position: absolute;
+    z-index: 10;
+    animation: gentle-float 5s ease-in-out infinite;
+  }
+
+  .metric-float-one {
+    right: -2.2rem;
+    top: 24%;
+  }
+
+  .metric-float-two {
+    bottom: 9%;
+    left: -4.8rem;
+    animation-delay: -2.3s;
+  }
+
+  .problem-card,
+  .solution-card {
+    box-shadow: 0 24px 55px -45px rgba(15, 23, 42, 0.42);
+    transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  }
+
+  .problem-card:hover,
+  .solution-card:hover {
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 30px 65px -42px rgba(15, 23, 42, 0.34);
+    transform: translateY(-4px);
+  }
+
+  .managed-panel {
+    box-shadow: 0 38px 85px -55px rgba(15, 23, 42, 0.85);
+  }
+
+  .audit-result {
+    animation: audit-reveal 360ms ease both;
+  }
+
+  .final-cta {
+    box-shadow: 0 36px 70px -48px rgba(6, 182, 212, 0.9);
+  }
 }
 
 @keyframes diagnostic-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes node-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes audit-reveal {
   from {
     opacity: 0;
     transform: translateY(8px);
@@ -196,5 +329,17 @@
 
   .diagnostic-enter {
     animation: none;
+  }
+
+  .workflow-node,
+  .metric-float,
+  .audit-result {
+    animation: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .mobile-fixed-cta {
+    display: none;
   }
 }

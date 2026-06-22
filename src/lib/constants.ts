@@ -1,17 +1,17 @@
 export const COMPANY = {
   name: "Sentient Engineering",
-  tagline: "Engineering Better Business Operations",
+  tagline: "Automation that keeps business moving",
   description:
-    "Sentient Engineering is an Operations Engineering company. We improve business operations using process improvement, automation, AI, custom software, and data analytics as tools for measurable business performance.",
+    "Sentient Engineering helps growing businesses automate sales, customer support, finance, HR, admin, and operations with reliable workflows, AI assistants, integrations, and managed automation systems.",
   email: "hello@sentientengineering.com",
   url: "https://sentientengineering.com",
 } as const;
 
 export const META = {
   title:
-    "Sentient Engineering | Operations Engineering for Better Business Performance",
+    "Sentient Engineering | Business Process Automation",
   description:
-    "Sentient Engineering helps businesses in Nigeria, Africa, and beyond improve operations, cash flow, efficiency, productivity, visibility, and measurable business performance.",
+    "Automate sales, support, finance, HR, and operations with connected workflows, AI assistants, dashboards, integrations, and managed automation systems.",
   siteName: "Sentient Engineering",
   url: COMPANY.url,
   locale: "en_US",
@@ -19,11 +19,10 @@ export const META = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Outcomes", href: "#outcomes" },
-  { label: "Method", href: "#method" },
-  { label: "Tools", href: "#tools" },
-  { label: "Metrics", href: "#metrics" },
-  { label: "Industries", href: "#industries" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Use Cases", href: "#use-cases" },
+  { label: "Process", href: "#process" },
+  { label: "Managed Automation", href: "#managed-automation" },
 ] as const;
 
 export const PROBLEMS = [

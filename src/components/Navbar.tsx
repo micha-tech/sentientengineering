@@ -23,7 +23,7 @@ export default function Navbar() {
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
           scrolled
             ? "border-b border-white/10 bg-navy/95 shadow-lg shadow-black/10 backdrop-blur-xl"
-            : "bg-navy/90 backdrop-blur-md"
+            : "bg-navy"
         }`}
       >
         <Container>
@@ -49,7 +49,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-slate-300 transition-colors hover:text-cyan-300"
+                  className="text-[0.82rem] font-medium text-slate-300 transition-colors hover:text-cyan"
                 >
                   {link.label}
                 </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
                 href="/diagnostic"
                 className="primary-button min-h-0 px-5 py-2.5"
               >
-                Start Free Diagnostic
+                Book Audit
               </Link>
             </div>
 
@@ -104,7 +104,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className="primary-button mt-2 px-5 py-3 text-center"
                 >
-                  Start Free Diagnostic
+                  Book an Automation Audit
                 </Link>
               </div>
             </Container>
@@ -112,12 +112,14 @@ export default function Navbar() {
         ) : null}
       </header>
 
-      <Link
-        href="/diagnostic"
-        className="primary-button fixed inset-x-4 bottom-4 z-50 min-h-12 px-5 shadow-2xl shadow-navy/30 sm:hidden"
-      >
-        Start Free Diagnostic
-      </Link>
+      {scrolled ? (
+        <Link
+          href="/diagnostic"
+          className="mobile-fixed-cta primary-button fixed inset-x-4 bottom-4 z-50 min-h-12 px-5 shadow-2xl shadow-navy/30"
+        >
+          Book an Automation Audit
+        </Link>
+      ) : null}
     </>
   );
 }
