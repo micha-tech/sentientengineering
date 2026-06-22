@@ -343,3 +343,20 @@
     display: none;
   }
 }
+
+.mobile-hero-banner {
+  width: 100%;
+  height: 473px;
+  contain: paint;
+  background-image: url("/images/automation-hero-banner.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 820px auto;
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .mobile-hero-banner {
+    height: calc(100vw * 0.576923);
+    background-size: 100% auto;
+  }
+}

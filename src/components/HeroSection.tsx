@@ -31,15 +31,12 @@ export default function HeroSection() {
       </section>
 
       <section
-        className="relative overflow-hidden bg-navy md:hidden"
+        className="mobile-hero-banner relative overflow-clip bg-navy md:hidden"
         aria-labelledby="mobile-hero-title"
       >
         <h1 id="mobile-hero-title" className="sr-only">
           Automate the Work Slowing You Down
         </h1>
-        <div className="[&>img]:h-auto [&>img]:w-[820px] [&>img]:max-w-none sm:[&>img]:w-full">
-          {banner}
-        </div>
         <Link
           href="/diagnostic"
           aria-label="Book an Automation Audit"
