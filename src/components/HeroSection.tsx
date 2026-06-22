@@ -40,7 +40,7 @@ export default function HeroSection() {
         <Link
           href="/diagnostic"
           aria-label="Book an Automation Audit"
-          className="absolute left-[5%] top-[61%] h-[10%] w-[38%] rounded-full focus-visible:outline-white sm:h-[8%] sm:w-[24%]"
+          className="absolute left-[9%] top-[88.5%] h-[7%] w-[82%] rounded-full focus-visible:outline-white"
         />
       </section>
     </>
