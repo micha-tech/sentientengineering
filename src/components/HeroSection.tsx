@@ -25,8 +25,8 @@ export default function HeroSection() {
         <div className="[&>img]:h-auto [&>img]:w-full">{banner}</div>
         <Link
           href="/diagnostic"
-          aria-label="Run an Automation Audit"
-          className="absolute left-[4.9%] top-[63%] h-[6.5%] w-[21%] rounded-full focus-visible:outline-white"
+          aria-label="Run a Quick Automation Assessment"
+          className="absolute left-[4.9%] top-[63%] h-[6.5%] w-[27%] rounded-full focus-visible:outline-white"
         />
       </section>
 
