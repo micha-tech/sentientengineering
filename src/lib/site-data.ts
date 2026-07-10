@@ -2,7 +2,7 @@ export const capabilities = [
   {
     title: "Applied AI Engineering",
     summary:
-      "We design AI systems that understand business context, work with company data, communicate naturally, use tools, and support operational work.",
+      "AI systems that understand context, use business data, and support operational work.",
     applications: [
       "AI assistants",
       "AI agents",
@@ -25,7 +25,7 @@ export const capabilities = [
   {
     title: "Applied Machine Learning Engineering",
     summary:
-      "We build predictive and analytical systems that learn from operational data and improve decisions.",
+      "Predictive and analytical systems built from operational data.",
     applications: [
       "Forecasting",
       "Classification",
@@ -42,7 +42,7 @@ export const capabilities = [
   {
     title: "Computer Vision Systems",
     summary:
-      "We develop systems that inspect, detect, monitor, measure, and understand physical environments using cameras and visual data.",
+      "Camera-based systems for inspection, detection, monitoring, and measurement.",
     applications: [
       "Quality inspection",
       "Defect detection",
@@ -66,7 +66,7 @@ export const capabilities = [
   {
     title: "Robotics and Autonomous Systems",
     summary:
-      "We design and integrate intelligent systems that connect AI, sensors, software, machines, and physical processes.",
+      "Integrated AI, sensor, software, and machine systems for physical processes.",
     applications: [
       "Industrial automation",
       "Robotic inspection",
@@ -87,7 +87,7 @@ export const capabilities = [
   {
     title: "Intelligent Automation",
     summary:
-      "We connect applications, APIs, data sources, business tools, and AI models to automate operational workflows.",
+      "Connected workflows across applications, APIs, data sources, and AI models.",
     applications: [
       "Workflow automation",
       "Document processing",
@@ -103,7 +103,7 @@ export const capabilities = [
   {
     title: "Data and Decision Intelligence",
     summary:
-      "We transform operational data into information that teams and decision-makers can use.",
+      "Data platforms, monitoring, and decision interfaces teams can actually use.",
     applications: [
       "Executive dashboards",
       "Operational analytics",
@@ -118,7 +118,7 @@ export const capabilities = [
   {
     title: "Operations Engineering",
     summary:
-      "We analyze how work, information, materials, and decisions move through an organization so intelligent systems are aimed at real constraints.",
+      "Operational analysis that points intelligent systems at real constraints.",
     applications: [
       "Bottleneck analysis",
       "Process mapping",
@@ -130,6 +130,39 @@ export const capabilities = [
       "Constraint management",
       "Operational visibility",
     ],
+  },
+] as const;
+
+export const systemImages = [
+  {
+    label: "Applied AI",
+    src: "/images/ai-assistant.jpg",
+    alt: "AI assistant interface representing applied AI for customer and operational workflows",
+  },
+  {
+    label: "Machine Learning",
+    src: "/images/computer-vision-hud.webp",
+    alt: "Digital eye interface representing machine learning and pattern recognition systems",
+  },
+  {
+    label: "Computer Vision",
+    src: "/images/computer-vision-detection.webp",
+    alt: "Computer vision system detecting people, vehicles, signs, and street objects",
+  },
+  {
+    label: "Visual Intelligence",
+    src: "/images/computer-vision-eye.jfif",
+    alt: "Human eye with digital overlays representing visual intelligence and image analysis",
+  },
+  {
+    label: "Robotics Integration",
+    src: "/images/robotics-arm.webp",
+    alt: "Robotic arm representing industrial robotics and autonomous systems integration",
+  },
+  {
+    label: "Autonomous Systems",
+    src: "/images/robotics-humanoid.jpg",
+    alt: "Humanoid robot representing autonomous systems and intelligent physical operations",
   },
 ] as const;
 
@@ -270,23 +303,23 @@ export const gyptiqCapabilities = [
 export const workSteps = [
   {
     title: "Understand the system",
-    copy: "We study the business, industry environment, workflow, data, people, constraints, and desired outcomes.",
+    copy: "We study the workflow, data, people, constraints, and desired outcomes.",
   },
   {
     title: "Identify intelligence opportunities",
-    copy: "We determine where AI, machine learning, computer vision, robotics, automation, or operational redesign can create measurable value.",
+    copy: "We find where AI, automation, robotics, data, or redesign can create value.",
   },
   {
     title: "Design the architecture",
-    copy: "We define the data flows, models, integrations, interfaces, infrastructure, safeguards, and human oversight required.",
+    copy: "We define data flows, models, integrations, interfaces, and oversight.",
   },
   {
     title: "Build and deploy",
-    copy: "We engineer the system, integrate it into existing operations, test it under realistic conditions, and deploy it responsibly.",
+    copy: "We build, integrate, test under realistic conditions, and deploy responsibly.",
   },
   {
     title: "Measure and improve",
-    copy: "We monitor performance, reliability, accuracy, adoption, cost, throughput, and business impact.",
+    copy: "We monitor reliability, accuracy, adoption, cost, throughput, and impact.",
   },
 ] as const;
 
