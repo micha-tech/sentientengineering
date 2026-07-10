@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AutomationSections from "@/components/AutomationSections";
+import IntelligentSystemsSections from "@/components/IntelligentSystemsSections";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <AutomationSections />
+        <IntelligentSystemsSections />
       </main>
       <Footer />
     </>
