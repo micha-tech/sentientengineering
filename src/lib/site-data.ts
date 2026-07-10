@@ -151,7 +151,7 @@ export const systemImages = [
   },
   {
     label: "Visual Intelligence",
-    src: "/images/computer-vision-eye.jfif",
+    src: "/images/computer-vision-eye.jpg",
     alt: "Human eye with digital overlays representing visual intelligence and image analysis",
   },
   {
