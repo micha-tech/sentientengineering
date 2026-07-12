@@ -7,25 +7,27 @@ export default function HeroSection() {
         Transform your business with AI through Sentient Engineering.
       </h1>
 
-      <div className="relative hidden aspect-[1440/850] w-full md:block">
+      <div className="hidden md:block">
         <Image
           src="/images/sentient-hero-desktop.jfif"
           alt=""
-          fill
+          width={1440}
+          height={850}
           priority
           sizes="100vw"
-          className="object-cover object-top"
+          className="h-auto w-full"
         />
       </div>
 
-      <div className="relative aspect-[941/1672] w-full md:hidden">
+      <div className="md:hidden">
         <Image
           src="/images/sentient-hero-mobile.png"
           alt=""
-          fill
+          width={941}
+          height={1672}
           priority
           sizes="100vw"
-          className="object-cover object-top"
+          className="h-auto w-full"
         />
       </div>
     </section>

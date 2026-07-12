@@ -19,10 +19,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071b20] transition-shadow duration-200 ${
         scrolled
-          ? "border-b border-white/10 bg-[#071b20]/95 shadow-lg shadow-black/10 backdrop-blur-xl"
-          : "bg-[#071b20]"
+          ? "shadow-lg shadow-black/10"
+          : "shadow-none"
       }`}
     >
       <Container>
