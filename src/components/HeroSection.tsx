@@ -9,7 +9,7 @@ export default function HeroSection() {
 
       <div className="hidden md:block">
         <Image
-          src="/images/sentient-hero-desktop.jfif"
+          src="/images/sentient-hero-desktop.jpg"
           alt=""
           width={1440}
           height={850}
