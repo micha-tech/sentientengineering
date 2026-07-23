@@ -19,9 +19,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071b20] transition-shadow duration-200 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#06191d] transition-shadow duration-200 ${
         scrolled
-          ? "shadow-lg shadow-black/10"
+          ? "shadow-[0_12px_30px_rgba(0,0,0,0.18)]"
           : "shadow-none"
       }`}
     >
@@ -29,7 +29,7 @@ export default function Navbar() {
         <nav className="flex h-20 items-center justify-between" aria-label="Primary">
           <Link
             href="/"
-            className="relative h-14 w-52 shrink-0 sm:w-64"
+            className="relative h-12 w-48 shrink-0 sm:w-56"
             aria-label={`${COMPANY.name} home`}
             onClick={() => setOpen(false)}
           >
@@ -37,23 +37,23 @@ export default function Navbar() {
               src="/sentientlogo-wordmark.png"
               alt="Sentient Engineering"
               fill
-              sizes="(min-width: 640px) 256px, 208px"
+              sizes="(min-width: 640px) 224px, 192px"
               className="object-contain object-left"
               priority
             />
           </Link>
 
-          <div className="hidden items-center gap-7 lg:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-[#8fd3bf]"
+                className="text-[0.8125rem] font-semibold text-slate-300 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
             ))}
-            <a className="primary-button min-h-11 px-5" href="#contact">
+            <a className="primary-button min-h-11 px-5 shadow-sm" href="#contact">
               Talk to an Engineer
             </a>
           </div>
@@ -61,7 +61,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
-            className="grid h-11 w-11 place-items-center rounded-lg border border-white/15 bg-white/[0.04] text-white lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-white lg:hidden"
             aria-label="Toggle navigation"
             aria-expanded={open}
             aria-controls="mobile-navigation"
@@ -85,7 +85,7 @@ export default function Navbar() {
       {open ? (
         <div
           id="mobile-navigation"
-          className="border-t border-white/10 bg-[#071b20] lg:hidden"
+          className="border-t border-white/10 bg-[#06191d] lg:hidden"
         >
           <Container>
             <div className="grid gap-1 py-4">
@@ -94,7 +94,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-2 py-3 text-base text-slate-200 transition hover:bg-white/[0.06] hover:text-[#8fd3bf]"
+                  className="rounded-md px-2 py-3 text-base text-slate-200 transition hover:bg-white/[0.06] hover:text-[#8fd3bf]"
                 >
                   {link.label}
                 </a>

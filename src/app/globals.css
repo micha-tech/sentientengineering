@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f7f3;
+  --background: #f3f6f4;
   --foreground: #071b20;
   --card: #ffffff;
-  --muted: #5f6f73;
-  --border: #dbe2df;
+  --muted: #586b70;
+  --border: #d6dfdc;
   --brand-deep: #071b20;
   --brand-green: #2f7d44;
   --brand-mint: #8fd3bf;
@@ -41,6 +41,13 @@
     text-rendering: optimizeLegibility;
   }
 
+  h1,
+  h2,
+  h3,
+  p {
+    letter-spacing: 0;
+  }
+
   a {
     text-decoration: none;
   }
@@ -51,7 +58,7 @@
     min-height: 3rem;
     width: 100%;
     border: 1px solid var(--border);
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     background: var(--card);
     padding: 0.75rem 0.875rem;
     color: var(--foreground);
@@ -66,6 +73,7 @@
   textarea:focus,
   select:focus {
     border-color: var(--brand-mint);
+    box-shadow: 0 0 0 3px rgba(143, 211, 191, 0.18);
     outline: none;
   }
 
@@ -90,11 +98,12 @@
     min-height: 3.25rem;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     background: var(--brand-mint);
     color: var(--brand-deep);
     font-size: 0.875rem;
     font-weight: 700;
+    letter-spacing: 0;
     transition:
       background-color 180ms ease,
       transform 180ms ease;
@@ -111,10 +120,11 @@
     align-items: center;
     justify-content: center;
     border: 1px solid var(--brand-deep);
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     color: var(--brand-deep);
     font-size: 0.875rem;
     font-weight: 700;
+    letter-spacing: 0;
     transition:
       background-color 180ms ease,
       color 180ms ease,
@@ -133,11 +143,12 @@
     align-items: center;
     justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     background: rgba(255, 255, 255, 0.04);
     color: #ffffff;
     font-size: 0.875rem;
     font-weight: 700;
+    letter-spacing: 0;
     transition:
       border-color 180ms ease,
       background-color 180ms ease,
