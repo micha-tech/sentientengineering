@@ -43,25 +43,28 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="hidden items-center gap-5 xl:flex">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-[0.8125rem] font-semibold text-slate-300 transition-colors hover:text-white"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a className="primary-button min-h-11 px-5 shadow-sm" href="#contact">
-              Talk to an Engineer
-            </a>
+            <Link
+              className="primary-button min-h-11 px-5 shadow-sm"
+              href="/#contact"
+            >
+              Discuss Your Project
+            </Link>
           </div>
 
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
-            className="grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-white lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-white xl:hidden"
             aria-label="Toggle navigation"
             aria-expanded={open}
             aria-controls="mobile-navigation"
@@ -85,27 +88,27 @@ export default function Navbar() {
       {open ? (
         <div
           id="mobile-navigation"
-          className="border-t border-white/10 bg-[#06191d] lg:hidden"
+          className="border-t border-white/10 bg-[#06191d] xl:hidden"
         >
           <Container>
             <div className="grid gap-1 py-4">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="rounded-md px-2 py-3 text-base text-slate-200 transition hover:bg-white/[0.06] hover:text-[#8fd3bf]"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="primary-button mt-2 px-5"
               >
-                Talk to an Engineer
-              </a>
+                Discuss Your Project
+              </Link>
             </div>
           </Container>
         </div>

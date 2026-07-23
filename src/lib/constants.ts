@@ -1,29 +1,29 @@
 export const COMPANY = {
   name: "Sentient Engineering",
-  tagline: "Applied intelligence for real operations",
+  tagline: "Applied AI. Engineered for reality.",
   description:
-    "Sentient Engineering applies AI, automation, computer vision, and data technologies to consequential business and industrial problems.",
+    "Sentient Engineering designs, builds, deploys, and manages applied AI systems for businesses and industries.",
   email: "hello@sentientengineering.com",
   phone: "",
   url: "https://sentientengineering.com",
 } as const;
 
 export const META = {
-  title:
-    "Sentient Engineering | Enterprise AI Engineering and Automation",
+  title: "Sentient Engineering | Applied AI Engineering Company",
   description:
-    "Sentient Engineering designs, integrates, and deploys enterprise AI and intelligent automation for real business and industrial operations.",
+    "Sentient Engineering designs, builds, deploys, and manages applied AI systems, intelligent automation, computer vision, enterprise AI, document intelligence, and AI-powered business platforms.",
   siteName: "Sentient Engineering",
   url: COMPANY.url,
   locale: "en_US",
   twitterHandle: "@sentienteng",
-  ogImage: "/sentientlogo-wordmark.png",
+  ogImage: "/images/hero-artwork.png",
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Industries", href: "#industries" },
-  { label: "Gyptiq", href: "#gyptiq" },
-  { label: "Company", href: "#company" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
+  { label: "Industries", href: "/#industries" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ] as const;

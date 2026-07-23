@@ -23,11 +23,11 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-6 max-w-xl text-base font-medium leading-7 text-white">
-              Applied intelligence for real operations.
+              Applied AI. Engineered for reality.
             </p>
             <p className="mt-3 max-w-xl text-sm leading-7 text-slate-400">
-              Enterprise AI engineering, intelligent automation, computer
-              vision, and decision systems for business and industry.
+              We design, build, deploy, and manage intelligent systems for
+              business and industry.
             </p>
           </div>
 
@@ -36,13 +36,13 @@ export default function Footer() {
             aria-label="Footer"
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-slate-300 transition hover:text-[#8fd3bf]"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

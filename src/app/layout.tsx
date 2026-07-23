@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { META } from "@/lib/constants";
+import { COMPANY, META } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +20,7 @@ const jsonLd = {
       logo: `${META.url}/sentientlogo-wordmark.png`,
       image: `${META.url}${META.ogImage}`,
       description: META.description,
-      slogan: "Intelligent systems for business and industry.",
+      slogan: COMPANY.tagline,
       areaServed: ["Nigeria", "Africa", "Worldwide"],
       knowsAbout: [
         "Applied AI Engineering",
@@ -30,8 +30,11 @@ const jsonLd = {
         "Robotics and Automation Engineering",
         "AI Automation for Businesses",
         "Industrial AI Solutions",
+        "Document Intelligence",
+        "Enterprise Knowledge Systems",
+        "AI Infrastructure and MLOps",
+        "Managed AI Operations",
         "Data and Decision Intelligence",
-        "Operations Engineering",
       ],
     },
     {
@@ -58,6 +61,9 @@ const jsonLd = {
         "Computer vision systems",
         "Robotics and automation engineering",
         "Intelligent systems engineering",
+        "Document intelligence",
+        "Enterprise AI systems",
+        "Managed AI operations",
       ],
       provider: {
         "@id": `${META.url}/#organization`,
@@ -103,9 +109,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: META.ogImage,
-        width: 890,
-        height: 230,
-        alt: "Sentient Engineering wordmark",
+        width: 760,
+        height: 690,
+        alt: "Applied AI engineering systems by Sentient Engineering",
       },
     ],
   },
@@ -128,22 +134,22 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    "Applied AI engineering company",
-    "Machine learning engineering company",
+    "Applied AI engineering",
+    "AI engineering company",
+    "Artificial intelligence solutions",
+    "Intelligent automation",
+    "Computer vision engineering",
+    "Enterprise AI systems",
+    "AI business systems",
+    "Document intelligence",
+    "Predictive AI",
+    "AI operations",
+    "AI engineering Nigeria",
+    "Applied AI Africa",
     "Intelligent systems engineering",
-    "AI solutions for business",
-    "Industrial AI solutions",
     "Computer vision systems",
-    "AI automation for businesses",
-    "Robotics and automation engineering",
-    "AI for logistics",
-    "AI for manufacturing",
-    "AI for healthcare",
-    "AI for supply chain",
-    "AI for construction",
-    "Applied AI company in Nigeria",
-    "AI engineering company in Africa",
-    "Machine learning solutions for businesses",
+    "Enterprise knowledge systems",
+    "AI infrastructure and MLOps",
   ],
 };
 
@@ -153,7 +159,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} h-full antialiased`}
+    >
       <body className="min-h-full bg-background font-sans text-foreground">
         <script
           type="application/ld+json"
