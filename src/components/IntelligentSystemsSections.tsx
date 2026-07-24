@@ -29,6 +29,25 @@ const positioningValues = [
   },
 ] as const;
 
+const capabilityIcons = [
+  "spark",
+  "message",
+  "layers",
+  "pulse",
+  "code",
+  "chart",
+  "target",
+  "bot",
+  "headset",
+  "workflow",
+  "database",
+  "cloud",
+  "audit",
+  "coins",
+  "shield",
+  "arrow",
+] as const;
+
 export default function IntelligentSystemsSections() {
   const gyptiq = products[0];
 
@@ -289,18 +308,26 @@ export default function IntelligentSystemsSections() {
               controls required for the complete system.
             </p>
           </div>
-          <div className="mt-12 grid border-t border-slate-300 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
             {engineeringCapabilities.map((capability, index) => (
               <div
                 key={capability}
-                className={`flex min-h-20 items-center border-b border-slate-300 py-5 text-sm font-semibold text-[#071b20] sm:px-5 ${
-                  index % 2 === 0 ? "sm:border-r" : ""
-                } ${index % 4 !== 3 ? "lg:border-r" : ""}`}
+                className="group relative flex min-h-40 flex-col justify-between overflow-hidden rounded-xl border border-slate-200 bg-white p-4 shadow-[0_8px_24px_rgba(7,27,32,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#8fd3bf] hover:shadow-[0_16px_36px_rgba(7,27,32,0.09)] sm:min-h-44 sm:p-5"
               >
-                <span className="mr-3 text-xs text-[#2f7d44]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                {capability}
+                <div className="flex items-start justify-between gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#e7f3ee] text-[#2f7d44] transition duration-300 group-hover:bg-[#2f7d44] group-hover:text-white">
+                    <AutomationIcon
+                      name={capabilityIcons[index]}
+                      className="h-5 w-5"
+                    />
+                  </span>
+                  <span className="text-[0.68rem] font-bold text-slate-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-6 text-sm font-semibold leading-5 text-[#071b20] sm:text-base sm:leading-6">
+                  {capability}
+                </p>
               </div>
             ))}
           </div>
