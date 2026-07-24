@@ -109,9 +109,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: META.ogImage,
-        width: 1731,
-        height: 909,
-        alt: "Sentient Engineering — intelligence built to move real operations forward",
+        width: 760,
+        height: 690,
+        alt: "Applied AI engineering systems by Sentient Engineering",
       },
     ],
   },

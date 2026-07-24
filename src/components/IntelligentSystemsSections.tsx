@@ -29,67 +29,40 @@ const positioningValues = [
   },
 ] as const;
 
-const serviceVisuals = [
-  "/images/ai-assistant.jpg",
-  "/images/automation-hero-banner.png",
-  "/images/computer-vision-hud.webp",
-] as const;
-
-const industryVisuals = [
-  "/images/automation-hero-banner.png",
-  "/images/robotics-arm.webp",
-  "/images/ai-intelligence-portrait.webp",
-  "/images/computer-vision-eye.jpg",
-] as const;
-
 export default function IntelligentSystemsSections() {
   const gyptiq = products[0];
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-slate-200 bg-white py-16 sm:py-28">
+      <section className="border-b border-slate-200 bg-white py-16 sm:py-24">
         <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+            <SectionHeading
+              eyebrow="Sentient Engineering"
+              title="We Build AI Systems That Perform Real Work"
+              copy="Sentient Engineering is an Applied AI Engineering company. We combine artificial intelligence, software engineering, automation, data infrastructure, and domain knowledge to build systems that solve practical business and industrial problems."
+            />
             <div>
-              <SectionHeading
-                eyebrow="Built for the real world"
-                title="AI that leaves the lab and enters the workflow."
-                copy="We combine artificial intelligence, software engineering, automation, data infrastructure, and domain knowledge into complete operational systems."
-              />
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600">
-                From the first data connection to the final user experience, we
-                design every layer to work reliably inside the organisation.
+              <p className="max-w-2xl text-base leading-8 text-slate-600">
+                We do not stop at prototypes or isolated AI models. We engineer
+                complete systems that integrate with existing workflows,
+                applications, databases, communication channels, equipment, and
+                operational processes.
               </p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {positioningValues.map((item, index) => (
-                  <article key={item.title} className="rounded-2xl border border-slate-200 bg-[#f6f9f7] p-5">
-                    <p className="text-xs font-bold text-[#2f7d44]">0{index + 1}</p>
-                    <h3 className="mt-5 text-base font-semibold text-[#071b20]">{item.title}</h3>
-                    <p className="mt-2 text-xs leading-5 text-slate-600">{item.copy}</p>
+              <div className="mt-8 border-t border-slate-200">
+                {positioningValues.map((item) => (
+                  <article
+                    key={item.title}
+                    className="grid gap-3 border-b border-slate-200 py-6 sm:grid-cols-[10rem_1fr] sm:gap-8"
+                  >
+                    <h3 className="text-base font-semibold text-[#071b20]">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm leading-7 text-slate-600">
+                      {item.copy}
+                    </p>
                   </article>
                 ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-[#071b20] shadow-[0_24px_80px_rgba(7,27,32,0.18)]">
-                <Image
-                  src="/images/automation-hero-banner.png"
-                  alt="Connected automation and AI systems working across business operations"
-                  fill
-                  sizes="(min-width: 1024px) 52vw, 100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(4,22,25,0.9)_100%)]" />
-                <div className="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8fd3bf]">One connected system</p>
-                  <p className="mt-2 max-w-md text-xl font-semibold leading-7 text-white sm:text-2xl">
-                    Data, models, workflows, interfaces, and infrastructure—engineered together.
-                  </p>
-                </div>
-              </div>
-              <div className="absolute -bottom-5 -left-4 hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-xl sm:block">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#2f7d44]">From prototype</p>
-                <p className="mt-1 text-sm font-semibold text-[#071b20]">to dependable production</p>
               </div>
             </div>
           </div>
@@ -114,38 +87,24 @@ export default function IntelligentSystemsSections() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid border-t border-white/15 md:grid-cols-2 xl:grid-cols-4">
             {services.slice(0, 8).map((service, index) => (
               <article
                 key={service.id}
-                className={`group relative min-h-[19rem] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#8fd3bf]/40 hover:bg-white/[0.07] ${
-                  index < 2 ? "md:min-h-[22rem] xl:col-span-2" : ""
-                }`}
+                className={`border-b border-white/15 py-7 md:p-7 ${
+                  index % 2 === 0 ? "md:border-r md:border-white/15" : ""
+                } ${index % 4 !== 3 ? "xl:border-r xl:border-white/15" : ""}`}
               >
-                {index < 3 ? (
-                  <>
-                    <Image
-                      src={serviceVisuals[index]}
-                      alt=""
-                      fill
-                      sizes={index < 2 ? "(min-width: 1280px) 50vw, 100vw" : "(min-width: 1280px) 25vw, 50vw"}
-                      className="object-cover opacity-35 transition duration-500 group-hover:scale-105 group-hover:opacity-45"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,27,32,0.05)_0%,#071b20_88%)]" />
-                  </>
-                ) : null}
-                <div className="relative flex h-full flex-col">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#8fd3bf]/12">
-                      <AutomationIcon name={service.icon} className="h-5 w-5 text-[#8fd3bf]" />
-                    </span>
-                    <span className="text-xs text-slate-500">0{index + 1}</span>
-                  </div>
-                  <div className="mt-auto pt-12">
-                    <h3 className="text-xl font-semibold leading-7 text-white">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-400">{service.summary}</p>
-                  </div>
-                </div>
+                <AutomationIcon
+                  name={service.icon}
+                  className="h-6 w-6 text-[#8fd3bf]"
+                />
+                <h3 className="mt-6 text-xl font-semibold leading-7 text-white">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-400">
+                  {service.summary}
+                </p>
               </article>
             ))}
           </div>
@@ -236,40 +195,29 @@ export default function IntelligentSystemsSections() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-28">
+      <section className="bg-white py-16 sm:py-24">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:gap-20">
-            <div className="lg:sticky lg:top-32 lg:self-start">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+            <div>
               <SectionHeading
                 eyebrow="How we work"
                 title="From Business Problem to Production System"
                 copy="We optimize the process before automating it. AI is applied where it creates measurable operational value."
               />
-              <div className="relative mt-8 hidden aspect-[5/3] overflow-hidden rounded-2xl lg:block">
-                <Image
-                  src="/images/ai-assistant.jpg"
-                  alt="AI engineering team translating an operational challenge into a working system"
-                  fill
-                  sizes="36vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-[#071b20]/25" />
-              </div>
             </div>
-            <ol className="relative">
-              <span className="absolute bottom-8 left-[1.45rem] top-8 w-px bg-gradient-to-b from-[#8fd3bf] via-[#2f7d44] to-slate-200 sm:left-[1.7rem]" />
+            <ol className="border-t border-slate-300">
               {workSteps.map((step, index) => (
                 <li
                   key={step.title}
-                  className="relative grid grid-cols-[3rem_1fr] gap-4 py-4 sm:grid-cols-[3.5rem_0.62fr_1.38fr] sm:gap-6"
+                  className="grid grid-cols-[3rem_1fr] gap-4 border-b border-slate-300 py-6 sm:grid-cols-[4rem_0.65fr_1.35fr] sm:gap-6"
                 >
-                  <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-[#8fd3bf]/60 bg-white text-xs font-bold text-[#2f7d44] shadow-sm sm:h-14 sm:w-14">
+                  <span className="text-xs font-bold text-[#2f7d44]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="pt-3 text-lg font-semibold leading-7 text-[#071b20] sm:pt-4">
+                  <h3 className="text-base font-semibold leading-6 text-[#071b20]">
                     {step.title}
                   </h3>
-                  <p className="col-start-2 rounded-xl bg-[#f3f6f4] p-5 text-sm leading-7 text-slate-600 sm:col-start-auto">
+                  <p className="col-start-2 text-sm leading-6 text-slate-600 sm:col-start-auto">
                     {step.copy}
                   </p>
                 </li>
@@ -291,29 +239,23 @@ export default function IntelligentSystemsSections() {
             copy="Applied AI must reflect the workflows, constraints, risk, and operating conditions of the environment where it will perform."
           />
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid border-t border-white/15 md:grid-cols-2">
             {industries.map((industry, index) => (
               <article
                 key={industry.name}
-                className="group relative min-h-64 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-7"
+                className={`border-b border-white/15 py-7 md:p-8 ${
+                  index % 2 === 0 ? "md:border-r md:border-white/15" : ""
+                }`}
               >
-                {index < 4 ? (
-                  <>
-                    <Image
-                      src={industryVisuals[index]}
-                      alt=""
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-cover opacity-25 transition duration-500 group-hover:scale-105 group-hover:opacity-35"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,27,32,0.12),#071b20_90%)]" />
-                  </>
-                ) : null}
-                <div className="relative flex h-full flex-col justify-end">
-                  <p className="text-xs font-bold text-[#8fd3bf]">{String(index + 1).padStart(2, "0")}</p>
-                  <h3 className="mt-3 text-xl font-semibold text-white">{industry.name}</h3>
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">{industry.examples}</p>
-                </div>
+                <p className="text-xs font-bold text-[#8fd3bf]">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold text-white">
+                  {industry.name}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-400">
+                  {industry.examples}
+                </p>
               </article>
             ))}
           </div>
