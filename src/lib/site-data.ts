@@ -395,9 +395,9 @@ export const industries = [
   },
   {
     name: "Healthcare and Medical Services",
-    image: "/images/industry-healthcare-laboratory.png",
+    image: "/images/industry-healthcare.png",
     imageAlt:
-      "Modern healthcare laboratory with microscope and diagnostic equipment",
+      "Modern medical imaging suite with MRI equipment",
     examples:
       "Document intelligence, patient communication, appointment systems, inventory visibility, equipment monitoring, and operational automation.",
   },
