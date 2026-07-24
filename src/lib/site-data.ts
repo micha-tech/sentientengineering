@@ -379,41 +379,65 @@ export const products = [
 export const industries = [
   {
     name: "Logistics and Supply Chain",
+    image: "/images/industry-logistics.png",
+    imageAlt:
+      "Connected logistics network with cargo ship, trucks, aircraft, and port operations",
     examples:
       "Route optimization, dispatch intelligence, delivery prediction, fleet monitoring, document processing, and operational visibility.",
   },
   {
     name: "Manufacturing",
+    image: "/images/industry-manufacturing.png",
+    imageAlt:
+      "Smart manufacturing facility with robotic production lines",
     examples:
       "Quality inspection, predictive maintenance, production intelligence, defect detection, scheduling, and inventory optimization.",
   },
   {
     name: "Healthcare and Medical Services",
+    image: "/images/industry-healthcare-laboratory.png",
+    imageAlt:
+      "Modern healthcare laboratory with microscope and diagnostic equipment",
     examples:
       "Document intelligence, patient communication, appointment systems, inventory visibility, equipment monitoring, and operational automation.",
   },
   {
     name: "Scientific and Laboratory Equipment",
+    image: "/images/industry-healthcare-laboratory.png",
+    imageAlt:
+      "Scientific laboratory microscope and testing equipment",
     examples:
       "Technical product search, quotation automation, purchase-order processing, product recommendations, after-sales support, and knowledge systems.",
   },
   {
     name: "Energy and Utilities",
+    image: "/images/industry-energy.png",
+    imageAlt:
+      "Renewable energy and utilities infrastructure with wind, solar, hydro, and power transmission",
     examples:
       "Asset monitoring, anomaly detection, field inspection, maintenance intelligence, reliability analytics, and decision support.",
   },
   {
     name: "Construction and Infrastructure",
+    image: "/images/industry-construction.png",
+    imageAlt:
+      "Engineers overseeing a major construction and infrastructure project",
     examples:
       "Site monitoring, safety compliance, project intelligence, document processing, equipment tracking, and progress analysis.",
   },
   {
     name: "Retail and B2B Commerce",
+    image: "/images/industry-commerce.png",
+    imageAlt:
+      "Autonomous package delivery supporting modern retail and commerce operations",
     examples:
       "Product intelligence, customer engagement, demand planning, sales automation, quotation workflows, and inventory optimization.",
   },
   {
     name: "Professional and Field Services",
+    image: "/images/industry-field-services.png",
+    imageAlt:
+      "Field service professional coordinating work with a connected tablet",
     examples:
       "Knowledge systems, scheduling, customer operations, reporting, field coordination, document automation, and decision support.",
   },

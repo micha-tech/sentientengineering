@@ -239,23 +239,37 @@ export default function IntelligentSystemsSections() {
             copy="Applied AI must reflect the workflows, constraints, risk, and operating conditions of the environment where it will perform."
           />
 
-          <div className="mt-12 grid border-t border-white/15 md:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {industries.map((industry, index) => (
               <article
                 key={industry.name}
-                className={`border-b border-white/15 py-7 md:p-8 ${
-                  index % 2 === 0 ? "md:border-r md:border-white/15" : ""
-                }`}
+                className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] transition duration-300 hover:-translate-y-1 hover:border-[#8fd3bf]/40 hover:bg-white/[0.06]"
               >
-                <p className="text-xs font-bold text-[#8fd3bf]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold text-white">
-                  {industry.name}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-400">
-                  {industry.examples}
-                </p>
+                <figure className="relative aspect-[16/9] overflow-hidden bg-[#050d0f]">
+                  <Image
+                    src={industry.image}
+                    alt={industry.imageAlt}
+                    fill
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,13,15,0.05)_25%,rgba(5,13,15,0.9)_100%)]" />
+                  <p className="absolute left-5 top-5 rounded-full border border-white/20 bg-[#06191d]/70 px-3 py-1 text-xs font-bold text-[#8fd3bf] backdrop-blur-sm">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="absolute inset-x-5 bottom-5 text-xl font-semibold leading-7 text-white">
+                    {industry.name}
+                  </h3>
+                </figure>
+                <div className="p-5 sm:p-6">
+                  <p className="text-sm leading-7 text-slate-300">
+                    {industry.examples}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 border-t border-white/10 pt-4 text-xs font-semibold text-[#8fd3bf]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#8fd3bf]" />
+                    Applied AI systems
+                  </div>
+                </div>
               </article>
             ))}
           </div>
