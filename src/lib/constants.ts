@@ -16,7 +16,7 @@ export const META = {
   url: COMPANY.url,
   locale: "en_US",
   twitterHandle: "@sentienteng",
-  ogImage: "/images/hero-artwork.png",
+  ogImage: "/og.png",
 } as const;
 
 export const NAV_LINKS = [
