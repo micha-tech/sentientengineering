@@ -42,7 +42,6 @@ export default function HeroVideo() {
       loop
       playsInline
       preload="metadata"
-      poster="/images/hero-background.avif"
       tabIndex={-1}
       onCanPlay={(event) => {
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

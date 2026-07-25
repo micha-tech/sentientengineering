@@ -6,12 +6,7 @@ import HeroVideo from "./HeroVideo";
 
 export default function HeroSection() {
   return (
-    <section className="relative isolate min-h-svh overflow-hidden bg-[#071653] text-white">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-background.avif')" }}
-      />
+    <section className="relative isolate min-h-svh overflow-hidden bg-black text-white">
       <HeroVideo />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,30,0.12)_0%,rgba(2,7,24,0.2)_38%,rgba(1,5,18,0.82)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_15%,rgba(59,130,246,0.08),transparent_45%)]" />
