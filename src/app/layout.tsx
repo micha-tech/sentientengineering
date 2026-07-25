@@ -5,7 +5,7 @@ import { COMPANY, META } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   variable: "--font-inter",
 });
 
