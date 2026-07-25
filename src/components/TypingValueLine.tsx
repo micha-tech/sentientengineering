@@ -76,13 +76,13 @@ export default function TypingValueLine() {
     <>
       <div
         aria-hidden="true"
-        className="mt-6 flex min-h-8 max-w-3xl flex-wrap items-center gap-x-3 gap-y-1 text-left text-sm sm:text-base"
+        className="mt-6 flex min-h-[4.5rem] max-w-3xl flex-wrap items-start gap-x-3 gap-y-1 text-left text-sm sm:min-h-8 sm:items-center sm:text-base"
       >
-        <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/60">
+        <span className="w-full text-xs font-bold uppercase tracking-[0.14em] text-white/60 sm:w-auto">
           {displayedHook.label}
         </span>
         <span className="hidden h-4 w-px bg-white/20 sm:block" />
-        <span className="font-medium text-slate-100">
+        <span className="min-h-12 font-medium leading-5 text-slate-100 sm:min-h-0 sm:leading-normal">
           {displayedText}
           {!reduceMotion && (
             <span className="ml-0.5 inline-block text-white motion-safe:animate-pulse">

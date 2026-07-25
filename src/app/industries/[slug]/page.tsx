@@ -129,7 +129,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   src={industry.image}
                   alt={industry.imageAlt}
                   fill
-                  priority
+                  preload
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />

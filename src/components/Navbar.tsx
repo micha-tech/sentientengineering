@@ -47,7 +47,7 @@ export default function Navbar() {
             src="/sentientlogo-wordmark.png"
             alt="Sentient Engineering"
             fill
-            priority
+            loading="eager"
             sizes="(min-width: 640px) 208px, 176px"
             className={`object-contain object-left transition ${
               solidHeader ? "invert" : ""
