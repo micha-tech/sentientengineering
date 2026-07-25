@@ -20,7 +20,7 @@ export default function PageHero({
         src={image}
         alt={imageAlt}
         fill
-        preload
+        loading="eager"
         sizes="100vw"
         className="object-cover object-center"
       />

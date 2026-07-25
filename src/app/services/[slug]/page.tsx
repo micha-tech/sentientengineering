@@ -128,7 +128,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   src={service.image}
                   alt={service.imageAlt}
                   fill
-                  preload
+                  loading="eager"
                   sizes="(min-width: 1024px) 48vw, 100vw"
                   className="object-cover"
                 />

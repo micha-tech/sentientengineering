@@ -241,7 +241,7 @@ export default function ServicesPage() {
                   src="/images/industry-field-services.png"
                   alt="Field operations professional using intelligent systems in a real business environment"
                   fill
-                  preload
+                  loading="eager"
                   sizes="(min-width: 1024px) 46vw, 100vw"
                   className="object-cover"
                 />
