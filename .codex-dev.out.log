@@ -280,3 +280,4 @@
  GET /services 200 in 413ms (next.js: 14ms, application-code: 399ms)
  GET /services 200 in 413ms (next.js: 169ms, application-code: 244ms)
  GET /sw.js 404 in 1076ms (next.js: 85ms, application-code: 991ms)
+ GET /sw.js 404 in 124ms (next.js: 18ms, application-code: 106ms)
