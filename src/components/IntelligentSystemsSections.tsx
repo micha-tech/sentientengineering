@@ -5,7 +5,6 @@ import {
   industries,
   managedAiCapabilities,
   products,
-  services,
   workSteps,
 } from "@/lib/site-data";
 import CapabilitiesCarousel from "./CapabilitiesCarousel";
@@ -14,22 +13,46 @@ import Container from "./Container";
 
 const featuredServices = [
   {
-    ...services[1],
-    kicker: "Business workflows",
-    image: "/images/ai-assistant.jpg",
-    imageAlt: "AI assistant supporting connected business workflows",
+    id: "ai-agents-integrations",
+    kicker: "Agents · Orchestration · Integration",
+    title: "AI Agents and Connected Workflows",
+    summary:
+      "Specialised AI agents that work across Gmail, WhatsApp, websites, internal tools, software and business data to move enquiries and operations forward.",
+    outcomes: [
+      "Faster customer response",
+      "Connected workflow execution",
+    ],
+    image: "/images/service-ai-agent-integrations.jpg",
+    imageAlt:
+      "AI agent connected to Gmail, WhatsApp, websites and business analytics",
   },
   {
-    ...services[2],
-    kicker: "Physical operations",
-    image: "/images/computer-vision-detection.webp",
-    imageAlt: "Computer vision system detecting activity in a physical environment",
+    id: "computer-vision",
+    kicker: "Manufacturing · Construction · Agriculture · Security",
+    title: "Practical Computer Vision Systems",
+    summary:
+      "Complete vision systems combining powerful models, cameras, edge devices, alerts and human review for inspection, monitoring, tracking and detection.",
+    outcomes: [
+      "Continuous operational visibility",
+      "Earlier risk and defect detection",
+    ],
+    image: "/images/service-computer-vision-agriculture.jpg",
+    imageAlt:
+      "Computer vision monitoring crops with a smartphone, drone and farm analytics",
   },
   {
-    ...services[6],
-    kicker: "Operational intelligence",
-    image: "/images/industry-manufacturing.png",
-    imageAlt: "Intelligent manufacturing operation with connected robotics",
+    id: "biometrics-identity",
+    kicker: "Identity · Access · Verification",
+    title: "Biometric and Facial Recognition Systems",
+    summary:
+      "AI-powered identity systems for verification, access control, attendance and secure operational workflows, designed with privacy and auditability in mind.",
+    outcomes: [
+      "Faster identity verification",
+      "Stronger access and attendance control",
+    ],
+    image: "/images/service-facial-recognition.png",
+    imageAlt:
+      "Facial recognition system processing biometric landmarks",
   },
 ] as const;
 
