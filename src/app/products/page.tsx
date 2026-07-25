@@ -8,12 +8,14 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { products } from "@/lib/site-data";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "AI Products and Intelligent Platforms",
   description:
     "Gyptiq and configurable AI platforms for revenue operations, document processing, commerce, industrial vision, predictive maintenance, knowledge, and logistics.",
-};
+  path: "/products",
+});
 
 export default function ProductsPage() {
   const gyptiq = products[0];

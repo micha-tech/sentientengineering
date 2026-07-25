@@ -92,9 +92,6 @@ export const metadata: Metadata = {
   },
   description: META.description,
   metadataBase: new URL(META.url),
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
@@ -109,8 +106,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: META.ogImage,
-        width: 760,
-        height: 690,
+        width: 1200,
+        height: 630,
         alt: "Applied AI engineering systems by Sentient Engineering",
       },
     ],

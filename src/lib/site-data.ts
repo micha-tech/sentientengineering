@@ -378,6 +378,7 @@ export const products = [
 
 export const industries = [
   {
+    slug: "logistics-supply-chain",
     name: "Logistics and Supply Chain",
     image: "/images/industry-logistics.png",
     imageAlt:
@@ -386,6 +387,7 @@ export const industries = [
       "Route optimization, dispatch intelligence, delivery prediction, fleet monitoring, document processing, and operational visibility.",
   },
   {
+    slug: "manufacturing",
     name: "Manufacturing",
     image: "/images/industry-manufacturing.png",
     imageAlt:
@@ -394,6 +396,7 @@ export const industries = [
       "Quality inspection, predictive maintenance, production intelligence, defect detection, scheduling, and inventory optimization.",
   },
   {
+    slug: "healthcare-medical-services",
     name: "Healthcare and Medical Services",
     image: "/images/industry-healthcare.png",
     imageAlt:
@@ -402,6 +405,7 @@ export const industries = [
       "Document intelligence, patient communication, appointment systems, inventory visibility, equipment monitoring, and operational automation.",
   },
   {
+    slug: "scientific-laboratory-equipment",
     name: "Scientific and Laboratory Equipment",
     image: "/images/industry-healthcare-laboratory.png",
     imageAlt:
@@ -410,6 +414,7 @@ export const industries = [
       "Technical product search, quotation automation, purchase-order processing, product recommendations, after-sales support, and knowledge systems.",
   },
   {
+    slug: "energy-utilities",
     name: "Energy and Utilities",
     image: "/images/industry-energy.png",
     imageAlt:
@@ -418,6 +423,7 @@ export const industries = [
       "Asset monitoring, anomaly detection, field inspection, maintenance intelligence, reliability analytics, and decision support.",
   },
   {
+    slug: "construction-infrastructure",
     name: "Construction and Infrastructure",
     image: "/images/industry-construction.png",
     imageAlt:
@@ -426,6 +432,7 @@ export const industries = [
       "Site monitoring, safety compliance, project intelligence, document processing, equipment tracking, and progress analysis.",
   },
   {
+    slug: "retail-b2b-commerce",
     name: "Retail and B2B Commerce",
     image: "/images/industry-commerce.png",
     imageAlt:
@@ -434,6 +441,7 @@ export const industries = [
       "Product intelligence, customer engagement, demand planning, sales automation, quotation workflows, and inventory optimization.",
   },
   {
+    slug: "professional-field-services",
     name: "Professional and Field Services",
     image: "/images/industry-field-services.png",
     imageAlt:

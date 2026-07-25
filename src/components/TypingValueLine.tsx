@@ -35,9 +35,6 @@ export default function TypingValueLine() {
 
   useEffect(() => {
     if (reduceMotion) {
-      setVisibleText(hooks[0].text);
-      setHookIndex(0);
-      setDeleting(false);
       return;
     }
 
@@ -72,6 +69,9 @@ export default function TypingValueLine() {
     return () => window.clearTimeout(timer);
   }, [deleting, hookIndex, reduceMotion, visibleText]);
 
+  const displayedHook = reduceMotion ? hooks[0] : hooks[hookIndex];
+  const displayedText = reduceMotion ? hooks[0].text : visibleText;
+
   return (
     <>
       <div
@@ -79,11 +79,11 @@ export default function TypingValueLine() {
         className="mt-6 flex min-h-8 max-w-3xl flex-wrap items-center gap-x-3 gap-y-1 text-left text-sm sm:text-base"
       >
         <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/60">
-          {hooks[hookIndex].label}
+          {displayedHook.label}
         </span>
         <span className="hidden h-4 w-px bg-white/20 sm:block" />
         <span className="font-medium text-slate-100">
-          {visibleText}
+          {displayedText}
           {!reduceMotion && (
             <span className="ml-0.5 inline-block text-white motion-safe:animate-pulse">
               |

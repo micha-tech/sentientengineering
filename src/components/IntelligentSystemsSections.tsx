@@ -166,6 +166,12 @@ export default function IntelligentSystemsSections() {
                         </p>
                       ))}
                     </div>
+                    <Link
+                      href={`/services/${service.id}`}
+                      className="mt-7 inline-flex border-b border-black pb-1 text-sm font-bold"
+                    >
+                      Explore this service
+                    </Link>
                   </div>
                 </div>
                 <figure
@@ -301,8 +307,9 @@ export default function IntelligentSystemsSections() {
 
           <div className="grid md:grid-cols-2">
             {industries.map((industry, index) => (
-              <article
+              <Link
                 key={industry.name}
+                href={`/industries/${industry.slug}`}
                 className={`border-b border-black/10 py-8 ${
                   index % 2 === 0
                     ? "md:border-r md:pr-8"
@@ -327,7 +334,10 @@ export default function IntelligentSystemsSections() {
                 <p className="mt-3 max-w-xl text-sm leading-7 text-black/55">
                   {industry.examples}
                 </p>
-              </article>
+                <span className="mt-5 inline-flex border-b border-black pb-1 text-sm font-bold">
+                  Explore industry solutions
+                </span>
+              </Link>
             ))}
           </div>
         </Container>

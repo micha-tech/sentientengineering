@@ -5,12 +5,15 @@ import ContactSection from "@/components/ContactSection";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { createPageMetadata } from "@/lib/seo";
+import { industryLandingPages } from "@/lib/seo-landing-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "AI-Powered Business Systems and Automation Services",
   description:
     "Sentient Engineering builds AI-powered business systems, automated workflows, AI agents, computer vision, biometric systems, digital commerce intelligence, and industrial operations solutions.",
-};
+  path: "/services",
+});
 
 const serviceAreas = [
   {
@@ -172,17 +175,6 @@ const integrations = [
   "Payment systems",
   "Cloud applications",
   "Custom APIs",
-] as const;
-
-const industries = [
-  "Commerce and Retail",
-  "Healthcare",
-  "Manufacturing",
-  "Construction",
-  "Agriculture",
-  "Security",
-  "Transportation",
-  "Logistics and Supply Chain",
 ] as const;
 
 const deliverySteps = [
@@ -356,6 +348,12 @@ export default function ServicesPage() {
                       <p className="mt-6 max-w-xl text-base leading-8 text-black/60">
                         {service.summary}
                       </p>
+                      <Link
+                        href={`/services/${service.id}`}
+                        className="mt-7 inline-flex border-b border-black pb-1 text-sm font-bold"
+                      >
+                        View service details
+                      </Link>
                     </div>
 
                     <div className="mt-14">
@@ -458,18 +456,19 @@ export default function ServicesPage() {
             </div>
 
             <div className="mt-14 grid border-t border-l border-black/15 sm:grid-cols-2 lg:grid-cols-4">
-              {industries.map((industry, index) => (
-                <div
-                  key={industry}
+              {industryLandingPages.map((industry, index) => (
+                <Link
+                  key={industry.slug}
+                  href={`/industries/${industry.slug}`}
                   className="flex min-h-40 flex-col justify-between border-b border-r border-black/15 p-5"
                 >
                   <span className="text-xs font-bold text-black/25">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <p className="text-lg font-semibold tracking-[-0.02em]">
-                    {industry}
+                    {industry.name}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </Container>

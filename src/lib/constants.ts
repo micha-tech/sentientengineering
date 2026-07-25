@@ -5,7 +5,7 @@ export const COMPANY = {
     "Sentient Engineering designs, builds, deploys, and manages applied AI systems for businesses and industries.",
   email: "hello@sentientengineering.com",
   phone: "",
-  url: "https://sentientengineering.com",
+  url: "https://sentientengineering.com.ng",
 } as const;
 
 export const META = {
@@ -16,14 +16,14 @@ export const META = {
   url: COMPANY.url,
   locale: "en_US",
   twitterHandle: "@sentienteng",
-  ogImage: "/images/hero-artwork.png",
+  ogImage: "/og.png",
 } as const;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
-  { label: "Industries", href: "/#industries" },
+  { label: "Industries", href: "/industries" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
 ] as const;
