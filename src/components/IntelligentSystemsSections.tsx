@@ -33,7 +33,7 @@ const featuredServices = [
     summary:
       "Complete vision systems combining powerful models, cameras, edge devices, alerts and human review for inspection, monitoring, tracking and detection.",
     outcomes: [
-      "Continuous operational visibility",
+      "Continuous site visibility",
       "Earlier risk and defect detection",
     ],
     image: "/images/service-computer-vision-agriculture.jpg",
@@ -45,7 +45,7 @@ const featuredServices = [
     kicker: "Identity · Access · Verification",
     title: "Biometric and Facial Recognition Systems",
     summary:
-      "AI-powered identity systems for verification, access control, attendance and secure operational workflows, designed with privacy and auditability in mind.",
+      "AI-powered identity systems for verification, access control, attendance and secure workflows, designed with privacy and auditability in mind.",
     outcomes: [
       "Faster identity verification",
       "Stronger access and attendance control",
@@ -77,9 +77,9 @@ export default function IntelligentSystemsSections() {
               problems.
             </p>
             <p className="max-w-xl text-sm leading-7 text-black/55 lg:justify-self-end">
-              We engineer complete production systems—not isolated models or
+              We engineer complete, dependable systems—not isolated models or
               abstract demonstrations. Every engagement begins with the
-              operating problem and the value it should create.
+              business constraint and the value it should create.
             </p>
           </div>
 
@@ -353,7 +353,7 @@ export default function IntelligentSystemsSections() {
               Engineering capabilities
             </p>
             <h2 className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.04em] sm:text-5xl">
-              Every layer required to move from possibility to production.
+              Every layer required to move from possibility to dependable use.
             </h2>
           </div>
           <CapabilitiesCarousel />
@@ -368,7 +368,7 @@ export default function IntelligentSystemsSections() {
                 How we work
               </p>
               <h2 className="mt-6 text-4xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-                From business problem to production system.
+                From business problem to measurable improvement.
               </h2>
             </div>
             <ol className="border-t border-black/15">

@@ -14,7 +14,7 @@ export const services = [
       "AI agents and assistants",
     ],
     outcomes: [
-      "Faster operational decisions",
+      "Faster decisions",
       "Consistent execution",
       "Scalable intelligent workflows",
     ],
@@ -46,7 +46,7 @@ export const services = [
     title: "Computer Vision Engineering",
     icon: "pulse" as const,
     summary:
-      "Visual systems for inspection, object detection, tracking, safety, counting, and operational visibility.",
+      "Visual systems for inspection, object detection, tracking, safety, counting, and continuous visibility.",
     problems:
       "Limited physical visibility, manual inspection, inconsistent quality checks, and delayed detection of risk.",
     applications: [
@@ -216,7 +216,7 @@ export const services = [
     summary:
       "Ongoing monitoring, maintenance, evaluation, knowledge updates, infrastructure support, and system optimization.",
     problems:
-      "Limited internal AI capacity, degrading system quality, changing workflows, and unmanaged operational risk.",
+      "Limited internal AI capacity, degrading system quality, changing workflows, and unmanaged delivery risk.",
     applications: [
       "System monitoring",
       "Knowledge-base maintenance",
@@ -225,7 +225,7 @@ export const services = [
     ],
     outcomes: [
       "Sustained system quality",
-      "Reduced operational burden",
+      "Reduced support burden",
       "Continuous improvement",
     ],
     industries: ["All deployed AI environments"],
@@ -251,7 +251,7 @@ export const products = [
       "Faster response",
       "More consistent follow-up",
       "Reduced manual work",
-      "One operational view",
+      "One connected business view",
     ],
     cta: "Explore Gyptiq",
   },
@@ -277,7 +277,7 @@ export const products = [
     name: "Intelligent Document Processing Platform",
     label: "Configurable Platform",
     description:
-      "A platform for extracting, validating, structuring, comparing, and routing information from operational documents.",
+      "A platform for extracting, validating, structuring, comparing, and routing information from high-volume business documents.",
     useCase:
       "Purchase orders, quotations, invoices, tenders, forms, contracts, and technical reports.",
     capabilities: [
@@ -320,7 +320,7 @@ export const products = [
       "Equipment inspection",
       "Counting and tracking",
     ],
-    outcomes: ["Earlier detection", "Consistent inspection", "Improved operational visibility"],
+    outcomes: ["Earlier detection", "Consistent inspection", "Improved site visibility"],
     cta: "Discuss This Solution",
   },
   {
@@ -362,7 +362,7 @@ export const products = [
     name: "Logistics Intelligence Platform",
     label: "Industry Solution",
     description:
-      "An operational platform for dispatch, route planning, delivery prediction, fleet visibility, and logistics documentation.",
+      "An intelligence platform for dispatch, route planning, delivery prediction, fleet visibility, and logistics documentation.",
     useCase:
       "Transport and distribution operations coordinating vehicles, orders, documents, and delivery commitments.",
     capabilities: [
@@ -384,7 +384,7 @@ export const industries = [
     imageAlt:
       "Connected logistics network with cargo ship, trucks, aircraft, and port operations",
     examples:
-      "Route optimization, dispatch intelligence, delivery prediction, fleet monitoring, document processing, and operational visibility.",
+      "Route optimization, dispatch intelligence, delivery prediction, fleet monitoring, document processing, and live network visibility.",
   },
   {
     slug: "manufacturing",
@@ -402,7 +402,7 @@ export const industries = [
     imageAlt:
       "Modern medical imaging suite with MRI equipment",
     examples:
-      "Document intelligence, patient communication, appointment systems, inventory visibility, equipment monitoring, and operational automation.",
+      "Document intelligence, patient communication, appointment systems, inventory visibility, equipment monitoring, and workflow automation.",
   },
   {
     slug: "scientific-laboratory-equipment",
@@ -499,7 +499,7 @@ export const businessOutcomes = [
     driver: "Decision quality",
     title: "Move from fragmented data to confident action",
     description:
-      "Convert operational data into timely intelligence leaders can act on.",
+      "Convert business data into timely intelligence leaders can act on.",
   },
   {
     driver: "Scalable growth",
@@ -521,7 +521,7 @@ export const managedAiCapabilities = [
 export const workSteps = [
   {
     title: "Understand",
-    copy: "We study the operational problem, objective, workflow, data, systems, constraints, and success metrics.",
+    copy: "We study the core problem, objective, workflow, data, systems, constraints, and success metrics.",
   },
   {
     title: "Design",

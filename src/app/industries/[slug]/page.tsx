@@ -184,7 +184,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
               <div className="bg-black p-6 py-16 text-white sm:p-10 sm:py-20">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/40">
-                  Commercial and operational value
+                  Commercial value
                 </p>
                 <h2 className="mt-7 text-4xl font-medium tracking-[-0.04em]">
                   Designed around measurable improvement

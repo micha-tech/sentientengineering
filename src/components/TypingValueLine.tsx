@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 const hooks = [
   {
     label: "Who we are",
-    text: "Applied AI engineers for real business.",
+    text: "Applied AI engineers focused on measurable value.",
   },
   {
     label: "What we do",
-    text: "We build production systems that perform real work.",
+    text: "We turn complex workflows into intelligent systems.",
   },
   {
     label: "Who we serve",
@@ -92,8 +92,8 @@ export default function TypingValueLine() {
         </span>
       </div>
       <p className="sr-only">
-        Who we are: Applied AI engineers for real business. What we do: We
-        build production systems that perform real work. Who we serve:
+        Who we are: Applied AI engineers focused on measurable value. What we
+        do: We turn complex workflows into intelligent systems. Who we serve:
         Businesses and industries ready to move forward.
       </p>
     </>

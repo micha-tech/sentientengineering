@@ -26,8 +26,8 @@ export default function Footer() {
               Applied AI. Engineered for reality.
             </p>
             <p className="mt-5 max-w-xl text-sm leading-7 text-black/55">
-              Intelligent systems for businesses and industries that need real
-              operational results.
+              Intelligent systems designed to improve revenue, efficiency,
+              visibility, and reliability.
             </p>
           </div>
 

@@ -27,7 +27,7 @@ export default function HeroSection() {
               Applied AI Engineering
             </p>
             <h1 className="mt-5 max-w-5xl text-balance text-[2.8rem] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-[5.25rem]">
-              AI systems that move real businesses forward.
+              AI systems that move business forward.
             </h1>
             <TypingValueLine />
           </div>

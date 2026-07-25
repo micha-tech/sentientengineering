@@ -69,7 +69,7 @@ const serviceAreas = [
     kicker: "Manufacturing · Construction · Agriculture · Security",
     title: "Practical Computer Vision Systems",
     summary:
-      "We implement powerful vision models inside complete operational systems—combining cameras, edge devices, software, alerts and human review.",
+      "We implement powerful vision models inside complete inspection systems—combining cameras, edge devices, software, alerts and human review.",
     image: "/images/service-computer-vision-agriculture.jpg",
     imageAlt:
       "Computer vision monitoring crops with a smartphone, drone and farm analytics",
@@ -141,7 +141,7 @@ const serviceAreas = [
     kicker: "Manufacturing · Procurement · Logistics · Supply Chain",
     title: "Industrial and Operations Intelligence",
     summary:
-      "We connect operational data, AI and optimisation to improve how organisations plan, move, maintain and allocate resources.",
+      "We connect business data, AI and optimisation to improve how organisations plan, move, maintain and allocate resources.",
     image: "/images/industry-logistics.png",
     imageAlt:
       "Connected logistics network with cargo, trucks, aircraft and port operations",
@@ -151,7 +151,7 @@ const serviceAreas = [
       "Route, dispatch and fleet optimisation",
       "Warehouse and supply-chain visibility",
       "Predictive maintenance and anomaly detection",
-      "Operational dashboards and decision support",
+      "Management dashboards and decision support",
     ],
     outcomes: [
       "Lower operating cost",
@@ -210,7 +210,7 @@ export default function ServicesPage() {
             <div className="grid min-h-[calc(92svh-4.5rem)] lg:grid-cols-[1.08fr_0.92fr]">
               <div className="flex flex-col justify-end border-b border-white/15 p-6 pb-10 sm:p-10 sm:pb-14 lg:border-b-0 lg:border-r lg:p-12">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                  AI-powered systems for real business
+                  AI-powered systems built around measurable value
                 </p>
                 <h1 className="mt-8 max-w-5xl text-balance text-[2.8rem] font-medium leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-[4.8rem]">
                   We build the systems that move work and business forward.
@@ -239,7 +239,7 @@ export default function ServicesPage() {
               <figure className="relative min-h-[29rem] bg-[#07100e]">
                 <Image
                   src="/images/industry-field-services.png"
-                  alt="Field operations professional using intelligent systems in a real business environment"
+                  alt="Field operations professional using intelligent systems on site"
                   fill
                   loading="eager"
                   sizes="(min-width: 1024px) 46vw, 100vw"
@@ -267,8 +267,8 @@ export default function ServicesPage() {
               Our difference
             </p>
             <h2 className="mt-8 max-w-6xl text-balance text-3xl font-medium leading-[1.12] tracking-[-0.04em] sm:text-5xl lg:text-[4rem]">
-              We do not sell abstract AI. We engineer systems that perform real
-              work inside real businesses.
+              We do not sell abstract AI. We engineer systems around the work,
+              decisions and results that matter.
             </h2>
             <div className="mt-14 grid border-t border-black/15 md:grid-cols-3">
               {[
