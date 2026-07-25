@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   businessOutcomes,
-  engineeringCapabilities,
   industries,
   managedAiCapabilities,
   products,
@@ -10,6 +9,7 @@ import {
   workSteps,
 } from "@/lib/site-data";
 import AutomationIcon from "./AutomationIcon";
+import CapabilitiesCarousel from "./CapabilitiesCarousel";
 import ContactSection from "./ContactSection";
 import Container from "./Container";
 import SectionHeading from "./SectionHeading";
@@ -27,25 +27,6 @@ const positioningValues = [
     title: "Outcome-Driven",
     copy: "Every system is tied to measurable improvements in revenue, efficiency, decision-making, safety, reliability, or operational performance.",
   },
-] as const;
-
-const capabilityIcons = [
-  "spark",
-  "message",
-  "layers",
-  "pulse",
-  "code",
-  "chart",
-  "target",
-  "bot",
-  "headset",
-  "workflow",
-  "database",
-  "cloud",
-  "audit",
-  "coins",
-  "shield",
-  "arrow",
 ] as const;
 
 export default function IntelligentSystemsSections() {
@@ -295,7 +276,10 @@ export default function IntelligentSystemsSections() {
         </Container>
       </section>
 
-      <section className="bg-[#f3f6f4] py-16 sm:py-24">
+      <section
+        id="capabilities"
+        className="scroll-mt-20 bg-[#f3f6f4] py-16 sm:py-24"
+      >
         <Container>
           <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
             <SectionHeading
@@ -308,55 +292,53 @@ export default function IntelligentSystemsSections() {
               controls required for the complete system.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-            {engineeringCapabilities.map((capability, index) => (
-              <div
-                key={capability}
-                className="group relative flex min-h-40 flex-col justify-between overflow-hidden rounded-xl border border-slate-200 bg-white p-4 shadow-[0_8px_24px_rgba(7,27,32,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#8fd3bf] hover:shadow-[0_16px_36px_rgba(7,27,32,0.09)] sm:min-h-44 sm:p-5"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#e7f3ee] text-[#2f7d44] transition duration-300 group-hover:bg-[#2f7d44] group-hover:text-white">
-                    <AutomationIcon
-                      name={capabilityIcons[index]}
-                      className="h-5 w-5"
-                    />
-                  </span>
-                  <span className="text-[0.68rem] font-bold text-slate-400">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <p className="mt-6 text-sm font-semibold leading-5 text-[#071b20] sm:text-base sm:leading-6">
-                  {capability}
-                </p>
-              </div>
-            ))}
-          </div>
+          <CapabilitiesCarousel />
         </Container>
       </section>
 
-      <section className="bg-[#050d0f] py-16 text-white sm:py-24">
+      <section className="relative overflow-hidden bg-[#050d0f] py-16 text-white sm:py-24">
+        <div className="pointer-events-none absolute right-0 top-0 h-[36rem] w-[36rem] translate-x-1/3 -translate-y-1/3 rounded-full bg-[#2f7d44]/10 blur-3xl" />
         <Container>
-          <SectionHeading
-            light
-            eyebrow="Business outcomes"
-            title="Engineering for Measurable Results"
-            copy="The purpose of applied AI is not simply to generate content or produce impressive demonstrations. It is to improve how the organisation sells, operates, decides, delivers, and grows."
-          />
-          <div className="mt-12 grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="relative">
+            <SectionHeading
+              light
+              eyebrow="Return on intelligence"
+              title="AI that earns its place on the balance sheet."
+              copy="We engineer against clear commercial and operational outcomes—not AI for its own sake."
+            />
+          </div>
+
+          <div className="relative mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {businessOutcomes.map((outcome, index) => (
-              <div
-                key={outcome}
-                className={`flex gap-4 border-b border-white/15 py-6 text-sm font-medium leading-6 text-slate-300 sm:px-6 ${
-                  index % 2 === 0 ? "sm:border-r sm:border-white/15" : ""
-                } ${index % 3 !== 2 ? "lg:border-r lg:border-white/15" : ""}`}
+              <article
+                key={outcome.title}
+                className="group flex min-h-60 flex-col rounded-xl border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#8fd3bf]/45 hover:bg-white/[0.055]"
               >
-                <AutomationIcon
-                  name="check"
-                  className="mt-1 h-4 w-4 shrink-0 text-[#8fd3bf]"
-                />
-                <span>{outcome}</span>
-              </div>
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8fd3bf]">
+                    {outcome.driver}
+                  </p>
+                  <span className="text-xs font-semibold text-slate-600">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-8 text-xl font-semibold leading-7 text-white">
+                  {outcome.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-400">
+                  {outcome.description}
+                </p>
+              </article>
             ))}
+          </div>
+
+          <div className="relative mt-8 flex flex-col gap-4 rounded-xl border border-[#8fd3bf]/20 bg-[#8fd3bf]/[0.06] p-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-lg font-semibold text-white">
+              Ready to define the return?
+            </p>
+            <a className="primary-button shrink-0 px-6" href="#contact">
+              Build the Business Case
+            </a>
           </div>
         </Container>
       </section>
@@ -366,22 +348,19 @@ export default function IntelligentSystemsSections() {
           <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-20">
             <SectionHeading
               eyebrow="Managed AI"
-              title="AI Systems Require More Than Deployment"
-              copy="Sentient Engineering can operate and improve deployed systems as an ongoing managed service. This allows clients to benefit from AI capabilities without building and maintaining an internal AI engineering team."
+              title="Deployment is only the beginning."
+              copy="We monitor, maintain, and improve your AI systems so they remain reliable, secure, and valuable."
             />
-            <div className="grid border-t border-slate-200 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               {managedAiCapabilities.map((item, index) => (
                 <div
                   key={item}
-                  className={`flex gap-3 border-b border-slate-200 py-5 text-sm font-medium text-slate-700 sm:px-5 ${
-                    index % 2 === 0 ? "sm:border-r" : ""
-                  }`}
+                  className="flex min-h-24 items-start gap-4 rounded-xl border border-slate-200 bg-[#f6f9f7] p-5 text-sm font-semibold leading-6 text-slate-700"
                 >
-                  <AutomationIcon
-                    name="check"
-                    className="h-4 w-4 shrink-0 text-[#2f7d44]"
-                  />
-                  {item}
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#e2f0ea] text-[0.68rem] font-bold text-[#2f7d44]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="pt-1">{item}</span>
                 </div>
               ))}
             </div>

@@ -463,31 +463,51 @@ export const engineeringCapabilities = [
 ] as const;
 
 export const businessOutcomes = [
-  "Reduce customer response time",
-  "Shorten enquiry-to-quotation cycles",
-  "Increase sales follow-up consistency",
-  "Reduce repetitive administrative work",
-  "Improve operational visibility",
-  "Detect risks and anomalies earlier",
-  "Improve resource allocation",
-  "Reduce equipment downtime",
-  "Improve decision-making",
-  "Increase process reliability",
-  "Convert unstructured data into usable information",
-  "Scale operations without proportionally increasing overhead",
+  {
+    driver: "Revenue velocity",
+    title: "Turn enquiries into revenue faster",
+    description:
+      "Shorten response, quotation, and follow-up cycles so opportunities move forward sooner.",
+  },
+  {
+    driver: "Cost efficiency",
+    title: "Lower the cost of repetitive work",
+    description:
+      "Automate high-volume administration and keep people focused on higher-value decisions.",
+  },
+  {
+    driver: "Operating margin",
+    title: "Get more value from every resource",
+    description:
+      "Allocate teams, equipment, inventory, and capacity more effectively.",
+  },
+  {
+    driver: "Risk and resilience",
+    title: "Detect loss, risk, and downtime earlier",
+    description:
+      "Surface anomalies and failures before they become expensive disruptions.",
+  },
+  {
+    driver: "Decision quality",
+    title: "Move from fragmented data to confident action",
+    description:
+      "Convert operational data into timely intelligence leaders can act on.",
+  },
+  {
+    driver: "Scalable growth",
+    title: "Increase capacity without linear overhead",
+    description:
+      "Support more customers and operations without matching growth in manual effort.",
+  },
 ] as const;
 
 export const managedAiCapabilities = [
-  "System monitoring",
-  "Model and workflow evaluation",
-  "Knowledge-base updates",
-  "Infrastructure management",
-  "Integration maintenance",
+  "Performance monitoring and evaluation",
+  "Knowledge and model updates",
+  "Infrastructure and integration management",
   "Security and access control",
-  "Cost monitoring",
-  "Incident response",
-  "Performance reporting",
-  "Continuous optimization",
+  "Cost and reliability management",
+  "Continuous improvement",
 ] as const;
 
 export const workSteps = [

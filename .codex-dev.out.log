@@ -1,0 +1,71 @@
+
+> sentientengineering@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://169.254.83.107:3000
+✓ Ready in 3.0s
+
+ GET / 200 in 2.5s (next.js: 621ms, application-code: 1832ms)
+ GET / 200 in 1567ms (next.js: 16ms, application-code: 1551ms)
+ GET /sw.js 404 in 322ms (next.js: 111ms, application-code: 210ms)
+ GET /sw.js 404 in 133ms (next.js: 20ms, application-code: 113ms)
+✓ Compiled in 624ms
+ GET / 200 in 4.4s (next.js: 500ms, application-code: 3.9s)
+ GET / 200 in 3.3s (next.js: 15ms, application-code: 3.3s)
+ GET / 200 in 2.9s (next.js: 1017ms, application-code: 1897ms)
+ GET / 200 in 2.9s (next.js: 552ms, application-code: 2.4s)
+ GET / 200 in 2.9s (next.js: 120ms, application-code: 2.8s)
+ GET / 200 in 2.9s (next.js: 1688ms, application-code: 1257ms)
+ GET /sw.js 404 in 474ms (next.js: 83ms, application-code: 391ms)
+✓ Compiled in 341ms
+ GET / 200 in 584ms (next.js: 197ms, application-code: 387ms)
+ GET /sw.js 404 in 185ms (next.js: 40ms, application-code: 145ms)
+✓ Compiled in 203ms
+ GET / 200 in 815ms (next.js: 223ms, application-code: 592ms)
+ GET /sw.js 404 in 267ms (next.js: 47ms, application-code: 220ms)
+ GET / 200 in 1151ms (next.js: 301ms, application-code: 850ms)
+ GET / 200 in 530ms (next.js: 28ms, application-code: 502ms)
+ GET / 200 in 903ms (next.js: 217ms, application-code: 686ms)
+ GET / 200 in 384ms (next.js: 18ms, application-code: 366ms)
+ GET /sw.js 404 in 290ms (next.js: 52ms, application-code: 239ms)
+✓ Compiled in 324ms
+ GET / 200 in 2.6s (next.js: 196ms, application-code: 2.4s)
+ GET / 200 in 2.2s (next.js: 53ms, application-code: 2.1s)
+ GET / 200 in 1586ms (next.js: 67ms, application-code: 1519ms)
+ GET / 200 in 1607ms (next.js: 549ms, application-code: 1058ms)
+ GET / 200 in 1612ms (next.js: 1027ms, application-code: 585ms)
+ GET /sw.js 404 in 407ms (next.js: 55ms, application-code: 351ms)
+ GET / 200 in 3.1s (next.js: 494ms, application-code: 2.6s)
+ GET / 200 in 2.2s (next.js: 55ms, application-code: 2.1s)
+ GET / 200 in 1674ms (next.js: 83ms, application-code: 1591ms)
+ GET / 200 in 1681ms (next.js: 546ms, application-code: 1135ms)
+ GET / 200 in 1689ms (next.js: 997ms, application-code: 693ms)
+ GET /sw.js 404 in 607ms (next.js: 49ms, application-code: 558ms)
+✓ Compiled in 329ms
+ GET / 200 in 2.4s (next.js: 242ms, application-code: 2.2s)
+ GET / 200 in 1897ms (next.js: 131ms, application-code: 1766ms)
+ GET / 200 in 1410ms (next.js: 56ms, application-code: 1354ms)
+ GET / 200 in 1422ms (next.js: 421ms, application-code: 1000ms)
+ GET / 200 in 1418ms (next.js: 908ms, application-code: 510ms)
+ GET /sw.js 404 in 456ms (next.js: 63ms, application-code: 393ms)
+✓ Compiled in 368ms
+ GET / 200 in 3.0s (next.js: 238ms, application-code: 2.8s)
+ GET / 200 in 2.4s (next.js: 34ms, application-code: 2.3s)
+ GET / 200 in 2.3s (next.js: 455ms, application-code: 1822ms)
+ GET / 200 in 2.3s (next.js: 59ms, application-code: 2.2s)
+ GET / 200 in 2.3s (next.js: 817ms, application-code: 1483ms)
+ GET / 200 in 2.3s (next.js: 1224ms, application-code: 1092ms)
+ GET / 200 in 500ms (next.js: 30ms, application-code: 470ms)
+ GET /sw.js 404 in 392ms (next.js: 49ms, application-code: 344ms)
+✓ Compiled in 492ms
+ GET / 200 in 2.5s (next.js: 342ms, application-code: 2.2s)
+ GET / 200 in 1814ms (next.js: 65ms, application-code: 1749ms)
+ GET / 200 in 1321ms (next.js: 803ms, application-code: 518ms)
+ GET / 200 in 1330ms (next.js: 72ms, application-code: 1258ms)
+ GET / 200 in 1338ms (next.js: 506ms, application-code: 832ms)
+ GET /sw.js 404 in 486ms (next.js: 61ms, application-code: 425ms)
+✓ Compiled in 356ms
+ GET / 200 in 836ms (next.js: 364ms, application-code: 471ms)
+ GET /sw.js 404 in 563ms (next.js: 117ms, application-code: 446ms)
