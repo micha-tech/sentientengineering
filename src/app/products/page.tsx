@@ -10,7 +10,7 @@ import { products } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "AI Products and Intelligent Platforms",
+  title: "AI Products and Intelligent Business Platforms",
   description:
     "Gyptiq and configurable AI platforms for revenue, document processing, commerce, industrial vision, predictive maintenance, knowledge and logistics.",
   path: "/products",
@@ -134,12 +134,12 @@ export default function ProductsPage() {
                       </div>
                     ))}
                   </div>
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/products/gyptiq"
                     className="mt-7 inline-flex min-h-12 items-center justify-between bg-black px-5 text-sm font-bold text-white"
                   >
-                    Discuss Gyptiq <span aria-hidden="true">→</span>
-                  </a>
+                    Learn how Gyptiq works <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </article>
             </div>

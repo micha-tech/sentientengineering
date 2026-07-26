@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { COMPANY, META } from "@/lib/constants";
 
 const inter = Inter({
@@ -13,15 +14,39 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "ProfessionalService"],
       "@id": `${META.url}/#organization`,
       name: META.siteName,
       url: META.url,
       logo: `${META.url}/sentientlogo-wordmark.png`,
       image: `${META.url}${META.ogImage}`,
-      description: META.description,
+      description: COMPANY.description,
       slogan: COMPANY.tagline,
-      areaServed: ["Nigeria", "Africa", "Worldwide"],
+      email: COMPANY.email,
+      telephone: "+2347073512305",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Lagos",
+        addressCountry: "NG",
+      },
+      areaServed: [
+        {
+          "@type": "Country",
+          name: "Nigeria",
+        },
+        {
+          "@type": "Place",
+          name: "Africa",
+        },
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: COMPANY.email,
+        telephone: "+2347073512305",
+        areaServed: ["NG", "Africa"],
+        availableLanguage: "English",
+      },
       knowsAbout: [
         "Applied AI Engineering",
         "Machine Learning Engineering",
@@ -43,41 +68,6 @@ const jsonLd = {
       name: META.siteName,
       url: META.url,
       description: META.description,
-      publisher: {
-        "@id": `${META.url}/#organization`,
-      },
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": `${META.url}/#professional-service`,
-      name: META.siteName,
-      url: META.url,
-      image: `${META.url}${META.ogImage}`,
-      description: META.description,
-      areaServed: ["Nigeria", "Africa", "Worldwide"],
-      serviceType: [
-        "Applied AI engineering",
-        "Machine learning engineering",
-        "Computer vision systems",
-        "Robotics and automation engineering",
-        "Intelligent systems engineering",
-        "Document intelligence",
-        "Enterprise AI systems",
-        "Managed AI operations",
-      ],
-      provider: {
-        "@id": `${META.url}/#organization`,
-      },
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": `${META.url}/#gyptiq`,
-      name: "Gyptiq",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web",
-      description:
-        "Gyptiq is Sentient Engineering's AI-powered business companion for customer conversations, sales workflows, payments, appointments, and business operations.",
-      image: `${META.url}/images/gyptiq-wordmark-light.png`,
       publisher: {
         "@id": `${META.url}/#organization`,
       },
@@ -116,7 +106,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: META.title,
     description: META.description,
-    creator: META.twitterHandle,
     images: [META.ogImage],
   },
   robots: {
@@ -167,6 +156,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 
 const CANONICAL_HOST = "sentientengineering.com.ng";
 const ALTERNATIVE_HOSTS = new Set([
+  "www.sentientengineering.com.ng",
   "sentientengineering.com",
   "www.sentientengineering.com",
 ]);

@@ -27,8 +27,13 @@ export default function HeroSection() {
               Applied AI Engineering
             </p>
             <h1 className="mt-5 max-w-5xl text-balance text-[2.8rem] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-[5.25rem]">
-              AI systems that move business forward.
+              Applied AI systems that move businesses forward.
             </h1>
+            <p className="mt-6 max-w-3xl text-base leading-7 text-white/70 sm:text-lg">
+              We design and deploy AI agents, intelligent business systems,
+              process automation, computer vision and industrial AI solutions
+              for organisations in Nigeria and across Africa.
+            </p>
             <TypingValueLine />
           </div>
 

@@ -1,9 +1,13 @@
 import nodemailer from "nodemailer";
+import { COMPANY } from "@/lib/constants";
+import { projectTypes } from "@/lib/site-data";
 
 export const runtime = "nodejs";
 
-const RECIPIENT_EMAIL = "pstmichaeljohnson721@gmail.com";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_PATTERN = /^[+\d][\d\s()-]{6,49}$/;
+const CONTACT_METHODS = new Set(["Email", "WhatsApp", "Phone call"]);
+const PROJECT_TYPES = new Set<string>(projectTypes);
 
 function clean(value: unknown, maxLength: number) {
   return typeof value === "string"
@@ -34,23 +38,64 @@ export async function POST(request: Request) {
     const phone = clean(body.phone, 50);
     const projectType = clean(body.project_type, 150);
     const projectDescription = clean(body.project_description, 5000);
+    const preferredContactMethod = clean(
+      body.preferred_contact_method,
+      50,
+    );
     const website = clean(body.website, 200);
 
     if (website) {
       return Response.json({
-        message: "Thank you. Your project enquiry has been sent successfully.",
+        message:
+          "Thank you. Your project enquiry has been received. Our team will review it and contact you shortly.",
       });
     }
 
-    if (
-      !name ||
-      !EMAIL_PATTERN.test(email) ||
-      !company ||
-      !projectType ||
-      !projectDescription
-    ) {
+    if (!name) {
       return Response.json(
-        { message: "Please complete all required fields correctly." },
+        { message: "Please enter your full name." },
+        { status: 400 },
+      );
+    }
+
+    if (!EMAIL_PATTERN.test(email)) {
+      return Response.json(
+        { message: "Please enter a valid work email address." },
+        { status: 400 },
+      );
+    }
+
+    if (!PHONE_PATTERN.test(phone)) {
+      return Response.json(
+        { message: "Please enter a valid phone or WhatsApp number." },
+        { status: 400 },
+      );
+    }
+
+    if (!company) {
+      return Response.json(
+        { message: "Please enter your company name." },
+        { status: 400 },
+      );
+    }
+
+    if (!PROJECT_TYPES.has(projectType)) {
+      return Response.json(
+        { message: "Please select a valid project type." },
+        { status: 400 },
+      );
+    }
+
+    if (!CONTACT_METHODS.has(preferredContactMethod)) {
+      return Response.json(
+        { message: "Please select your preferred contact method." },
+        { status: 400 },
+      );
+    }
+
+    if (!projectDescription) {
+      return Response.json(
+        { message: "Please briefly describe the problem you want to solve." },
         { status: 400 },
       );
     }
@@ -70,6 +115,8 @@ export async function POST(request: Request) {
     }
 
     const smtpPort = Number(process.env.SMTP_PORT || 465);
+    const recipientEmail =
+      process.env.CONTACT_RECIPIENT || COMPANY.email;
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "smtp.gmail.com",
       port: smtpPort,
@@ -89,6 +136,7 @@ export async function POST(request: Request) {
       company: escapeHtml(company),
       phone: escapeHtml(phone || "Not provided"),
       projectType: escapeHtml(projectType),
+      preferredContactMethod: escapeHtml(preferredContactMethod),
       projectDescription: escapeHtml(projectDescription).replace(
         /\n/g,
         "<br />",
@@ -99,7 +147,7 @@ export async function POST(request: Request) {
       from:
         process.env.SMTP_FROM ||
         `Sentient Engineering Website <${smtpUser}>`,
-      to: RECIPIENT_EMAIL,
+      to: recipientEmail,
       replyTo: email,
       subject: `New project enquiry from ${company.replace(/[\r\n]/g, " ")}`,
       text: [
@@ -110,6 +158,7 @@ export async function POST(request: Request) {
         `Company: ${company}`,
         `Phone: ${phone || "Not provided"}`,
         `Project type: ${projectType}`,
+        `Preferred contact method: ${preferredContactMethod}`,
         "",
         "Project description:",
         projectDescription,
@@ -121,13 +170,14 @@ export async function POST(request: Request) {
         <p><strong>Company:</strong> ${safe.company}</p>
         <p><strong>Phone:</strong> ${safe.phone}</p>
         <p><strong>Project type:</strong> ${safe.projectType}</p>
+        <p><strong>Preferred contact method:</strong> ${safe.preferredContactMethod}</p>
         <p><strong>Project description:</strong><br />${safe.projectDescription}</p>
       `,
     });
 
     return Response.json({
       message:
-        "Thank you. Your project enquiry has been sent successfully.",
+        "Thank you. Your project enquiry has been received. Our team will review it and contact you shortly.",
     });
   } catch (error) {
     console.error("Unable to send project enquiry:", error);

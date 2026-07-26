@@ -17,10 +17,11 @@ const featuredServices = [
     kicker: "Agents · Orchestration · Integration",
     title: "AI Agents and Connected Workflows",
     summary:
-      "Specialised AI agents that work across Gmail, WhatsApp, websites, internal tools, software and business data to move enquiries and operations forward.",
+      "Enquiries, customer records and follow-ups are often split across WhatsApp, email, websites and disconnected software, causing slow responses and missed opportunities. We build governed AI agents that retrieve trusted information, qualify leads, prepare quotations, update CRM records and coordinate follow-ups. Sensitive actions are routed to people for approval, giving teams faster response without losing control.",
     outcomes: [
-      "Faster customer response",
-      "Connected workflow execution",
+      "Faster enquiry response",
+      "Consistent customer follow-up",
+      "Less administrative handling",
     ],
     image: "/images/service-ai-agent-integrations.jpg",
     imageAlt:
@@ -31,10 +32,11 @@ const featuredServices = [
     kicker: "Manufacturing · Construction · Agriculture · Security",
     title: "Practical Computer Vision Systems",
     summary:
-      "Complete vision systems combining powerful models, cameras, edge devices, alerts and human review for inspection, monitoring, tracking and detection.",
+      "Manual inspection and continuous site monitoring are difficult to perform consistently at scale. We deploy computer vision systems that analyse images and video to detect defects, identify and count objects, verify conditions and monitor safety or environmental events. Alerts and review queues help teams intervene sooner, improve inspection consistency and reduce repetitive manual monitoring.",
     outcomes: [
-      "Continuous site visibility",
-      "Earlier risk and defect detection",
+      "More consistent inspection",
+      "Faster anomaly detection",
+      "Reduced manual monitoring",
     ],
     image: "/images/service-computer-vision-agriculture.jpg",
     imageAlt:
@@ -45,10 +47,11 @@ const featuredServices = [
     kicker: "Identity · Access · Verification",
     title: "Biometric and Facial Recognition Systems",
     summary:
-      "AI-powered identity systems for verification, access control, attendance and secure workflows, designed with privacy and auditability in mind.",
+      "Unreliable identity checks, access processes and attendance records create security and accountability gaps. We engineer privacy-conscious biometric identity systems for facial verification, access control, workforce attendance and visitor management. Secure data handling, audit trails, exception review and human oversight help organisations verify people more reliably while maintaining clear control over sensitive decisions.",
     outcomes: [
-      "Faster identity verification",
-      "Stronger access and attendance control",
+      "Reliable identity verification",
+      "Stronger access control",
+      "Auditable attendance records",
     ],
     image: "/images/service-facial-recognition.png",
     imageAlt:
@@ -72,9 +75,10 @@ export default function IntelligentSystemsSections() {
           </h2>
           <div className="mt-14 grid gap-8 border-t border-black/10 pt-8 lg:grid-cols-[1fr_0.7fr]">
             <p className="max-w-2xl text-lg leading-8 text-black/70">
-              Sentient Engineering combines AI, software, automation, and data
+              Sentient Engineering is an Applied AI engineering company based
+              in Lagos, Nigeria. We combine AI, software, automation and data
               infrastructure to solve practical commercial and industrial
-              problems.
+              problems across Africa.
             </p>
             <p className="max-w-xl text-sm leading-7 text-black/55 lg:justify-self-end">
               We engineer complete, dependable systems—not isolated models or
@@ -108,8 +112,14 @@ export default function IntelligentSystemsSections() {
               </p>
               <div className="mt-20">
                 <h2 className="max-w-3xl text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-                  Built around the work your business actually needs done.
+                  Applied AI engineered into the work that runs your business.
                 </h2>
+                <p className="mt-6 max-w-2xl text-base leading-8 text-white/55">
+                  We connect intelligence to customer channels, business
+                  software, cameras and identity workflows so systems can
+                  respond, inspect, verify, update and escalate work inside the
+                  organisation.
+                </p>
                 <Link
                   href="/services"
                   className="mt-8 inline-flex items-center gap-4 text-sm font-bold"
@@ -137,7 +147,7 @@ export default function IntelligentSystemsSections() {
                 className="grid border-t border-black/10 lg:grid-cols-2"
               >
                 <div
-                  className={`flex min-h-[28rem] flex-col justify-between p-6 sm:p-10 ${
+                  className={`flex min-h-[30rem] flex-col justify-between p-6 sm:p-10 ${
                     index % 2 === 1 ? "lg:order-2 lg:border-l" : "lg:border-r"
                   } border-black/10`}
                 >
@@ -149,18 +159,18 @@ export default function IntelligentSystemsSections() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-12">
                     <h3 className="text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">
                       {service.title}
                     </h3>
                     <p className="mt-5 max-w-xl text-base leading-8 text-black/60">
                       {service.summary}
                     </p>
-                    <div className="mt-8 grid grid-cols-2 border-y border-black/10">
-                      {service.outcomes.slice(0, 2).map((outcome) => (
+                    <div className="mt-8 grid grid-cols-3 border-y border-black/10">
+                      {service.outcomes.map((outcome) => (
                         <p
                           key={outcome}
-                          className="border-r border-black/10 py-4 pr-4 text-xs font-semibold uppercase leading-5 tracking-[0.08em] last:border-r-0 last:pl-4"
+                          className="border-r border-black/10 px-3 py-4 text-[0.65rem] font-semibold uppercase leading-5 tracking-[0.07em] first:pl-0 last:border-r-0 last:pr-0"
                         >
                           {outcome}
                         </p>
@@ -168,6 +178,7 @@ export default function IntelligentSystemsSections() {
                     </div>
                     <Link
                       href={`/services/${service.id}`}
+                      aria-label={`Explore ${service.title}`}
                       className="mt-7 inline-flex border-b border-black pb-1 text-sm font-bold"
                     >
                       Explore this service
@@ -237,7 +248,7 @@ export default function IntelligentSystemsSections() {
                   ))}
                 </div>
                 <Link
-                  href="/products"
+                  href="/products/gyptiq"
                   className="mt-7 inline-flex min-h-12 w-full items-center justify-between bg-white px-5 text-sm font-bold text-black"
                 >
                   Explore Gyptiq <span aria-hidden="true">→</span>

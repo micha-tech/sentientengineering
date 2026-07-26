@@ -45,7 +45,7 @@ export default function Navbar() {
         >
           <Image
             src="/sentientlogo-wordmark.png"
-            alt="Sentient Engineering"
+            alt="Sentient Engineering logo"
             fill
             loading="eager"
             sizes="(min-width: 640px) 208px, 176px"
@@ -107,12 +107,20 @@ export default function Navbar() {
                 revenue.
               </p>
               <Link
-                href="/#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex min-h-12 items-center justify-center bg-black px-5 text-sm font-bold text-white"
               >
                 Discuss Your Project
               </Link>
+              <a
+                href={COMPANY.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center border border-black px-5 text-sm font-bold"
+              >
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
         </div>

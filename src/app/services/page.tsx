@@ -9,9 +9,9 @@ import { createPageMetadata } from "@/lib/seo";
 import { industryLandingPages } from "@/lib/seo-landing-data";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "AI-Powered Business Systems and Automation Services",
+  title: "Applied AI and Business Automation Services in Nigeria",
   description:
-    "Sentient Engineering builds AI-powered business systems, automated workflows, AI agents, computer vision, biometric systems, digital commerce intelligence, and industrial operations solutions.",
+    "Explore AI agents, business process automation, computer vision, biometric systems, digital commerce and industrial AI engineering services in Nigeria.",
   path: "/services",
 });
 
@@ -21,7 +21,7 @@ const serviceAreas = [
     kicker: "Sales · Operations · Administration",
     title: "AI-Powered Business Systems and Automation",
     summary:
-      "We turn slow, repetitive and disconnected business processes into coordinated systems that move work forward automatically.",
+      "Repetitive administration, disconnected applications and manual handoffs delay sales and internal work. We engineer business process automation that connects teams and software to process enquiries, route approvals, generate quotations or invoices, update records and issue notifications. This shortens process lead times, reduces manual error and keeps work visible across the organisation.",
     image: "/images/ai-assistant.jpg",
     imageAlt:
       "AI assistant supporting connected sales and business operations",
@@ -34,10 +34,10 @@ const serviceAreas = [
       "Reporting, alerts and management visibility",
     ],
     outcomes: [
-      "Faster sales cycles",
-      "Lower administrative cost",
-      "Fewer missed handoffs",
-      "More operating capacity",
+      "Shorter process lead times",
+      "Fewer manual errors",
+      "Connected business workflows",
+      "Clearer management visibility",
     ],
   },
   {
@@ -45,7 +45,7 @@ const serviceAreas = [
     kicker: "Agents · Orchestration · Integration",
     title: "AI Agents That Work Across Your Existing Tools",
     summary:
-      "We design and orchestrate specialised AI agents that communicate, reason, retrieve information and take approved actions across the software your teams already use.",
+      "Customer enquiries and internal tasks lose momentum when information is spread across channels and software. We build governed AI agents that work across Gmail, WhatsApp, websites, CRM, ERP and business data to respond, retrieve information, qualify leads, prepare documents and update records. Agents coordinate follow-ups and escalate sensitive actions for human approval.",
     image: "/images/service-ai-agent-integrations.jpg",
     imageAlt:
       "AI agent connected to Gmail, WhatsApp, websites and business analytics",
@@ -58,10 +58,10 @@ const serviceAreas = [
       "Multi-agent coordination and escalation",
     ],
     outcomes: [
-      "24/7 responsiveness",
-      "Consistent execution",
-      "Connected business data",
-      "Human control where it matters",
+      "Faster enquiry response",
+      "Consistent customer follow-up",
+      "Reduced administrative work",
+      "Human approval for sensitive actions",
     ],
   },
   {
@@ -69,7 +69,7 @@ const serviceAreas = [
     kicker: "Manufacturing · Construction · Agriculture · Security",
     title: "Practical Computer Vision Systems",
     summary:
-      "We implement powerful vision models inside complete inspection systems—combining cameras, edge devices, software, alerts and human review.",
+      "Visual inspection and continuous monitoring are difficult to perform consistently across products, sites and camera feeds. We deploy computer vision solutions that analyse images and video to detect defects, identify objects, verify conditions, track activity and alert teams. This supports faster intervention, more consistent inspection and less repetitive manual monitoring.",
     image: "/images/service-computer-vision-agriculture.jpg",
     imageAlt:
       "Computer vision monitoring crops with a smartphone, drone and farm analytics",
@@ -82,10 +82,10 @@ const serviceAreas = [
       "Equipment and site-condition inspection",
     ],
     outcomes: [
-      "Continuous visibility",
-      "Earlier risk detection",
       "More consistent inspection",
-      "Reduced manual exposure",
+      "Faster anomaly detection",
+      "Reduced manual monitoring",
+      "Earlier team intervention",
     ],
   },
   {
@@ -93,7 +93,7 @@ const serviceAreas = [
     kicker: "Identity · Access · Verification",
     title: "AI-Powered Biometric and Facial Recognition Systems",
     summary:
-      "We design identity systems for controlled access, verification, attendance and secure workflows, with privacy, auditability and operating context built into the architecture.",
+      "Weak identity checks and unreliable attendance or access records create security and accountability risks. We engineer privacy-conscious biometric identity systems for facial verification, access control, attendance and visitor management. Secure data handling, audit trails, exception review and human oversight support reliable verification without removing responsibility from authorised people.",
     image: "/images/service-facial-recognition.png",
     imageAlt:
       "Facial recognition system processing biometric landmarks",
@@ -106,10 +106,10 @@ const serviceAreas = [
       "Audit trails and exception review",
     ],
     outcomes: [
-      "Faster verification",
+      "Reliable identity verification",
       "Stronger access control",
-      "Reliable attendance records",
-      "Reduced identity fraud",
+      "Auditable attendance records",
+      "Traceable exception handling",
     ],
   },
   {
@@ -117,7 +117,7 @@ const serviceAreas = [
     kicker: "Commerce · Personalisation · Revenue",
     title: "AI-Powered Digital Commerce Systems",
     summary:
-      "We make digital buying experiences more relevant and commercially effective by learning from product data, customer intent and shopping behaviour.",
+      "Customers leave when product search is difficult and recommendations ignore their context. We build intelligent commerce systems that analyse catalogue data, buying behaviour and business rules to improve search, recommend compatible or complementary products, assist quotations and support merchandising decisions. Customers find suitable products faster while the business improves conversion and basket value.",
     image: "/images/industry-commerce.png",
     imageAlt:
       "Modern commerce and intelligent delivery operations",
@@ -130,10 +130,10 @@ const serviceAreas = [
       "B2B quotation and purchasing intelligence",
     ],
     outcomes: [
-      "Higher conversion",
+      "Improved product discovery",
       "Larger basket value",
-      "Better product discovery",
-      "More repeat revenue",
+      "Faster quotation support",
+      "More relevant shopping journeys",
     ],
   },
   {
@@ -141,7 +141,7 @@ const serviceAreas = [
     kicker: "Manufacturing · Procurement · Logistics · Supply Chain",
     title: "Industrial and Operations Intelligence",
     summary:
-      "We connect business data, AI and optimisation to improve how organisations plan, move, maintain and allocate resources.",
+      "Industrial and supply-chain teams often respond late because equipment, inventory, fleet and supplier data sit in separate systems. We build industrial AI and decision platforms that monitor performance, detect anomalies, forecast demand, support predictive maintenance and optimise planning or dispatch. Teams gain earlier warning, reduce downtime and make better resource decisions.",
     image: "/images/industry-logistics.png",
     imageAlt:
       "Connected logistics network with cargo, trucks, aircraft and port operations",
@@ -154,10 +154,10 @@ const serviceAreas = [
       "Management dashboards and decision support",
     ],
     outcomes: [
-      "Lower operating cost",
-      "Better asset utilisation",
-      "Less downtime and waste",
-      "More reliable fulfilment",
+      "Earlier fault detection",
+      "Reduced unplanned downtime",
+      "Better asset and inventory visibility",
+      "More reliable planning",
     ],
   },
 ] as const;
@@ -335,50 +335,57 @@ export default function ServicesPage() {
 
                 <div className="grid lg:grid-cols-2">
                   <div
-                    className={`flex min-h-[35rem] flex-col justify-between p-6 sm:p-10 ${
+                    className={`flex flex-col justify-between p-6 sm:p-10 lg:min-h-[35rem] ${
                       index % 2 === 1
                         ? "lg:order-2 lg:border-l"
                         : "lg:border-r"
                     } border-black/10`}
                   >
                     <div>
-                      <h2 className="max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-5xl">
+                      <h3 className="max-w-xl text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-5xl">
                         {service.title}
-                      </h2>
+                      </h3>
                       <p className="mt-6 max-w-xl text-base leading-8 text-black/60">
                         {service.summary}
                       </p>
                       <Link
                         href={`/services/${service.id}`}
+                        aria-label={`View details about ${service.title}`}
                         className="mt-7 inline-flex border-b border-black pb-1 text-sm font-bold"
                       >
                         View service details
                       </Link>
                     </div>
 
-                    <div className="mt-14">
-                      <p className="text-xs font-bold uppercase tracking-[0.13em] text-black/40">
+                    <details className="mt-10 sm:mt-14">
+                      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between border-y border-black/15 text-xs font-bold uppercase tracking-[0.13em] sm:hidden">
                         What we implement
-                      </p>
-                      <div className="mt-5 grid border-t border-black/10 sm:grid-cols-2">
-                        {service.applications.map((application) => (
-                          <p
-                            key={application}
-                            className="border-b border-black/10 py-3 pr-4 text-sm font-medium leading-6 sm:border-r sm:odd:pr-4 sm:even:border-r-0 sm:even:pl-4"
-                          >
-                            {application}
-                          </p>
-                        ))}
+                        <span aria-hidden="true">+</span>
+                      </summary>
+                      <div className="sm:block">
+                        <p className="hidden text-xs font-bold uppercase tracking-[0.13em] text-black/40 sm:block">
+                          What we implement
+                        </p>
+                        <div className="mt-5 grid grid-cols-2 border-t border-black/10">
+                          {service.applications.map((application) => (
+                            <p
+                              key={application}
+                              className="border-b border-r border-black/10 px-3 py-3 text-sm font-medium leading-6 even:border-r-0"
+                            >
+                              {application}
+                            </p>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    </details>
                   </div>
 
                   <div
-                    className={`grid min-h-[35rem] grid-rows-[1fr_auto] ${
+                    className={`grid grid-rows-[1fr_auto] lg:min-h-[35rem] ${
                       index % 2 === 1 ? "lg:order-1" : ""
                     }`}
                   >
-                    <figure className="relative min-h-[25rem] bg-neutral-200">
+                    <figure className="relative aspect-video bg-neutral-200 sm:aspect-auto sm:min-h-[22rem] lg:min-h-[25rem]">
                       <Image
                         src={service.image}
                         alt={service.imageAlt}

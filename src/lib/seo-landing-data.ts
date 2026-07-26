@@ -4,7 +4,7 @@ export const serviceLandingPages = [
     title: "AI Business Process Automation",
     heading: "AI-powered systems that remove operational friction.",
     description:
-      "Automate sales, administration, inventory, procurement and customer operations with AI systems engineered around your existing workflows.",
+      "Business process automation that connects sales, administration, inventory and procurement workflows to route approvals, update records and reduce manual work.",
     kicker: "Sales, operations and administration",
     image: "/images/ai-assistant.jpg",
     imageAlt:
@@ -39,7 +39,7 @@ export const serviceLandingPages = [
     title: "AI Agents and Workflow Integration",
     heading: "AI agents that work across the tools your business already uses.",
     description:
-      "Design and deploy governed AI agents connected to Gmail, WhatsApp, websites, databases, CRM, ERP and internal business applications.",
+      "Governed AI agents for businesses that respond across Gmail, WhatsApp and websites, retrieve information, update systems and escalate sensitive actions.",
     kicker: "Agents, orchestration and integration",
     image: "/images/service-ai-agent-integrations.jpg",
     imageAlt:
@@ -74,7 +74,7 @@ export const serviceLandingPages = [
     title: "Computer Vision Systems",
     heading: "Computer vision engineered for real operating environments.",
     description:
-      "Practical computer vision systems for manufacturing, construction, agriculture and security, combining models, cameras, edge devices, alerts and human review.",
+      "Computer vision solutions for manufacturing, construction, agriculture and security that inspect images and video, detect anomalies and alert teams.",
     kicker: "Manufacturing, construction, agriculture and security",
     image: "/images/service-computer-vision-agriculture.jpg",
     imageAlt:
@@ -109,7 +109,7 @@ export const serviceLandingPages = [
     title: "Biometric and Facial Recognition Systems",
     heading: "Identity systems designed for security, auditability and responsible use.",
     description:
-      "AI-powered biometric and facial recognition systems for verification, access control, attendance and secure operational workflows.",
+      "Privacy-conscious biometric identity systems for facial verification, access control, attendance and visitor management, with audit trails and human oversight.",
     kicker: "Identity, access and verification",
     image: "/images/service-facial-recognition.png",
     imageAlt:
@@ -144,7 +144,7 @@ export const serviceLandingPages = [
     title: "AI-Powered Digital Commerce",
     heading: "Commerce systems that learn what customers need and help them buy.",
     description:
-      "Increase product discovery, conversion and basket value with intelligent search, recommendations and customer-behaviour learning.",
+      "AI-powered commerce systems that improve product search, recommendations, quotations and merchandising using catalogue, customer and behavioural data.",
     kicker: "Commerce, personalisation and revenue",
     image: "/images/industry-commerce.png",
     imageAlt:
@@ -179,7 +179,7 @@ export const serviceLandingPages = [
     title: "Industrial and Operations Intelligence",
     heading: "Operational intelligence for assets, inventory and supply chains.",
     description:
-      "Connect operational data, AI and optimisation to improve planning, maintenance, logistics, procurement and production performance.",
+      "Industrial AI systems for equipment monitoring, predictive maintenance, demand planning, logistics and anomaly detection across connected business data.",
     kicker: "Manufacturing, procurement, logistics and supply chain",
     image: "/images/industry-logistics.png",
     imageAlt:

@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
+  images: {
+    qualities: [70, 75],
+  },
   async headers() {
     const immutableMediaHeaders = [
       {

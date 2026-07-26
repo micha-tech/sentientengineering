@@ -14,6 +14,71 @@ type IndustryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const relatedServicesByIndustry: Record<
+  string,
+  { href: string; label: string }[]
+> = {
+  "logistics-supply-chain": [
+    {
+      href: "/services/industrial-operations",
+      label: "Industrial intelligence",
+    },
+    {
+      href: "/services/business-systems-automation",
+      label: "Process automation",
+    },
+  ],
+  manufacturing: [
+    { href: "/services/computer-vision", label: "Computer vision" },
+    {
+      href: "/services/industrial-operations",
+      label: "Industrial intelligence",
+    },
+  ],
+  "healthcare-medical-services": [
+    { href: "/services/biometrics-identity", label: "Biometric systems" },
+    {
+      href: "/services/business-systems-automation",
+      label: "Process automation",
+    },
+  ],
+  "scientific-laboratory-equipment": [
+    { href: "/services/digital-commerce", label: "Digital commerce" },
+    {
+      href: "/services/ai-agents-integrations",
+      label: "AI agents and integrations",
+    },
+  ],
+  "energy-utilities": [
+    {
+      href: "/services/industrial-operations",
+      label: "Industrial intelligence",
+    },
+    { href: "/services/computer-vision", label: "Computer vision" },
+  ],
+  "construction-infrastructure": [
+    { href: "/services/computer-vision", label: "Computer vision" },
+    {
+      href: "/services/industrial-operations",
+      label: "Industrial intelligence",
+    },
+  ],
+  "retail-b2b-commerce": [
+    { href: "/services/digital-commerce", label: "Digital commerce" },
+    {
+      href: "/services/ai-agents-integrations",
+      label: "AI agents and integrations",
+    },
+  ],
+  "professional-field-services": [
+    {
+      href: "/services/business-systems-automation",
+      label: "Process automation",
+    },
+    { href: "/services/biometrics-identity", label: "Biometric systems" },
+  ],
+};
+
 export function generateStaticParams() {
   return industryLandingPages.map(({ slug }) => ({ slug }));
 }
@@ -36,6 +101,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
   const { slug } = await params;
   const industry = industryLandingPages.find((item) => item.slug === slug);
   if (!industry) notFound();
+  const relatedServices = relatedServicesByIndustry[industry.slug] ?? [];
 
   const pageUrl = absoluteUrl(`/industries/${industry.slug}`);
   const jsonLd = {
@@ -209,16 +275,32 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
         <section className="bg-[#ededE7] text-black">
           <Container className="border-x border-black/10 py-16">
-            <div className="flex flex-col gap-6 border-y border-black/15 py-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl text-2xl font-semibold tracking-[-0.03em]">
-                Explore how Sentient Engineering works across other industries.
-              </p>
-              <Link
-                href="/industries"
-                className="inline-flex min-h-12 items-center justify-center border border-black px-6 text-sm font-bold transition hover:bg-black hover:text-white"
-              >
-                View All Industries
-              </Link>
+            <div className="grid gap-8 border-y border-black/15 py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-black/45">
+                  Related services
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em]">
+                  Explore relevant engineering capabilities.
+                </h2>
+              </div>
+              <div className="flex flex-wrap gap-3 lg:justify-end">
+                {relatedServices.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    className="inline-flex min-h-11 items-center border border-black px-4 text-sm font-bold transition hover:bg-black hover:text-white"
+                  >
+                    Explore {service.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/industries"
+                  className="inline-flex min-h-11 items-center border border-black/20 px-4 text-sm font-bold"
+                >
+                  View all industries
+                </Link>
+              </div>
             </div>
           </Container>
         </section>

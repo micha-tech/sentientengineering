@@ -47,8 +47,18 @@ export function createPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      creator: META.twitterHandle,
       images: [absoluteUrl(image)],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
   };
 }

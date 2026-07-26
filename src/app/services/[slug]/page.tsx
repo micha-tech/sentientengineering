@@ -14,6 +14,51 @@ type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const relatedIndustriesByService: Record<
+  string,
+  { href: string; label: string }[]
+> = {
+  "business-systems-automation": [
+    { href: "/industries/retail-b2b-commerce", label: "Commerce" },
+    { href: "/industries/professional-field-services", label: "Field services" },
+  ],
+  "ai-agents-integrations": [
+    { href: "/industries/retail-b2b-commerce", label: "Commerce" },
+    {
+      href: "/industries/healthcare-medical-services",
+      label: "Healthcare",
+    },
+  ],
+  "computer-vision": [
+    { href: "/industries/manufacturing", label: "Manufacturing" },
+    {
+      href: "/industries/construction-infrastructure",
+      label: "Construction",
+    },
+  ],
+  "biometrics-identity": [
+    {
+      href: "/industries/healthcare-medical-services",
+      label: "Healthcare",
+    },
+    { href: "/industries/professional-field-services", label: "Field services" },
+  ],
+  "digital-commerce": [
+    { href: "/industries/retail-b2b-commerce", label: "Commerce" },
+    {
+      href: "/industries/scientific-laboratory-equipment",
+      label: "Scientific equipment",
+    },
+  ],
+  "industrial-operations": [
+    { href: "/industries/manufacturing", label: "Manufacturing" },
+    {
+      href: "/industries/logistics-supply-chain",
+      label: "Logistics and supply chain",
+    },
+  ],
+};
+
 export function generateStaticParams() {
   return serviceLandingPages.map(({ slug }) => ({ slug }));
 }
@@ -36,6 +81,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const service = serviceLandingPages.find((item) => item.slug === slug);
   if (!service) notFound();
+  const relatedIndustries = relatedIndustriesByService[service.slug] ?? [];
 
   const pageUrl = absoluteUrl(`/services/${service.slug}`);
   const jsonLd = {
@@ -48,7 +94,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         description: service.description,
         url: pageUrl,
         serviceType: service.title,
-        areaServed: ["Nigeria", "Africa", "Worldwide"],
+        areaServed: ["Nigeria", "Africa"],
         provider: {
           "@id": `${COMPANY.url}/#organization`,
         },
@@ -247,16 +293,32 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
         <section className="bg-white text-black">
           <Container className="border-x border-black/10 py-16">
-            <div className="flex flex-col gap-6 border-y border-black/15 py-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl text-2xl font-semibold tracking-[-0.03em]">
-                Explore the complete Sentient Engineering service portfolio.
-              </p>
-              <Link
-                href="/services"
-                className="inline-flex min-h-12 items-center justify-center border border-black px-6 text-sm font-bold transition hover:bg-black hover:text-white"
-              >
-                View All Services
-              </Link>
+            <div className="grid gap-8 border-y border-black/15 py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-black/45">
+                  Related industries
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em]">
+                  See where this service creates value.
+                </h2>
+              </div>
+              <div className="flex flex-wrap gap-3 lg:justify-end">
+                {relatedIndustries.map((industry) => (
+                  <Link
+                    key={industry.href}
+                    href={industry.href}
+                    className="inline-flex min-h-11 items-center border border-black px-4 text-sm font-bold transition hover:bg-black hover:text-white"
+                  >
+                    AI solutions for {industry.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/services"
+                  className="inline-flex min-h-11 items-center border border-black/20 px-4 text-sm font-bold"
+                >
+                  View all services
+                </Link>
+              </div>
             </div>
           </Container>
         </section>

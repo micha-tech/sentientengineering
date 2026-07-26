@@ -10,9 +10,9 @@ import { industryLandingPages } from "@/lib/seo-landing-data";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Industries We Serve",
+  title: "AI Solutions for Industries in Nigeria and Africa",
   description:
-    "Applied AI, automation and computer vision systems for logistics, manufacturing, healthcare, laboratories, energy, construction, commerce and field services.",
+    "Applied AI, automation and computer vision solutions for logistics, manufacturing, healthcare, energy, construction, commerce and field services.",
   path: "/industries",
 });
 

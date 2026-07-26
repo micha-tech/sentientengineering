@@ -455,7 +455,7 @@ export const engineeringCapabilities = [
   "Generative AI",
   "Large Language Models",
   "Retrieval-Augmented Generation",
-  "Computer Vision",
+  "Computer vision",
   "Natural Language Processing",
   "Predictive Analytics",
   "Optimization",
@@ -542,14 +542,13 @@ export const workSteps = [
 ] as const;
 
 export const projectTypes = [
-  "AI Business System",
-  "Intelligent Automation",
-  "Computer Vision",
-  "Document Intelligence",
-  "Conversational or Voice AI",
-  "Enterprise Knowledge System",
-  "Predictive AI",
-  "AI Product Development",
-  "Managed AI Operations",
+  "AI agents",
+  "Business process automation",
+  "AI-powered business systems",
+  "Computer vision",
+  "Industrial intelligence",
+  "Data and analytics",
+  "Cloud and infrastructure",
+  "Gyptiq",
   "Other",
 ] as const;
