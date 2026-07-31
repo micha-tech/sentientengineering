@@ -2,23 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
 import TypingValueLine from "./TypingValueLine";
-import HeroVideo from "./HeroVideo";
 
 export default function HeroSection() {
   return (
     <section className="relative isolate min-h-svh overflow-hidden bg-black text-white">
       <Image
-        src="/images/sentient-hero-poster.webp"
+        src="/images/sentient-hero-identity.webp"
         alt=""
         fill
         preload
         sizes="100vw"
-        quality={70}
-        className="object-cover"
+        quality={85}
+        className="object-cover object-[58%_center] sm:object-center"
       />
-      <HeroVideo />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,30,0.12)_0%,rgba(2,7,24,0.2)_38%,rgba(1,5,18,0.82)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_15%,rgba(59,130,246,0.08),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.22)_42%,rgba(0,0,0,0.88)_100%)]" />
 
       <Container className="relative z-10 flex min-h-svh items-end pb-7 pt-28 sm:pb-10">
         <div className="grid w-full items-end gap-8 lg:grid-cols-[1fr_23rem]">
