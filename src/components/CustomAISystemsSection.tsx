@@ -20,8 +20,6 @@ const projectSystems = [
     ],
     value:
       "Faster product discovery, better inquiry routing and shorter quotation cycles for complex purchases.",
-    flow: ["Discover", "Recommend", "Quote", "Follow up"],
-    signal: "Qualified opportunity",
   },
   {
     id: "event-vision",
@@ -41,8 +39,6 @@ const projectSystems = [
     ],
     value:
       "Shorter check-in queues, more reliable attendee verification and clearer event access data.",
-    flow: ["Enrol", "Detect", "Match", "Review"],
-    signal: "Check-in ready",
   },
   {
     id: "sales",
@@ -62,8 +58,6 @@ const projectSystems = [
     ],
     value:
       "Faster response, more consistent quotations and more sales capacity focused on qualified opportunities.",
-    flow: ["Capture", "Evaluate", "Approve", "Progress"],
-    signal: "Governed by approved rules",
   },
   {
     id: "biometrics",
@@ -83,8 +77,6 @@ const projectSystems = [
     ],
     value:
       "A controlled biometric layer that identity providers can integrate into onboarding, risk and compliance operations.",
-    flow: ["Capture", "Validate", "Compare", "Record"],
-    signal: "Reviewable result",
   },
   {
     id: "knowledge",
@@ -104,8 +96,6 @@ const projectSystems = [
     ],
     value:
       "Faster information retrieval, more consistent internal answers and better access to institutional knowledge.",
-    flow: ["Ingest", "Retrieve", "Ground", "Answer"],
-    signal: "Source referenced",
   },
 ] as const;
 
@@ -121,62 +111,6 @@ const systemScope = [
 ] as const;
 
 const deploymentModes = ["Cloud", "On-premise", "Edge", "Hybrid"] as const;
-
-function SystemFlow({
-  steps,
-  signal,
-}: {
-  steps: readonly string[];
-  signal: string;
-}) {
-  return (
-    <div
-      className="border border-white/15 bg-[#0d0d0d] p-5"
-      aria-label={`System flow: ${steps.join(", ")}. Result: ${signal}.`}
-    >
-      <div className="flex items-center justify-between gap-4">
-        <span className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/35">
-          Operational flow
-        </span>
-        <span className="flex items-center gap-2 text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[#83a8ff]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#83a8ff]" />
-          Active
-        </span>
-      </div>
-
-      <div className="relative mt-8 grid grid-cols-4 gap-2">
-        <div
-          className="absolute left-[10%] right-[10%] top-2 h-px bg-white/15"
-          aria-hidden="true"
-        />
-        {steps.map((step, index) => (
-          <div key={step} className="relative min-w-0">
-            <span
-              className={`relative z-10 block h-4 w-4 rounded-full border ${
-                index === steps.length - 1
-                  ? "border-[#83a8ff] bg-[#83a8ff]"
-                  : "border-white/35 bg-[#0d0d0d]"
-              }`}
-              aria-hidden="true"
-            />
-            <span className="mt-3 block break-words text-[0.62rem] font-semibold uppercase leading-4 tracking-[0.06em] text-white/55">
-              {step}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/10 pt-4">
-        <span className="text-[0.62rem] uppercase tracking-[0.12em] text-white/30">
-          System output
-        </span>
-        <span className="text-right text-xs font-semibold text-white/75">
-          {signal}
-        </span>
-      </div>
-    </div>
-  );
-}
 
 export default function CustomAISystemsSection() {
   return (
@@ -308,10 +242,6 @@ export default function CustomAISystemsSection() {
                   }
                 >
                   <div className="mt-8">
-                    <SystemFlow steps={project.flow} signal={project.signal} />
-                  </div>
-
-                  <div className="mt-7">
                     <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-white/30">
                       Relevant capabilities
                     </p>
