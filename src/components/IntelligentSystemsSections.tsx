@@ -4,12 +4,12 @@ import {
   businessOutcomes,
   industries,
   managedAiCapabilities,
-  products,
   workSteps,
 } from "@/lib/site-data";
 import CapabilitiesCarousel from "./CapabilitiesCarousel";
 import ContactSection from "./ContactSection";
 import Container from "./Container";
+import CustomAISystemsSection from "./CustomAISystemsSection";
 
 const featuredServices = [
   {
@@ -60,8 +60,6 @@ const featuredServices = [
 ] as const;
 
 export default function IntelligentSystemsSections() {
-  const gyptiq = products[0];
-
   return (
     <>
       <section id="about" className="scroll-mt-20 bg-[#f6f6f1]">
@@ -204,60 +202,7 @@ export default function IntelligentSystemsSections() {
         </Container>
       </section>
 
-      <section id="products" className="scroll-mt-20 bg-black text-white">
-        <Container className="border-x border-white/15 py-20 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
-                Product
-              </p>
-              <p className="mt-4 text-lg font-semibold">{gyptiq.name}</p>
-            </div>
-            <h2 className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.04em] sm:text-5xl">
-              An intelligent business companion connecting conversations,
-              sales, and operations.
-            </h2>
-          </div>
-
-          <article className="mt-14 grid border border-white/15 lg:grid-cols-[1.25fr_0.75fr]">
-            <figure className="relative min-h-[23rem] border-b border-white/15 bg-[#0b0f0c] sm:min-h-[34rem] lg:border-b-0 lg:border-r">
-              <Image
-                src="/images/gyptiq-announcement.png"
-                alt="Gyptiq intelligent business companion"
-                fill
-                sizes="(min-width: 1024px) 64vw, 100vw"
-                className="object-cover"
-              />
-            </figure>
-            <div className="flex flex-col justify-between p-6 sm:p-9">
-              <p className="text-sm leading-7 text-white/60">
-                {gyptiq.description}
-              </p>
-              <div className="mt-12">
-                <div className="border-y border-white/15">
-                  {gyptiq.outcomes.map((outcome, index) => (
-                    <div
-                      key={outcome}
-                      className="flex items-center gap-4 border-b border-white/15 py-4 last:border-b-0"
-                    >
-                      <span className="text-[0.65rem] font-bold text-white/35">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-sm font-semibold">{outcome}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href="/products/gyptiq"
-                  className="mt-7 inline-flex min-h-12 w-full items-center justify-between bg-white px-5 text-sm font-bold text-black"
-                >
-                  Explore Gyptiq <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-          </article>
-        </Container>
-      </section>
+      <CustomAISystemsSection />
 
       <section className="bg-[#f6f6f1] text-black">
         <Container className="border-x border-black/10 py-20 sm:py-28">
