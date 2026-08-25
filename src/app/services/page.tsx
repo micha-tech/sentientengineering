@@ -60,9 +60,9 @@ export default function ServicesPage() {
       <main>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <section className="bg-black pt-[4.5rem] text-white">
-          <Container className="border-x border-white/15 px-0">
-            <div className="grid min-h-[44rem] lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="flex flex-col justify-end border-b border-white/15 p-6 py-14 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r lg:p-12">
+          <Container>
+            <div className="grid min-h-[44rem] gap-16 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:py-24">
+              <div className="flex flex-col justify-end">
                 <p className="eyebrow text-[#83a8ff]">Applied AI Engineering Services</p>
                 <h1 className="mt-8 max-w-5xl text-balance text-[3rem] font-medium leading-[0.97] tracking-[-0.06em] sm:text-7xl lg:text-[5.1rem]">
                   Intelligent systems for digital and physical operations.
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                   From customer enquiries and commercial workflows to machine vibration, visual inspection, scientific documents and acoustic signals, we engineer AI systems around the work and decisions that matter.
                 </p>
               </div>
-              <div className="flex items-center bg-[#080808] p-5 sm:p-10">
+              <div className="flex items-center">
                 <TechnicalSystemDiagram />
               </div>
             </div>
@@ -79,36 +79,36 @@ export default function ServicesPage() {
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 px-0">
-            <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
-              <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-24 lg:sticky lg:top-[4.5rem] lg:h-[calc(100svh-4.5rem)] lg:border-b-0 lg:border-r">
+          <Container className="py-24 sm:py-36">
+            <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
+              <div>
                 <p className="eyebrow text-[#1f5eff]">Domain 01</p>
                 <h2 className="mt-7 text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Business AI Systems</h2>
                 <p className="mt-6 max-w-xl text-base leading-8 text-black/60">
                   Intelligent systems that improve customer response, revenue execution, internal coordination and management visibility—with explicit rules, audit trails and human approval.
                 </p>
               </div>
-              <div>
+              <div className="border-t border-black/15">
                 {businessCapabilities.map(([title, copy], index) => (
-                  <article key={title} className="grid gap-5 border-b border-black/10 p-6 py-9 sm:grid-cols-[3rem_0.75fr_1.25fr] sm:p-10">
+                  <article key={title} className="grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[3rem_0.75fr_1.25fr] sm:py-10">
                     <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
                     <h3 className="text-xl font-semibold leading-7 tracking-[-0.025em]">{title}</h3>
                     <p className="text-sm leading-7 text-black/55">{copy}</p>
                   </article>
                 ))}
-                <div className="grid sm:grid-cols-3">
+                <div className="mt-12 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
                   {businessServicePages.map((service) => (
-                    <Link key={service.slug} href={`/services/${service.slug}`} className="flex min-h-48 flex-col justify-between border-b border-r border-black/10 p-6 transition hover:bg-black hover:text-white">
-                      <span className="text-xs font-bold uppercase tracking-[0.12em] opacity-40">Service</span>
-                      <span className="text-lg font-semibold leading-6">{service.shortTitle}<span className="mt-3 block text-xs">Explore →</span></span>
+                    <Link key={service.slug} href={`/services/${service.slug}`} className="group border-t border-black/20 pt-5">
+                      <span className="text-lg font-semibold leading-6 transition group-hover:text-[#1f5eff]">{service.shortTitle}</span>
+                      <span className="mt-3 block text-xs font-bold">Explore →</span>
                     </Link>
                   ))}
                 </div>
-                <div className="border-b border-black/10 bg-white p-6 sm:p-10">
+                <div className="mt-16 border-t border-black/15 pt-9">
                   <p className="eyebrow text-[#1f5eff]">Working product expression</p>
                   <div className="mt-5 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                     <div><h3 className="text-3xl font-semibold tracking-[-0.04em]">Sentient Co-Lab</h3><p className="mt-3 max-w-2xl text-sm leading-7 text-black/55">Real-time collaboration, speaker-aware transcription, shared notes and searchable meeting knowledge.</p></div>
-                    <Link href="/products/sentient-co-lab" className="inline-flex min-h-12 shrink-0 items-center border border-black px-5 text-sm font-bold">Explore Co-Lab</Link>
+                    <Link href="/products/sentient-co-lab" className="shrink-0 border-b border-black pb-1 text-sm font-bold">Explore Co-Lab →</Link>
                   </div>
                 </div>
               </div>
@@ -117,9 +117,9 @@ export default function ServicesPage() {
         </section>
 
         <section className="bg-black text-white">
-          <Container className="border-x border-white/15 px-0">
-            <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
-              <div className="border-b border-white/15 p-6 py-16 sm:p-10 sm:py-24 lg:sticky lg:top-[4.5rem] lg:h-[calc(100svh-4.5rem)] lg:border-b-0 lg:border-r">
+          <Container className="py-24 sm:py-36">
+            <div className="grid gap-16 lg:grid-cols-[0.72fr_1.28fr]">
+              <div>
                 <p className="eyebrow text-[#83a8ff]">Domain 02</p>
                 <h2 className="mt-7 text-5xl font-medium leading-none tracking-[-0.05em] sm:text-6xl">Scientific and Engineering AI Systems</h2>
                 <p className="mt-6 max-w-xl text-base leading-8 text-white/55">
@@ -127,14 +127,14 @@ export default function ServicesPage() {
                 </p>
                 <TechnicalSystemDiagram variant="signal" className="mt-10" />
               </div>
-              <div>
+              <div className="border-t border-white/20">
                 {engineeringServicePages.map((service, index) => (
-                  <Link key={service.slug} href={`/services/${service.slug}`} className="group grid gap-6 border-b border-white/15 p-6 py-9 transition hover:bg-white hover:text-black sm:grid-cols-[3rem_0.8fr_1.2fr] sm:p-10">
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="group grid gap-6 border-b border-white/20 py-8 sm:grid-cols-[3rem_0.8fr_1.2fr] sm:py-10">
                     <span className="text-xs font-bold opacity-30">{String(index + 1).padStart(2, "0")}</span>
                     <h3 className="text-xl font-semibold leading-7 tracking-[-0.025em]">{service.shortTitle}</h3>
                     <span>
                       <span className="block text-sm leading-7 opacity-55">{service.description}</span>
-                      <span className="mt-4 inline-flex border-b border-current pb-1 text-xs font-bold">Explore service</span>
+                      <span className="mt-4 inline-flex border-b border-current pb-1 text-xs font-bold transition group-hover:text-[#83a8ff]">Explore service →</span>
                     </span>
                   </Link>
                 ))}

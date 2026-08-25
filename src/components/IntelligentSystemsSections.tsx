@@ -97,32 +97,36 @@ export default function IntelligentSystemsSections() {
   return (
     <>
       <section className="bg-[#f6f6f1] text-black">
-        <Container className="border-x border-black/10 px-0">
-          <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-24">
+        <Container className="py-24 sm:py-36">
+          <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr]">
             <p className="eyebrow text-[#1f5eff]">Two engineering domains</p>
-            <h2 className="mt-7 max-w-5xl text-balance text-4xl font-medium leading-[1.02] tracking-[-0.05em] sm:text-6xl">
+            <h2 className="max-w-5xl text-balance text-4xl font-medium leading-[1.02] tracking-[-0.05em] sm:text-6xl">
               Intelligence for the systems that run organisations—and the physical world around them.
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2">
-            {domains.map((domain, index) => (
-              <article key={domain.title} className={`p-6 py-14 sm:p-10 sm:py-20 ${index === 0 ? "border-b border-black/10 lg:border-b-0 lg:border-r" : ""}`}>
-                <div className="flex items-center justify-between">
-                  <p className="eyebrow text-black/40">Engineering domain</p>
+          <div className="mt-24 sm:mt-36">
+            {domains.map((domain) => (
+              <article key={domain.title} className="grid gap-10 border-t border-black/15 py-14 sm:py-20 lg:grid-cols-[0.42fr_1.58fr]">
+                <div className="flex items-start gap-4">
                   <span className="text-xs font-bold text-black/25">{domain.number}</span>
+                  <p className="eyebrow text-black/40">Engineering domain</p>
                 </div>
-                <h3 className="mt-10 max-w-xl text-4xl font-medium tracking-[-0.045em] sm:text-5xl">{domain.title}</h3>
-                <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">{domain.copy}</p>
-                <ul className="mt-9 grid border-t border-black/15 sm:grid-cols-2">
-                  {domain.capabilities.map((item) => (
-                    <li key={item} className="border-b border-black/10 py-4 pr-4 text-sm font-semibold leading-6 sm:odd:border-r sm:even:pl-4">{item}</li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {domain.links.map(([label, href]) => (
-                    <Link key={href} href={href} className="inline-flex min-h-11 items-center border border-black px-4 text-xs font-bold transition hover:bg-black hover:text-white">{label}</Link>
-                  ))}
+                <div>
+                  <h3 className="max-w-4xl text-4xl font-medium leading-[1.04] tracking-[-0.045em] sm:text-6xl">{domain.title}</h3>
+                  <div className="mt-9 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+                    <p className="max-w-xl text-base leading-8 text-black/60">{domain.copy}</p>
+                    <ul className="grid gap-x-10 gap-y-4 sm:grid-cols-2">
+                      {domain.capabilities.map((item) => (
+                        <li key={item} className="flex gap-3 text-sm font-semibold leading-6"><span className="text-[#1f5eff]">↗</span>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4">
+                    {domain.links.map(([label, href]) => (
+                      <Link key={href} href={href} className="border-b border-black/40 pb-1 text-xs font-bold transition hover:border-[#1f5eff] hover:text-[#1f5eff]">{label} →</Link>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
@@ -131,43 +135,40 @@ export default function IntelligentSystemsSections() {
       </section>
 
       <section className="bg-black text-white">
-        <Container className="border-x border-white/15 px-0">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="border-b border-white/15 p-6 py-16 sm:p-10 sm:py-24 lg:border-b-0 lg:border-r">
+        <Container className="py-24 sm:py-36">
+          <div className="grid gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+            <div>
               <p className="eyebrow text-[#83a8ff]">Deep engineering</p>
               <h2 className="mt-7 max-w-3xl text-5xl font-medium leading-[0.98] tracking-[-0.055em] sm:text-7xl">Beyond the AI model.</h2>
               <p className="mt-7 max-w-2xl text-base leading-8 text-white/55">
                 A model is not an operating system. We engineer every layer required to acquire evidence, interpret it responsibly and connect the result to real people, software and physical operations.
               </p>
-              <TechnicalSystemDiagram className="mt-10" />
             </div>
-            <ol className="grid sm:grid-cols-2">
-              {engineeringLayers.map((layer, index) => (
-                <li key={layer} className="flex min-h-32 flex-col justify-between border-b border-white/15 p-5 sm:border-r sm:p-6">
-                  <span className="text-xs font-bold text-white/25">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="max-w-[15rem] text-sm font-semibold leading-6 text-white/75">{layer}</span>
-                </li>
-              ))}
-            </ol>
+            <TechnicalSystemDiagram />
           </div>
+          <ol className="mt-24 grid gap-x-10 gap-y-8 border-t border-white/20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            {engineeringLayers.map((layer, index) => (
+              <li key={layer} className="grid grid-cols-[2.5rem_1fr] gap-3 text-sm font-semibold leading-6 text-white/70">
+                <span className="text-xs text-white/25">{String(index + 1).padStart(2, "0")}</span>{layer}
+              </li>
+            ))}
+          </ol>
         </Container>
       </section>
 
       <section className="bg-white text-black">
-        <Container className="border-x border-black/10 py-20 sm:py-28">
-          <div className="grid gap-8 border-b border-black/15 pb-10 lg:grid-cols-[0.65fr_1.35fr]">
+        <Container className="py-24 sm:py-36">
+          <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr]">
             <p className="eyebrow text-[#1f5eff]">Core engineering capabilities</p>
             <h2 className="max-w-5xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.05em] sm:text-6xl">One engineering partner across software, signals and physical systems.</h2>
           </div>
-          <div className="grid md:grid-cols-2">
+          <div className="mt-20 border-t border-black/15">
             {coreCapabilities.map(([title, copy, href], index) => (
-              <Link key={title} href={href} className={`group grid min-h-52 grid-cols-[2.5rem_1fr] gap-4 border-b border-black/10 py-7 transition hover:bg-[#f6f6f1] sm:p-7 ${index % 2 === 0 ? "md:border-r" : ""}`}>
+              <Link key={title} href={href} className="group grid gap-5 border-b border-black/15 py-7 sm:grid-cols-[3rem_0.9fr_1.1fr_auto] sm:items-center sm:py-9">
                 <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
-                <span>
-                  <span className="block text-2xl font-semibold leading-tight tracking-[-0.03em]">{title}</span>
-                  <span className="mt-4 block max-w-xl text-sm leading-7 text-black/55">{copy}</span>
-                  <span className="mt-5 inline-flex border-b border-black pb-1 text-xs font-bold">Explore capability</span>
-                </span>
+                <span className="text-xl font-semibold tracking-[-0.025em] transition group-hover:text-[#1f5eff] sm:text-2xl">{title}</span>
+                <span className="max-w-xl text-sm leading-7 text-black/50">{copy}</span>
+                <span className="text-xl transition group-hover:translate-x-1">→</span>
               </Link>
             ))}
           </div>
@@ -175,55 +176,35 @@ export default function IntelligentSystemsSections() {
       </section>
 
       <section className="bg-[#0a0a0a] text-white">
-        <Container className="border-x border-white/15 px-0">
-          <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="border-b border-white/15 p-6 py-16 sm:p-10 sm:py-24 lg:border-b-0 lg:border-r">
-              <div className="flex items-center justify-between">
-                <p className="eyebrow text-[#83a8ff]">Featured product · Active development</p>
-                <span className="text-xs font-bold text-white/25">Co-Lab / 01</span>
-              </div>
+        <Container className="py-24 sm:py-36">
+          <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="flex items-center gap-4"><p className="eyebrow text-[#83a8ff]">Featured product</p><span className="text-xs font-bold text-white/25">Active development</span></div>
               <h2 className="mt-8 text-5xl font-medium tracking-[-0.055em] sm:text-7xl">Sentient Co-Lab</h2>
-              <p className="mt-5 text-xl font-semibold leading-8 text-white/85">Intelligent collaboration for meetings, lectures and distributed teams.</p>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/55">
-                Sentient Co-Lab is a virtual voice, video and interactive collaboration platform that combines real-time communication, collaborative work and speaker-aware AI knowledge capture.
-              </p>
-              <Link href="/products/sentient-co-lab" className="mt-8 inline-flex min-h-12 items-center bg-white px-5 text-sm font-bold text-black transition hover:bg-[#83a8ff]">Explore Sentient Co-Lab</Link>
-              <p className="mt-6 text-xs leading-6 text-white/35">No product screenshots were found in the repository, so this redesign uses an explanatory system diagram rather than an invented interface.</p>
+              <p className="mt-6 max-w-2xl text-xl font-semibold leading-8 text-white/85">Intelligent collaboration for meetings, lectures and distributed teams.</p>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/55">A virtual voice, video and interactive collaboration platform combining real-time communication, collaborative work and speaker-aware AI knowledge capture.</p>
+              <Link href="/products/sentient-co-lab" className="mt-9 inline-flex border-b border-white/50 pb-2 text-sm font-bold transition hover:border-[#83a8ff] hover:text-[#83a8ff]">Explore Sentient Co-Lab →</Link>
             </div>
-            <div className="p-6 py-12 sm:p-10 sm:py-16">
-              <TechnicalSystemDiagram variant="collaboration" />
-              <ul className="mt-8 grid border-l border-t border-white/15 sm:grid-cols-2">
-                {colabFeatures.map((feature) => (
-                  <li key={feature} className="border-b border-r border-white/15 p-4 text-xs font-semibold leading-5 text-white/65">{feature}</li>
-                ))}
-              </ul>
-            </div>
+            <TechnicalSystemDiagram variant="collaboration" />
           </div>
+          <ul className="mt-20 grid gap-x-12 gap-y-5 border-t border-white/20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            {colabFeatures.map((feature) => <li key={feature} className="flex gap-3 text-sm font-semibold leading-6 text-white/65"><span className="text-[#83a8ff]">•</span>{feature}</li>)}
+          </ul>
         </Container>
       </section>
 
       <section className="bg-[#f6f6f1] text-black">
-        <Container className="border-x border-black/10 py-20 sm:py-28">
-          <div className="flex flex-col gap-8 border-b border-black/15 pb-10 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="eyebrow text-[#1f5eff]">Selected work</p>
-              <h2 className="mt-6 text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Systems, with their status stated plainly.</h2>
-            </div>
-            <Link href="/work" className="inline-flex min-h-12 items-center border border-black px-5 text-sm font-bold">View all selected work</Link>
+        <Container className="py-24 sm:py-36">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div><p className="eyebrow text-[#1f5eff]">Selected work</p><h2 className="mt-6 max-w-4xl text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Systems, with their status stated plainly.</h2></div>
+            <Link href="/work" className="w-fit border-b border-black pb-1 text-sm font-bold">View all selected work →</Link>
           </div>
-          <div className="grid lg:grid-cols-2">
+          <div className="mt-20 border-t border-black/15">
             {workEntries.map((entry, index) => (
-              <article key={entry.id} className={`border-b border-black/10 py-8 ${index % 2 === 0 ? "lg:border-r lg:pr-8" : "lg:pl-8"} ${index === workEntries.length - 1 ? "lg:col-span-2 lg:border-r-0 lg:pr-0" : ""}`}>
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <p className="eyebrow text-black/40">{entry.category}</p>
-                  <span className="border border-black/15 px-2.5 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.08em]">{entry.status}</span>
-                </div>
-                <h3 className="mt-7 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em]">{entry.title}</h3>
-                <div className="mt-6 grid gap-6 text-sm leading-7 text-black/60 sm:grid-cols-2">
-                  <div><p className="text-xs font-bold uppercase tracking-[0.1em] text-black/35">Operational problem</p><p className="mt-2">{entry.problem}</p></div>
-                  <div><p className="text-xs font-bold uppercase tracking-[0.1em] text-black/35">System engineered</p><p className="mt-2">{entry.system}</p></div>
-                </div>
-                <p className="mt-6 border-l-2 border-[#1f5eff] pl-4 text-sm font-semibold leading-6">{entry.value}</p>
+              <article key={entry.id} className="grid gap-7 border-b border-black/15 py-10 lg:grid-cols-[0.3fr_0.75fr_0.95fr] lg:py-14">
+                <div><p className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</p><p className="mt-3 eyebrow text-[#1f5eff]">{entry.category}</p><p className="mt-3 text-xs font-bold uppercase tracking-[0.08em] text-black/45">{entry.status}</p></div>
+                <h3 className="max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl">{entry.title}</h3>
+                <div className="grid gap-6 sm:grid-cols-2"><p className="text-sm leading-7 text-black/55">{entry.system}</p><p className="border-l-2 border-[#1f5eff] pl-4 text-sm font-semibold leading-7">{entry.value}</p></div>
               </article>
             ))}
           </div>
@@ -231,22 +212,13 @@ export default function IntelligentSystemsSections() {
       </section>
 
       <section className="bg-white text-black">
-        <Container className="border-x border-black/10 py-20 sm:py-28">
-          <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
-            <p className="eyebrow text-[#1f5eff]">Industries</p>
-            <h2 className="text-balance text-4xl font-medium leading-[1.04] tracking-[-0.05em] sm:text-6xl">Engineering shaped around operating conditions—not industry labels.</h2>
-          </div>
-          <div className="mt-12 grid md:grid-cols-2">
+        <Container className="py-24 sm:py-36">
+          <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr] lg:items-end"><p className="eyebrow text-[#1f5eff]">Industries</p><h2 className="text-balance text-4xl font-medium leading-[1.04] tracking-[-0.05em] sm:text-6xl">Engineering shaped around operating conditions—not industry labels.</h2></div>
+          <div className="mt-20 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((industry, index) => (
-              <Link key={industry.slug} href={`/industries/${industry.slug}`} className={`group grid grid-cols-[5.5rem_1fr] gap-5 border-b border-black/10 py-6 sm:grid-cols-[8rem_1fr] ${index % 2 === 0 ? "md:border-r md:pr-7" : "md:pl-7"}`}>
-                <span className="relative aspect-square overflow-hidden bg-neutral-200">
-                  <Image src={industry.image} alt={industry.imageAlt} fill sizes="128px" className="object-cover transition duration-500 group-hover:scale-105" />
-                </span>
-                <span>
-                  <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="mt-3 block text-xl font-semibold tracking-[-0.025em]">{industry.name}</span>
-                  <span className="mt-2 line-clamp-2 block text-xs leading-6 text-black/50">{industry.examples}</span>
-                </span>
+              <Link key={industry.slug} href={`/industries/${industry.slug}`} className="group">
+                <span className="relative block aspect-[4/5] overflow-hidden bg-neutral-200"><Image src={industry.image} alt={industry.imageAlt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover transition duration-700 group-hover:scale-105" /></span>
+                <span className="mt-5 flex gap-4"><span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span><span><span className="block text-lg font-semibold tracking-[-0.025em]">{industry.name}</span><span className="mt-2 block text-xs leading-6 text-black/50">{industry.examples}</span></span></span>
               </Link>
             ))}
           </div>
@@ -254,21 +226,10 @@ export default function IntelligentSystemsSections() {
       </section>
 
       <section className="bg-[#ededE7] text-black">
-        <Container className="border-x border-black/10 px-0">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-24 lg:border-b-0 lg:border-r">
-              <p className="eyebrow text-[#1f5eff]">Deployment architecture</p>
-              <h2 className="mt-7 text-5xl font-medium leading-none tracking-[-0.05em] sm:text-6xl">Built for where the work happens.</h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-black/60">Architecture is selected around privacy, latency, connectivity, security, regulation, performance and operating conditions.</p>
-            </div>
-            <div className="grid sm:grid-cols-2">
-              {deploymentModes.map(([mode, copy], index) => (
-                <article key={mode} className="flex min-h-56 flex-col justify-between border-b border-black/10 p-6 sm:border-r">
-                  <span className="text-xs font-bold text-black/25">0{index + 1}</span>
-                  <div><h3 className="text-3xl font-semibold tracking-[-0.04em]">{mode}</h3><p className="mt-3 text-sm leading-7 text-black/55">{copy}</p></div>
-                </article>
-              ))}
-            </div>
+        <Container className="py-24 sm:py-36">
+          <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr]"><p className="eyebrow text-[#1f5eff]">Deployment architecture</p><div><h2 className="max-w-4xl text-5xl font-medium leading-none tracking-[-0.05em] sm:text-7xl">Built for where the work happens.</h2><p className="mt-7 max-w-2xl text-base leading-8 text-black/60">Architecture is selected around privacy, latency, connectivity, security, regulation, performance and operating conditions.</p></div></div>
+          <div className="mt-20 grid gap-10 border-t border-black/20 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+            {deploymentModes.map(([mode, copy], index) => <article key={mode}><span className="text-xs font-bold text-black/25">0{index + 1}</span><h3 className="mt-8 text-3xl font-semibold tracking-[-0.04em]">{mode}</h3><p className="mt-4 text-sm leading-7 text-black/55">{copy}</p></article>)}
           </div>
         </Container>
       </section>

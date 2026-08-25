@@ -75,41 +75,43 @@ export default function ProductsPage() {
       <main>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <section className="bg-black pt-[4.5rem] text-white">
-          <Container className="border-x border-white/15 px-0">
-            <div className="grid min-h-[38rem] lg:grid-cols-[1.08fr_0.92fr]">
-              <div className="flex flex-col justify-end border-b border-white/15 p-6 py-14 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r lg:p-12">
+          <Container>
+            <div className="grid min-h-[38rem] gap-16 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:py-24">
+              <div className="flex flex-col justify-end">
                 <p className="eyebrow text-[#83a8ff]">Products and engineering foundations</p>
                 <h1 className="mt-8 max-w-5xl text-balance text-[3rem] font-medium leading-[0.98] tracking-[-0.058em] sm:text-7xl lg:text-[5.2rem]">Built products. Honest maturity. Reusable engineering.</h1>
                 <p className="mt-7 max-w-3xl text-base leading-8 text-white/60 sm:text-lg">Owned products are separated from configurable solution accelerators so product maturity and delivery scope remain clear.</p>
               </div>
-              <div className="flex items-center p-5 sm:p-10"><TechnicalSystemDiagram variant="collaboration" /></div>
+              <div className="flex items-center"><TechnicalSystemDiagram variant="collaboration" /></div>
             </div>
           </Container>
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 px-0">
-            <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-20">
+          <Container className="py-24 sm:py-36">
+            <div>
               <p className="eyebrow text-[#1f5eff]">Owned products</p>
               <h2 className="mt-7 text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Software we are building as products.</h2>
             </div>
-            <div className="grid lg:grid-cols-2">
-              <article className="flex min-h-[38rem] flex-col justify-between border-b border-black/10 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+            <div className="mt-20 border-t border-black/15">
+              <article className="grid gap-12 border-b border-black/15 py-14 lg:grid-cols-[0.65fr_1.35fr] lg:py-20">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-4"><p className="eyebrow text-[#1f5eff]">Sentient Co-Lab</p><span className="border border-black/15 px-3 py-2 text-[0.62rem] font-bold uppercase tracking-[0.1em]">Active development</span></div>
-                  <h3 className="mt-10 text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl">Every conversation becomes shared intelligence.</h3>
-                  <p className="mt-6 max-w-xl text-base leading-8 text-black/60">Video, voice, collaborative work and speaker-aware AI transcription for meetings, lectures and distributed teams.</p>
                 </div>
-                <Link href="/products/sentient-co-lab" className="mt-10 inline-flex min-h-12 w-fit items-center bg-black px-5 text-sm font-bold text-white">Explore Sentient Co-Lab</Link>
+                <div>
+                  <h3 className="text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl">Every conversation becomes shared intelligence.</h3>
+                  <p className="mt-6 max-w-xl text-base leading-8 text-black/60">Video, voice, collaborative work and speaker-aware AI transcription for meetings, lectures and distributed teams.</p>
+                  <Link href="/products/sentient-co-lab" className="mt-10 inline-flex border-b border-black pb-1 text-sm font-bold">Explore Sentient Co-Lab →</Link>
+                </div>
               </article>
-              <article className="grid min-h-[38rem] grid-rows-[1fr_auto]">
-                <figure className="relative min-h-[22rem] bg-neutral-200">
+              <article className="grid gap-12 py-14 lg:grid-cols-[0.65fr_1.35fr] lg:py-20">
+                <figure className="relative min-h-[24rem] overflow-hidden bg-neutral-200">
                   <Image src="/images/gyptiq-announcement.png" alt="Gyptiq product announcement artwork" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                 </figure>
-                <div className="p-6 sm:p-10">
+                <div className="lg:py-8">
                   <div className="flex flex-wrap items-center justify-between gap-4"><p className="eyebrow text-[#1f5eff]">Gyptiq</p><span className="border border-black/15 px-3 py-2 text-[0.62rem] font-bold uppercase tracking-[0.1em]">In development</span></div>
                   <h3 className="mt-6 text-3xl font-semibold tracking-[-0.04em]">AI-native customer and business operations.</h3>
-                  <Link href="/products/gyptiq" className="mt-6 inline-flex border-b border-black pb-1 text-sm font-bold">Explore Gyptiq</Link>
+                  <Link href="/products/gyptiq" className="mt-6 inline-flex border-b border-black pb-1 text-sm font-bold">Explore Gyptiq →</Link>
                 </div>
               </article>
             </div>
@@ -117,16 +119,16 @@ export default function ProductsPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
-            <div className="grid gap-8 border-b border-black/15 pb-10 lg:grid-cols-[0.65fr_1.35fr]">
+          <Container className="py-24 sm:py-36">
+            <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr]">
               <p className="eyebrow text-[#1f5eff]">Solution accelerators</p>
               <div><h2 className="text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Reusable foundations, configured for the operation.</h2><p className="mt-6 max-w-3xl text-base leading-8 text-black/55">These are engineering starting points—not claims of standalone shipped products. Each requires scoped implementation, integration and validation.</p></div>
             </div>
-            <div className="grid md:grid-cols-2">
+            <div className="mt-20 border-t border-black/15">
               {accelerators.map(([title, copy], index) => (
-                <article key={title} className={`grid min-h-52 grid-cols-[2.5rem_1fr] gap-4 border-b border-black/10 py-7 sm:p-7 ${index % 2 === 0 ? "md:border-r" : ""}`}>
+                <article key={title} className="grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[3rem_0.9fr_1.1fr_auto] sm:items-center sm:py-10">
                   <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
-                  <div><h3 className="text-2xl font-semibold tracking-[-0.03em]">{title}</h3><p className="mt-4 max-w-xl text-sm leading-7 text-black/55">{copy}</p><Link href="/contact" className="mt-5 inline-flex border-b border-black pb-1 text-xs font-bold">Discuss this foundation</Link></div>
+                  <h3 className="text-2xl font-semibold tracking-[-0.03em]">{title}</h3><p className="max-w-xl text-sm leading-7 text-black/55">{copy}</p><Link href="/contact" className="inline-flex w-fit border-b border-black pb-1 text-xs font-bold">Discuss →</Link>
                 </article>
               ))}
             </div>
