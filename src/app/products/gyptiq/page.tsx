@@ -85,7 +85,7 @@ export default function GyptiqPage() {
                 </nav>
                 <div className="mt-24">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
-                    Sentient Engineering product
+                    Sentient Engineering product · In development
                   </p>
                   <h1 className="mt-7 text-[4rem] font-medium leading-none tracking-[-0.055em] sm:text-8xl">
                     Gyptiq
@@ -93,6 +93,10 @@ export default function GyptiqPage() {
                   <p className="mt-7 max-w-xl text-lg leading-8 text-white/60">
                     An intelligent workspace for customer conversations, sales
                     follow-up and the business processes around them.
+                  </p>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/40">
+                    Gyptiq is currently in development. This page does not
+                    claim production adoption or large-scale deployment.
                   </p>
                   <a
                     href="#contact"

@@ -31,36 +31,39 @@ const relatedServicesByIndustry: Record<
   manufacturing: [
     { href: "/services/computer-vision", label: "Computer vision" },
     {
-      href: "/services/industrial-operations",
-      label: "Industrial intelligence",
+      href: "/services/predictive-maintenance",
+      label: "Predictive maintenance",
     },
+    { href: "/services/vibration-signal-analysis", label: "Vibration analysis" },
   ],
   "healthcare-medical-services": [
     { href: "/services/biometrics-identity", label: "Biometric systems" },
     {
-      href: "/services/business-systems-automation",
-      label: "Process automation",
+      href: "/services/scientific-document-intelligence",
+      label: "Scientific documents",
     },
   ],
   "scientific-laboratory-equipment": [
     { href: "/services/digital-commerce", label: "Digital commerce" },
     {
-      href: "/services/ai-agents-integrations",
-      label: "AI agents and integrations",
+      href: "/services/scientific-document-intelligence",
+      label: "Scientific document intelligence",
     },
+    { href: "/services/scientific-engineering-ai", label: "Scientific AI" },
   ],
   "energy-utilities": [
     {
-      href: "/services/industrial-operations",
-      label: "Industrial intelligence",
+      href: "/services/predictive-maintenance",
+      label: "Predictive maintenance",
     },
     { href: "/services/computer-vision", label: "Computer vision" },
+    { href: "/services/scientific-engineering-ai", label: "Engineering AI" },
   ],
   "construction-infrastructure": [
     { href: "/services/computer-vision", label: "Computer vision" },
     {
-      href: "/services/industrial-operations",
-      label: "Industrial intelligence",
+      href: "/services/scientific-engineering-ai",
+      label: "Engineering intelligence",
     },
   ],
   "retail-b2b-commerce": [
@@ -75,7 +78,8 @@ const relatedServicesByIndustry: Record<
       href: "/services/business-systems-automation",
       label: "Process automation",
     },
-    { href: "/services/biometrics-identity", label: "Biometric systems" },
+    { href: "/services/speech-audio-intelligence", label: "Speech intelligence" },
+    { href: "/services/scientific-engineering-ai", label: "Field-engineer copilots" },
   ],
 };
 

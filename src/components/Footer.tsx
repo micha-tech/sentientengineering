@@ -7,6 +7,7 @@ const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Products", href: "/products" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy" },
@@ -37,9 +38,9 @@ export default function Footer() {
             </p>
             <p className="mt-3 font-semibold">{COMPANY.location}</p>
             <p className="mt-6 max-w-xl text-sm leading-7 text-black/55">
-              Sentient Engineering designs and deploys intelligent systems that
-              improve sales, operations, automation, visibility and
-              decision-making.
+              Applied AI Engineering for Business, Science and Industry. We
+              build complete intelligent systems for digital and physical
+              operations.
             </p>
 
             <div className="mt-8 grid gap-3 text-sm">
@@ -87,7 +88,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-black/10 px-6 py-5 text-xs text-black/45 sm:flex-row sm:items-center sm:justify-between sm:px-10">
           <p>Copyright {new Date().getFullYear()} Sentient Engineering.</p>
-          <p>Applied AI · Automation · Computer vision · Decision intelligence</p>
+          <p>Applied AI · Business systems · Scientific and engineering intelligence</p>
         </div>
       </Container>
     </footer>

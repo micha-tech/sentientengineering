@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { COMPANY } from "@/lib/constants";
 import {
   industryLandingPages,
-  serviceLandingPages,
 } from "@/lib/seo-landing-data";
+import { servicePages } from "@/lib/service-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -38,6 +38,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${COMPANY.url}/products/sentient-co-lab`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${COMPANY.url}/work`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${COMPANY.url}/contact`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -63,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const servicePages: MetadataRoute.Sitemap = serviceLandingPages.map(
+  const serviceRoutes: MetadataRoute.Sitemap = servicePages.map(
     (service) => ({
       url: `${COMPANY.url}/services/${service.slug}`,
       lastModified: new Date(),
@@ -81,5 +93,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  return [...staticPages, ...servicePages, ...industryPages];
+  return [...staticPages, ...serviceRoutes, ...industryPages];
 }

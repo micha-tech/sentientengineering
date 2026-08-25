@@ -1,9 +1,9 @@
 export const COMPANY = {
   name: "Sentient Engineering",
   businessType: "Applied AI Engineering Company",
-  tagline: "Applied AI. Engineered for reality.",
+  tagline: "Applied AI Engineering for Business, Science and Industry.",
   description:
-    "Sentient Engineering is an Applied AI engineering company that builds intelligent business systems, AI agents, process automation, computer vision and industrial AI solutions.",
+    "Sentient Engineering is an Applied AI engineering company that builds complete intelligent systems for business operations, scientific applications and engineering environments.",
   email: "hello@sentientengineering.com.ng",
   emailHref: "mailto:hello@sentientengineering.com.ng",
   phone: "+234 707 351 2305",
@@ -19,7 +19,7 @@ export const COMPANY = {
 export const META = {
   title: "Sentient Engineering | Applied AI Engineering Company in Nigeria",
   description:
-    "Sentient Engineering is an Applied AI engineering company in Lagos, Nigeria. We build AI agents, intelligent business systems, process automation, computer vision and industrial AI solutions.",
+    "Applied AI engineering for business, science and industry. Sentient Engineering builds business systems, computer vision, speech, signal intelligence and industrial AI in Lagos, Nigeria.",
   siteName: "Sentient Engineering",
   url: COMPANY.url,
   locale: "en_NG",
@@ -27,10 +27,10 @@ export const META = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
   { label: "Industries", href: "/industries" },
+  { label: "Products", href: "/products" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;

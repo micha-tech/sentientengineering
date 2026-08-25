@@ -10,15 +10,15 @@ export default function ContactSection() {
         <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-              Start a project
+              Start with the problem
             </p>
             <h2 className="mt-7 text-balance text-4xl font-medium leading-[1.05] tracking-[-0.04em] sm:text-6xl">
-              Let&apos;s engineer a better way for your business to operate.
+              Have a business, scientific or engineering problem worth solving?
             </h2>
             <p className="mt-6 max-w-xl text-base leading-8 text-white/55">
-              Tell us about the challenge, workflow, customer experience or
-              business process you want to improve. Our engineering team will
-              assess it and recommend a practical AI or software system.
+              Tell us where your organisation is losing time, visibility,
+              reliability, quality or customer opportunity. We will determine
+              the complete system required to improve it.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">

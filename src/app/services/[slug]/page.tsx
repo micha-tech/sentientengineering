@@ -6,70 +6,21 @@ import ContactSection from "@/components/ContactSection";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import TechnicalSystemDiagram from "@/components/TechnicalSystemDiagram";
 import { COMPANY } from "@/lib/constants";
-import { serviceLandingPages } from "@/lib/seo-landing-data";
+import { getServicePage, servicePages } from "@/lib/service-pages";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 
-type ServicePageProps = {
-  params: Promise<{ slug: string }>;
-};
-
-const relatedIndustriesByService: Record<
-  string,
-  { href: string; label: string }[]
-> = {
-  "business-systems-automation": [
-    { href: "/industries/retail-b2b-commerce", label: "Commerce" },
-    { href: "/industries/professional-field-services", label: "Field services" },
-  ],
-  "ai-agents-integrations": [
-    { href: "/industries/retail-b2b-commerce", label: "Commerce" },
-    {
-      href: "/industries/healthcare-medical-services",
-      label: "Healthcare",
-    },
-  ],
-  "computer-vision": [
-    { href: "/industries/manufacturing", label: "Manufacturing" },
-    {
-      href: "/industries/construction-infrastructure",
-      label: "Construction",
-    },
-  ],
-  "biometrics-identity": [
-    {
-      href: "/industries/healthcare-medical-services",
-      label: "Healthcare",
-    },
-    { href: "/industries/professional-field-services", label: "Field services" },
-  ],
-  "digital-commerce": [
-    { href: "/industries/retail-b2b-commerce", label: "Commerce" },
-    {
-      href: "/industries/scientific-laboratory-equipment",
-      label: "Scientific equipment",
-    },
-  ],
-  "industrial-operations": [
-    { href: "/industries/manufacturing", label: "Manufacturing" },
-    {
-      href: "/industries/logistics-supply-chain",
-      label: "Logistics and supply chain",
-    },
-  ],
-};
+type ServicePageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return serviceLandingPages.map(({ slug }) => ({ slug }));
+  return servicePages.map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ServicePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const service = serviceLandingPages.find((item) => item.slug === slug);
+  const service = getServicePage(slug);
   if (!service) return {};
-
   return createPageMetadata({
     title: service.title,
     description: service.description,
@@ -79,47 +30,38 @@ export async function generateMetadata({
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
-  const service = serviceLandingPages.find((item) => item.slug === slug);
+  const service = getServicePage(slug);
   if (!service) notFound();
-  const relatedIndustries = relatedIndustriesByService[service.slug] ?? [];
 
   const pageUrl = absoluteUrl(`/services/${service.slug}`);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": pageUrl,
+        name: service.title,
+        description: service.description,
+        url: pageUrl,
+        isPartOf: { "@id": `${COMPANY.url}/#website` },
+        mainEntity: { "@id": `${pageUrl}#service` },
+      },
+      {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
         name: service.title,
         description: service.description,
         url: pageUrl,
-        serviceType: service.title,
+        provider: { "@id": `${COMPANY.url}/#organization` },
         areaServed: ["Nigeria", "Africa"],
-        provider: {
-          "@id": `${COMPANY.url}/#organization`,
-        },
+        serviceType: service.shortTitle,
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: COMPANY.url,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Services",
-            item: `${COMPANY.url}/services`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: service.title,
-            item: pageUrl,
-          },
+          { "@type": "ListItem", position: 1, name: "Home", item: COMPANY.url },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${COMPANY.url}/services` },
+          { "@type": "ListItem", position: 3, name: service.shortTitle, item: pageUrl },
         ],
       },
     ],
@@ -129,196 +71,127 @@ export default async function ServicePage({ params }: ServicePageProps) {
     <>
       <Navbar />
       <main>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <section className="bg-black pt-[4.5rem] text-white">
           <Container className="border-x border-white/15 px-0">
-            <div className="grid min-h-[calc(88svh-4.5rem)] lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="grid min-h-[42rem] lg:grid-cols-[1.08fr_0.92fr]">
               <div className="flex flex-col justify-between border-b border-white/15 p-6 py-10 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
-                <nav
-                  aria-label="Breadcrumb"
-                  className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/45"
-                >
-                  <Link href="/" className="hover:text-white">
-                    Home
-                  </Link>
-                  <span>/</span>
-                  <Link href="/services" className="hover:text-white">
-                    Services
-                  </Link>
+                <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/40">
+                  <Link href="/" className="hover:text-white">Home</Link><span>/</span>
+                  <Link href="/services" className="hover:text-white">Services</Link><span>/</span>
+                  <span>{service.shortTitle}</span>
                 </nav>
                 <div className="mt-24">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
-                    {service.kicker}
-                  </p>
-                  <h1 className="mt-7 max-w-4xl text-balance text-[2.8rem] font-medium leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-[4.6rem]">
-                    {service.heading}
-                  </h1>
-                  <p className="mt-7 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">
-                    {service.description}
-                  </p>
-                  <a
-                    href="#contact"
-                    className="mt-9 inline-flex min-h-12 items-center justify-center bg-white px-6 text-sm font-bold text-black"
-                  >
-                    Discuss This System
-                  </a>
+                  <p className="eyebrow text-[#83a8ff]">{service.kicker}</p>
+                  <h1 className="mt-7 max-w-5xl text-balance text-[2.8rem] font-medium leading-[0.97] tracking-[-0.058em] sm:text-6xl lg:text-[4.7rem]">{service.heading}</h1>
+                  <p className="mt-7 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">{service.description}</p>
+                  <Link href="/contact" className="mt-9 inline-flex min-h-12 items-center bg-white px-6 text-sm font-bold text-black transition hover:bg-[#83a8ff]">Discuss This Engineering Problem</Link>
                 </div>
               </div>
-
-              <figure className="relative min-h-[30rem] bg-neutral-900">
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  loading="eager"
-                  sizes="(min-width: 1024px) 48vw, 100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
+              <figure className="relative min-h-[28rem] bg-[#0a0a0a]">
+                <Image src={service.image} alt={service.imageAlt} fill priority sizes="(min-width: 1024px) 46vw, 100vw" className="object-cover opacity-70" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.82))]" />
+                <figcaption className="absolute inset-x-6 bottom-6 border-t border-white/20 pt-4 text-xs leading-6 text-white/55 sm:inset-x-10 sm:bottom-10">{service.imageAlt}</figcaption>
               </figure>
             </div>
           </Container>
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
-            <div className="grid gap-14 lg:grid-cols-2">
-              <article>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                  The operating challenge
-                </p>
-                <h2 className="mt-7 text-3xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
-                  Where value is being lost
-                </h2>
-                <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">
-                  {service.challenge}
-                </p>
+          <Container className="border-x border-black/10 px-0">
+            <div className="grid lg:grid-cols-2">
+              <article className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-24 lg:border-b-0 lg:border-r">
+                <p className="eyebrow text-[#1f5eff]">The operating challenge</p>
+                <h2 className="mt-7 max-w-xl text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">Where the current system loses evidence or control.</h2>
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">{service.challenge}</p>
               </article>
-              <article className="border-t border-black/15 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                  Our engineering approach
-                </p>
-                <h2 className="mt-7 text-3xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
-                  A complete operating system
-                </h2>
-                <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">
-                  {service.approach}
-                </p>
+              <article className="p-6 py-16 sm:p-10 sm:py-24">
+                <p className="eyebrow text-[#1f5eff]">Our engineering approach</p>
+                <h2 className="mt-7 max-w-xl text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">The complete system—not an isolated model.</h2>
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">{service.approach}</p>
               </article>
             </div>
           </Container>
         </section>
 
-        <section className="bg-white text-black">
-          <Container className="border-x border-black/10 px-0">
-            <div className="grid lg:grid-cols-2">
-              <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                  What we implement
-                </p>
-                <h2 className="mt-7 text-4xl font-medium tracking-[-0.04em]">
-                  Practical use cases
-                </h2>
-                <ol className="mt-10 border-t border-black/15">
-                  {service.useCases.map((item, index) => (
-                    <li
-                      key={item}
-                      className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-black/15 py-5 text-sm font-semibold leading-6"
-                    >
-                      <span className="text-black/30">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      {item}
-                    </li>
+        <section className="bg-black text-white">
+          <Container className="border-x border-white/15 px-0">
+            <div className="grid lg:grid-cols-[0.92fr_1.08fr]">
+              <div className="border-b border-white/15 p-6 py-16 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r">
+                <p className="eyebrow text-[#83a8ff]">Engineering sequence</p>
+                <h2 className="mt-7 text-4xl font-medium tracking-[-0.045em] sm:text-5xl">From raw evidence to an accountable decision.</h2>
+                <ol className="mt-10 border-t border-white/15">
+                  {service.pipeline.map((step, index) => (
+                    <li key={step} className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-white/15 py-5 text-sm font-semibold leading-6"><span className="text-white/25">{String(index + 1).padStart(2, "0")}</span>{step}</li>
                   ))}
                 </ol>
               </div>
-
-              <div className="bg-black p-6 py-16 text-white sm:p-10 sm:py-20">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/40">
-                  Business value
-                </p>
-                <h2 className="mt-7 text-4xl font-medium tracking-[-0.04em]">
-                  Outcomes the system is designed to improve
-                </h2>
-                <div className="mt-10 grid border-l border-t border-white/15 sm:grid-cols-2">
-                  {service.outcomes.map((item, index) => (
-                    <div
-                      key={item}
-                      className="flex min-h-40 flex-col justify-between border-b border-r border-white/15 p-5"
-                    >
-                      <span className="text-xs font-bold text-white/25">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p className="font-semibold leading-6">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className="bg-[#ededE7] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
-            <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                  Connected by design
-                </p>
-                <h2 className="mt-7 text-4xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
-                  Built around your existing environment.
-                </h2>
-              </div>
-              <div className="grid border-l border-t border-black/15 sm:grid-cols-2">
-                {service.integrations.map((item, index) => (
-                  <div
-                    key={item}
-                    className="flex min-h-36 flex-col justify-between border-b border-r border-black/15 p-5"
-                  >
-                    <span className="text-xs font-bold text-black/25">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="font-semibold">{item}</p>
-                  </div>
-                ))}
-              </div>
+              <div className="p-5 sm:p-10"><TechnicalSystemDiagram variant={service.slug === "vibration-signal-analysis" || service.slug === "speech-audio-intelligence" ? "signal" : "system"} /></div>
             </div>
           </Container>
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-16">
-            <div className="grid gap-8 border-y border-black/15 py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <Container className="border-x border-black/10 py-20 sm:py-28">
+            <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr]">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-black/45">
-                  Related industries
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em]">
-                  See where this service creates value.
-                </h2>
+                <p className="eyebrow text-[#1f5eff]">Applications</p>
+                <h2 className="mt-7 text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">Where this capability becomes useful.</h2>
               </div>
-              <div className="flex flex-wrap gap-3 lg:justify-end">
-                {relatedIndustries.map((industry) => (
-                  <Link
-                    key={industry.href}
-                    href={industry.href}
-                    className="inline-flex min-h-11 items-center border border-black px-4 text-sm font-bold transition hover:bg-black hover:text-white"
-                  >
-                    AI solutions for {industry.label}
-                  </Link>
+              <ol className="grid border-l border-t border-black/15 sm:grid-cols-2">
+                {service.useCases.map((item, index) => (
+                  <li key={item} className="flex min-h-36 flex-col justify-between border-b border-r border-black/15 p-5"><span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span><span className="text-sm font-semibold leading-6">{item}</span></li>
                 ))}
-                <Link
-                  href="/services"
-                  className="inline-flex min-h-11 items-center border border-black/20 px-4 text-sm font-bold"
-                >
-                  View all services
-                </Link>
+              </ol>
+            </div>
+          </Container>
+        </section>
+
+        {service.sections.map((section, index) => (
+          <section key={section.title} className={index % 2 === 0 ? "bg-[#ededE7] text-black" : "bg-[#f6f6f1] text-black"}>
+            <Container className="border-x border-black/10 px-0">
+              <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
+                <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r">
+                  <p className="eyebrow text-[#1f5eff]">Capability {String(index + 1).padStart(2, "0")}</p>
+                  <h2 className="mt-7 text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">{section.title}</h2>
+                  <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">{section.copy}</p>
+                </div>
+                <ul className="grid content-start sm:grid-cols-2">
+                  {section.items.map((item, itemIndex) => (
+                    <li key={item} className="flex min-h-28 items-start gap-4 border-b border-r border-black/10 p-5 sm:p-6"><span className="text-xs font-bold text-black/25">{String(itemIndex + 1).padStart(2, "0")}</span><span className="text-sm font-semibold leading-6">{item}</span></li>
+                  ))}
+                </ul>
               </div>
+            </Container>
+          </section>
+        ))}
+
+        <section className="bg-white text-black">
+          <Container className="border-x border-black/10 py-20 sm:py-24">
+            {service.note ? (
+              <div className="mb-16 grid gap-8 border-y border-black/15 py-8 lg:grid-cols-[0.65fr_1.35fr]">
+                <p className="eyebrow text-[#1f5eff]">Responsible boundary</p>
+                <p className="max-w-4xl text-xl font-medium leading-9 tracking-[-0.02em]">{service.note}</p>
+              </div>
+            ) : null}
+            <div className="grid gap-12 lg:grid-cols-2">
+              <div>
+                <p className="eyebrow text-black/40">Connected environment</p>
+                <h2 className="mt-6 text-4xl font-medium tracking-[-0.045em]">Built around existing systems.</h2>
+                <ul className="mt-8 border-t border-black/15">
+                  {service.integrations.map((item) => <li key={item} className="border-b border-black/15 py-4 text-sm font-semibold">{item}</li>)}
+                </ul>
+              </div>
+              <div className="bg-black p-6 text-white sm:p-8">
+                <p className="eyebrow text-[#83a8ff]">Intended value</p>
+                <div className="mt-8 grid border-l border-t border-white/15 sm:grid-cols-2">
+                  {service.outcomes.map((item, index) => <div key={item} className="flex min-h-36 flex-col justify-between border-b border-r border-white/15 p-5"><span className="text-xs font-bold text-white/25">0{index + 1}</span><p className="text-sm font-semibold leading-6">{item}</p></div>)}
+                </div>
+              </div>
+            </div>
+            <div className="mt-16 flex flex-wrap gap-3 border-t border-black/15 pt-8">
+              {service.related.map((item) => <Link key={item.href} href={item.href} className="inline-flex min-h-11 items-center border border-black px-4 text-sm font-bold transition hover:bg-black hover:text-white">{item.label}</Link>)}
+              <Link href="/services" className="inline-flex min-h-11 items-center border border-black/20 px-4 text-sm font-bold">All services</Link>
             </div>
           </Container>
         </section>

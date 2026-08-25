@@ -12,7 +12,7 @@ import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 const aboutMetadata = createPageMetadata({
   title: "About Sentient Engineering | Applied AI Engineering Company",
   description:
-    "Learn about Sentient Engineering, an Applied AI engineering company in Lagos, Nigeria, building AI agents, intelligent business systems, automation, computer vision and industrial AI solutions.",
+    "Learn about Sentient Engineering, an Applied AI engineering company in Lagos building complete intelligent systems for business, science and industry.",
   path: "/about",
 });
 
@@ -155,7 +155,7 @@ export default function AboutPage() {
         name: "About Sentient Engineering",
         url: pageUrl,
         description:
-          "Sentient Engineering is an Applied AI engineering company that designs and deploys intelligent business and industrial systems.",
+          "Sentient Engineering is an Applied AI engineering company that designs and deploys complete intelligent systems for business, science and industry.",
         about: {
           "@id": `${COMPANY.url}/#organization`,
         },
@@ -172,7 +172,7 @@ export default function AboutPage() {
         email: COMPANY.email,
         telephone: "+2347073512305",
         description:
-          "Sentient Engineering is an Applied AI engineering company that designs and deploys intelligent business and industrial systems.",
+          "Sentient Engineering is an Applied AI engineering company that designs and deploys complete intelligent systems for business, science and industry.",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Lagos",
@@ -222,15 +222,14 @@ export default function AboutPage() {
                   About Sentient Engineering
                 </p>
                 <h1 className="mt-8 max-w-5xl text-balance text-[3rem] font-medium leading-[0.98] tracking-[-0.055em] sm:text-7xl lg:text-[5rem]">
-                  We engineer intelligent systems around real business
-                  problems.
+                  We engineer intelligent systems around real business,
+                  scientific and industrial problems.
                 </h1>
                 <p className="mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
                   Sentient Engineering is an Applied AI engineering company
-                  based in Lagos, Nigeria. We design and deploy intelligent
-                  business and industrial systems that automate work, improve
-                  customer response, connect fragmented processes and support
-                  better decisions.
+                  based in Lagos, Nigeria. We design and deploy complete systems
+                  for business operations, scientific applications and
+                  engineering environments.
                 </p>
                 <p className="mt-5 max-w-2xl text-sm leading-7 text-white/45">
                   Our work combines artificial intelligence, software
@@ -285,7 +284,7 @@ export default function AboutPage() {
                   Who we are
                 </p>
                 <h2 className="mt-7 text-4xl font-medium leading-[1.06] tracking-[-0.04em] sm:text-5xl">
-                  An engineering company built around business performance.
+                  An engineering company built around operating performance.
                 </h2>
               </div>
               <div className="max-w-3xl space-y-6 text-base leading-8 text-black/60">
@@ -297,11 +296,10 @@ export default function AboutPage() {
                   performance.
                 </p>
                 <p>
-                  The response may be an AI agent coordinating enquiries across
-                  WhatsApp and email, an automation platform connecting
-                  quotations and approvals, a computer vision system improving
-                  inspection or an intelligence platform detecting emerging
-                  equipment and process risks.
+                  The response may be an AI agent coordinating enquiries, a
+                  computer vision system improving inspection, speaker-aware
+                  transcription, signal analysis revealing machine condition
+                  or a scientific system connecting technical evidence.
                 </p>
                 <p>
                   Our role extends beyond an isolated application. We account

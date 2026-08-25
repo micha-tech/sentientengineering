@@ -5,141 +5,111 @@ import ContactSection from "@/components/ContactSection";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import TechnicalSystemDiagram from "@/components/TechnicalSystemDiagram";
 import { COMPANY } from "@/lib/constants";
-import { products } from "@/lib/site-data";
-import { createPageMetadata } from "@/lib/seo";
+import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "AI Products and Intelligent Business Platforms",
+  title: "AI Products and Solution Accelerators",
   description:
-    "Gyptiq and configurable AI platforms for revenue, document processing, commerce, industrial vision, predictive maintenance, knowledge and logistics.",
+    "Explore Sentient Co-Lab and Gyptiq, plus configurable Sentient Engineering foundations for commerce, documents, industrial vision, maintenance and knowledge systems.",
   path: "/products",
 });
 
-const portfolio = products.slice(1);
+const accelerators = [
+  ["AI Revenue Operations", "Lead capture, qualification, quotation, follow-up and conversion visibility."],
+  ["Intelligent Document Processing", "Extraction, validation, comparison and workflow routing for business documents."],
+  ["AI Commerce Engine", "Intent-based search, technical matching, recommendations and RFQ assistance."],
+  ["Industrial Vision", "Configurable inspection, detection, tracking and operator-review foundations."],
+  ["Predictive Maintenance", "Condition, anomaly and maintenance-prioritisation workflows for equipment."],
+  ["Enterprise Knowledge Assistant", "Controlled retrieval and source-grounded answers across approved knowledge."],
+  ["Logistics Intelligence", "Dispatch, route planning, visibility and logistics-document workflows."],
+] as const;
 
 export default function ProductsPage() {
-  const gyptiq = products[0];
+  const pageUrl = absoluteUrl("/products");
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "AI Products and Intelligent Platforms",
-    url: `${COMPANY.url}/products`,
-    description:
-      "Sentient Engineering products and configurable AI platforms for commercial and industrial teams.",
-    hasPart: products.map((product) => ({
-      "@type": "SoftwareApplication",
-      name: product.name,
-      description: product.description,
-      applicationCategory: "BusinessApplication",
-    })),
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": pageUrl,
+        name: "Sentient Engineering Products",
+        url: pageUrl,
+        description: metadata.description,
+        isPartOf: { "@id": `${COMPANY.url}/#website` },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${COMPANY.url}/products/sentient-co-lab#software`,
+        name: "Sentient Co-Lab",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        url: `${COMPANY.url}/products/sentient-co-lab`,
+        description: "A virtual collaboration platform with video, voice, shared work and speaker-aware AI knowledge capture.",
+        creator: { "@id": `${COMPANY.url}/#organization` },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${COMPANY.url}/products/gyptiq#software`,
+        name: "Gyptiq",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        url: `${COMPANY.url}/products/gyptiq`,
+        description: "An AI-native business operations platform currently in development.",
+        creator: { "@id": `${COMPANY.url}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: COMPANY.url },
+          { "@type": "ListItem", position: 2, name: "Products", item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (
     <>
       <Navbar />
       <main>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <section className="bg-black pt-[4.5rem] text-white">
           <Container className="border-x border-white/15 px-0">
-            <div className="grid lg:grid-cols-[1.18fr_0.82fr]">
-              <div className="flex min-h-[31rem] flex-col justify-end border-b border-white/15 p-6 py-14 sm:p-10 sm:py-20 lg:min-h-[37rem] lg:border-b-0 lg:border-r lg:p-12">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                  Products and platforms
-                </p>
-                <h1 className="mt-8 max-w-5xl text-balance text-[3rem] font-medium leading-[0.98] tracking-[-0.055em] sm:text-7xl lg:text-[5.25rem]">
-                  Intelligence packaged for the work that repeats.
-                </h1>
-                <p className="mt-7 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">
-                  Ready foundations for customer engagement, documents,
-                  commerce, vision, maintenance, knowledge and logistics —
-                  configured around your people, data and tools.
-                </p>
+            <div className="grid min-h-[38rem] lg:grid-cols-[1.08fr_0.92fr]">
+              <div className="flex flex-col justify-end border-b border-white/15 p-6 py-14 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r lg:p-12">
+                <p className="eyebrow text-[#83a8ff]">Products and engineering foundations</p>
+                <h1 className="mt-8 max-w-5xl text-balance text-[3rem] font-medium leading-[0.98] tracking-[-0.058em] sm:text-7xl lg:text-[5.2rem]">Built products. Honest maturity. Reusable engineering.</h1>
+                <p className="mt-7 max-w-3xl text-base leading-8 text-white/60 sm:text-lg">Owned products are separated from configurable solution accelerators so product maturity and delivery scope remain clear.</p>
               </div>
-
-              <div className="grid grid-cols-2 bg-[#111]">
-                {[
-                  ["01", "Revenue"],
-                  ["02", "Efficiency"],
-                  ["03", "Reliability"],
-                  ["04", "Visibility"],
-                ].map(([number, label], index) => (
-                  <div
-                    key={label}
-                    className={`flex min-h-40 flex-col justify-between border-white/15 p-6 sm:min-h-48 sm:p-8 ${
-                      index % 2 === 0 ? "border-r" : ""
-                    } ${index < 2 ? "border-b" : ""}`}
-                  >
-                    <span className="text-xs font-bold text-white/25">
-                      {number}
-                    </span>
-                    <span className="text-lg font-semibold">{label}</span>
-                  </div>
-                ))}
-              </div>
+              <div className="flex items-center p-5 sm:p-10"><TechnicalSystemDiagram variant="collaboration" /></div>
             </div>
           </Container>
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
           <Container className="border-x border-black/10 px-0">
+            <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-20">
+              <p className="eyebrow text-[#1f5eff]">Owned products</p>
+              <h2 className="mt-7 text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Software we are building as products.</h2>
+            </div>
             <div className="grid lg:grid-cols-2">
-              <figure className="relative min-h-[28rem] border-b border-black/10 bg-neutral-200 sm:min-h-[38rem] lg:border-b-0 lg:border-r">
-                <Image
-                  src="/images/gyptiq-in-hand.png"
-                  alt="Gyptiq mobile interface for connected customer and business workflows"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover object-top"
-                  priority
-                />
-                <span className="absolute left-5 top-5 bg-black px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white">
-                  Flagship product
-                </span>
-              </figure>
-
-              <article className="flex flex-col justify-between p-6 py-14 sm:p-10 sm:py-20 lg:p-12">
+              <article className="flex min-h-[38rem] flex-col justify-between border-b border-black/10 p-6 sm:p-10 lg:border-b-0 lg:border-r">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                    {gyptiq.name}
-                  </p>
-                  <h2 className="mt-7 max-w-xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.045em] sm:text-6xl">
-                    One place to manage conversations, customers and commercial
-                    workflows.
-                  </h2>
-                  <p className="mt-6 max-w-xl text-base leading-8 text-black/60">
-                    {gyptiq.description}
-                  </p>
+                  <div className="flex flex-wrap items-center justify-between gap-4"><p className="eyebrow text-[#1f5eff]">Sentient Co-Lab</p><span className="border border-black/15 px-3 py-2 text-[0.62rem] font-bold uppercase tracking-[0.1em]">Active development</span></div>
+                  <h3 className="mt-10 text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl">Every conversation becomes shared intelligence.</h3>
+                  <p className="mt-6 max-w-xl text-base leading-8 text-black/60">Video, voice, collaborative work and speaker-aware AI transcription for meetings, lectures and distributed teams.</p>
                 </div>
-
-                <div className="mt-14">
-                  <div className="grid border-y border-black/15 sm:grid-cols-2">
-                    {gyptiq.outcomes.map((outcome, index) => (
-                      <div
-                        key={outcome}
-                        className={`flex min-h-24 items-end gap-3 border-black/15 py-5 ${
-                          index % 2 === 0
-                            ? "sm:border-r sm:pr-5"
-                            : "sm:pl-5"
-                        } ${index < 2 ? "border-b" : ""}`}
-                      >
-                        <span className="text-xs font-bold text-black/25">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span className="text-sm font-semibold">{outcome}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Link
-                    href="/products/gyptiq"
-                    className="mt-7 inline-flex min-h-12 items-center justify-between bg-black px-5 text-sm font-bold text-white"
-                  >
-                    Learn how Gyptiq works <span aria-hidden="true">→</span>
-                  </Link>
+                <Link href="/products/sentient-co-lab" className="mt-10 inline-flex min-h-12 w-fit items-center bg-black px-5 text-sm font-bold text-white">Explore Sentient Co-Lab</Link>
+              </article>
+              <article className="grid min-h-[38rem] grid-rows-[1fr_auto]">
+                <figure className="relative min-h-[22rem] bg-neutral-200">
+                  <Image src="/images/gyptiq-announcement.png" alt="Gyptiq product announcement artwork" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                </figure>
+                <div className="p-6 sm:p-10">
+                  <div className="flex flex-wrap items-center justify-between gap-4"><p className="eyebrow text-[#1f5eff]">Gyptiq</p><span className="border border-black/15 px-3 py-2 text-[0.62rem] font-bold uppercase tracking-[0.1em]">In development</span></div>
+                  <h3 className="mt-6 text-3xl font-semibold tracking-[-0.04em]">AI-native customer and business operations.</h3>
+                  <Link href="/products/gyptiq" className="mt-6 inline-flex border-b border-black pb-1 text-sm font-bold">Explore Gyptiq</Link>
                 </div>
               </article>
             </div>
@@ -147,89 +117,22 @@ export default function ProductsPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-16 sm:py-24">
-            <div className="grid gap-8 border-b border-black/15 pb-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                Platform portfolio
-              </p>
-              <div>
-                <h2 className="max-w-5xl text-balance text-4xl font-medium leading-[1.06] tracking-[-0.045em] sm:text-6xl">
-                  Start with a proven foundation. Configure what makes your
-                  business different.
-                </h2>
-                <p className="mt-6 max-w-2xl text-base leading-8 text-black/55">
-                  Each platform is adapted to the workflow, integrations,
-                  controls and success measures that matter to your team.
-                </p>
-              </div>
+          <Container className="border-x border-black/10 py-20 sm:py-28">
+            <div className="grid gap-8 border-b border-black/15 pb-10 lg:grid-cols-[0.65fr_1.35fr]">
+              <p className="eyebrow text-[#1f5eff]">Solution accelerators</p>
+              <div><h2 className="text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Reusable foundations, configured for the operation.</h2><p className="mt-6 max-w-3xl text-base leading-8 text-black/55">These are engineering starting points—not claims of standalone shipped products. Each requires scoped implementation, integration and validation.</p></div>
             </div>
-
             <div className="grid md:grid-cols-2">
-              {portfolio.map((product, index) => (
-                <article
-                  id={product.id}
-                  key={product.id}
-                  className={`scroll-mt-28 border-b border-black/10 py-9 ${
-                    index % 2 === 0
-                      ? "md:border-r md:pr-8"
-                      : "md:pl-8"
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-black/40">
-                      {product.label}
-                    </p>
-                    <span className="text-xs font-bold text-black/20">
-                      {String(index + 2).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-8 max-w-lg text-3xl font-semibold leading-[1.08] tracking-[-0.04em]">
-                    {product.name}
-                  </h3>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-black/55">
-                    {product.description}
-                  </p>
-
-                  <p className="mt-7 border-l-2 border-[#235cff] pl-4 text-sm font-medium leading-6 text-black/75">
-                    {product.useCase}
-                  </p>
-
-                  <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 border-t border-black/10 pt-5">
-                    {product.outcomes.map((outcome) => (
-                      <span
-                        key={outcome}
-                        className="text-xs font-bold uppercase leading-5 tracking-[0.07em] text-black/50"
-                      >
-                        {outcome}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href="#contact"
-                    className="mt-8 inline-flex border-b border-black pb-1 text-sm font-bold"
-                  >
-                    {product.cta}
-                  </a>
+              {accelerators.map(([title, copy], index) => (
+                <article key={title} className={`grid min-h-52 grid-cols-[2.5rem_1fr] gap-4 border-b border-black/10 py-7 sm:p-7 ${index % 2 === 0 ? "md:border-r" : ""}`}>
+                  <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
+                  <div><h3 className="text-2xl font-semibold tracking-[-0.03em]">{title}</h3><p className="mt-4 max-w-xl text-sm leading-7 text-black/55">{copy}</p><Link href="/contact" className="mt-5 inline-flex border-b border-black pb-1 text-xs font-bold">Discuss this foundation</Link></div>
                 </article>
               ))}
             </div>
-
-            <div className="mt-12 flex flex-col gap-5 border-y border-black/15 py-7 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl text-xl font-semibold tracking-[-0.025em]">
-                Need a tailored system instead of a packaged platform?
-              </p>
-              <Link
-                className="inline-flex min-h-12 shrink-0 items-center justify-center border border-black px-5 text-sm font-bold transition hover:bg-black hover:text-white"
-                href="/services"
-              >
-                Explore engineering services
-              </Link>
-            </div>
+            <p className="mt-10 max-w-4xl border-l-2 border-[#1f5eff] pl-5 text-sm leading-7 text-black/55">Anywork365 and TrustPoint are not linked here because no verified public URLs or owner-approved platform details are present in the repository. They can be added as shipped platforms once those details are supplied and verified.</p>
           </Container>
         </section>
-
         <ContactSection />
       </main>
       <Footer />
