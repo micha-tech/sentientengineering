@@ -4,6 +4,7 @@ import {
   industryLandingPages,
 } from "@/lib/seo-landing-data";
 import { servicePages } from "@/lib/service-pages";
+import { teamMembers } from "@/lib/team-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -62,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${COMPANY.url}/team`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.8,
+    },
+    {
       url: `${COMPANY.url}/privacy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -93,5 +100,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  return [...staticPages, ...serviceRoutes, ...industryPages];
+  const teamPages: MetadataRoute.Sitemap = teamMembers.map((member) => ({
+    url: `${COMPANY.url}/team/${member.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...serviceRoutes, ...industryPages, ...teamPages];
 }

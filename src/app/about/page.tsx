@@ -180,9 +180,7 @@ export default function AboutPage() {
         },
         areaServed: ["Nigeria", "Africa"],
         founder: {
-          "@type": "Person",
-          name: "Michael Johnson",
-          jobTitle: "Founder and Head of Engineering and AI",
+          "@id": `${COMPANY.url}/team/michael-johnson#person`,
         },
       },
       {
@@ -573,34 +571,17 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
-            <div className="grid gap-12 lg:grid-cols-[0.68fr_1.32fr]">
+          <Container className="py-24 sm:py-32">
+            <div className="grid gap-10 lg:grid-cols-[0.58fr_1.42fr]">
+              <p className="eyebrow text-[#1f5eff]">Meet the team</p>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
-                  Engineering leadership
-                </p>
-                <h2 className="mt-7 text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
-                  Michael Johnson
+                <h2 className="max-w-4xl text-4xl font-medium leading-[1.04] tracking-[-0.05em] sm:text-6xl">
+                  Engineering leadership and customer experience, working as one system.
                 </h2>
-                <p className="mt-4 font-semibold text-black/55">
-                  Founder and Head of Engineering and AI
+                <p className="mt-7 max-w-3xl text-base leading-8 text-black/60">
+                  Meet the people responsible for Sentient Engineering&apos;s technical direction, delivery standards and the trusted client relationships around every engagement.
                 </p>
-              </div>
-              <div className="border-t border-black/15 pt-8">
-                <p className="max-w-3xl text-lg leading-8 text-black/65">
-                  Michael Johnson leads the engineering direction of Sentient
-                  Engineering across artificial intelligence, software
-                  development, systems integration, cloud infrastructure and
-                  business automation.
-                </p>
-                <p className="mt-6 max-w-3xl text-base leading-8 text-black/55">
-                  His work centres on understanding how organisations operate
-                  and engineering systems that reduce friction, improve
-                  visibility and create measurable value. Sentient Engineering
-                  brings together AI, software, data, cloud systems and
-                  process understanding through a multidisciplinary engineering
-                  approach.
-                </p>
+                <Link href="/team" className="mt-9 inline-flex border-b border-black pb-1 text-sm font-bold">Meet the Sentient Engineering team →</Link>
               </div>
             </div>
           </Container>

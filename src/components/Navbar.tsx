@@ -27,6 +27,7 @@ const primaryLinks = [
   ["Products", "/products"],
   ["Work", "/work"],
   ["About", "/about"],
+  ["Team", "/team"],
   ["Contact", "/contact"],
 ] as const;
 
