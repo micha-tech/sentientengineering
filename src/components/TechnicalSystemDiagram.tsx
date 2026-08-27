@@ -40,7 +40,7 @@ export default function TechnicalSystemDiagram({
 
   return (
     <figure
-      className={`technical-diagram relative isolate overflow-hidden border border-white/15 bg-[#0b0b0b] p-5 text-white sm:p-8 ${className}`}
+      className={`technical-diagram relative isolate overflow-hidden bg-[#0b0b0b] p-5 text-white sm:p-8 ${className}`}
       aria-label={label ?? copy.title}
     >
       <div className="absolute inset-0 technical-grid opacity-45" aria-hidden="true" />
@@ -123,19 +123,19 @@ export default function TechnicalSystemDiagram({
 
           <div className="absolute inset-0">
             <div className="absolute left-[2%] top-[43%] w-36 -translate-y-full">
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/35">01 · Input</p>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/35">Input</p>
               <p className="mt-2 text-sm font-semibold leading-5">{copy.nodes[0]}</p>
             </div>
             <div className="absolute left-[27%] top-[4%] w-36">
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/35">02 · Acquire</p>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/35">Acquire</p>
               <p className="mt-2 text-sm font-semibold leading-5">{copy.nodes[1]}</p>
             </div>
             <div className="absolute left-[58%] top-[43%] w-36 -translate-y-full">
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#83a8ff]">03 · Interpret</p>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#83a8ff]">Interpret</p>
               <p className="mt-2 text-sm font-semibold leading-5">{copy.nodes[2]}</p>
             </div>
             <div className="absolute bottom-[2%] right-[1%] w-40">
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/35">04 · Operate</p>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/35">Operate</p>
               <p className="mt-2 text-sm font-semibold leading-5">{copy.nodes[3]}</p>
             </div>
           </div>

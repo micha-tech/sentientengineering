@@ -213,9 +213,9 @@ export default function AboutPage() {
         />
 
         <section className="bg-black pt-[4.5rem] text-white">
-          <Container className="border-x border-white/15 px-0">
-            <div className="grid lg:grid-cols-[1.18fr_0.82fr]">
-              <div className="flex min-h-[42rem] flex-col justify-end border-b border-white/15 p-6 py-14 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r lg:p-12">
+          <Container>
+            <div className="grid min-h-[42rem] gap-14 py-16 lg:grid-cols-[1.18fr_0.82fr] lg:items-end lg:py-24">
+              <div className="flex flex-col justify-end">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
                   About Sentient Engineering
                 </p>
@@ -254,7 +254,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="flex min-h-[24rem] flex-col justify-between bg-[#101010] p-6 sm:p-10 lg:p-12">
+              <div className="flex min-h-[24rem] flex-col justify-between border-t border-white/15 py-8 lg:min-h-0">
                 <div className="relative h-20 w-72 max-w-full">
                   <Image
                     src="/sentientlogo-wordmark.png"
@@ -275,7 +275,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.68fr_1.32fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -310,7 +310,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.68fr_1.32fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -344,7 +344,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-black text-white">
-          <Container className="border-x border-white/15 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/40">
@@ -355,14 +355,11 @@ export default function AboutPage() {
                 </h2>
               </div>
               <div className="border-t border-white/15">
-                {principles.map((principle, index) => (
+                {principles.map((principle) => (
                   <article
                     key={principle.title}
-                    className="grid gap-4 border-b border-white/15 py-7 sm:grid-cols-[3rem_0.72fr_1.28fr]"
+                    className="grid gap-4 border-b border-white/15 py-7 sm:grid-cols-[0.72fr_1.28fr]"
                   >
-                    <span className="text-xs font-bold text-white/25">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <h3 className="font-semibold leading-6">
                       {principle.title}
                     </h3>
@@ -377,7 +374,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
                 What we engineer
@@ -395,14 +392,11 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-14 border-t border-black/15">
-              {capabilities.map((capability, index) => (
+              {capabilities.map((capability) => (
                 <article
                   key={capability.title}
-                  className="grid gap-5 border-b border-black/15 py-7 lg:grid-cols-[3rem_0.48fr_1fr_auto] lg:items-start"
+                  className="grid gap-5 border-b border-black/15 py-7 lg:grid-cols-[0.48fr_1fr_auto] lg:items-start"
                 >
-                  <span className="text-xs font-bold text-black/25">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                   <h3 className="text-xl font-semibold tracking-[-0.025em]">
                     {capability.title}
                   </h3>
@@ -422,7 +416,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.68fr_1.32fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -433,14 +427,11 @@ export default function AboutPage() {
                 </h2>
               </div>
               <ol className="border-t border-black/15">
-                {deliverySteps.map((step, index) => (
+                {deliverySteps.map((step) => (
                   <li
                     key={step.title}
-                    className="grid gap-4 border-b border-black/15 py-6 sm:grid-cols-[3rem_0.72fr_1.28fr]"
+                    className="grid gap-4 border-b border-black/15 py-6 sm:grid-cols-[0.72fr_1.28fr]"
                   >
-                    <span className="text-xs font-bold text-black/25">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <h3 className="font-semibold leading-6">{step.title}</h3>
                     <p className="text-sm leading-7 text-black/55">
                       {step.copy}
@@ -453,7 +444,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-[#ededE7] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -476,16 +467,13 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 border-l border-t border-black/15">
-                {businessMeasures.map((measure, index) => (
+              <div className="grid content-start gap-x-10 gap-y-5 border-t border-black/15 pt-8 sm:grid-cols-2">
+                {businessMeasures.map((measure) => (
                   <div
                     key={measure}
-                    className="flex min-h-28 flex-col justify-between border-b border-r border-black/15 p-4 sm:p-5"
+                    className="flex gap-3 text-sm font-semibold leading-6"
                   >
-                    <span className="text-xs font-bold text-black/25">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-sm font-semibold leading-6">{measure}</p>
+                    <span className="text-[#1f5eff]">•</span><p>{measure}</p>
                   </div>
                 ))}
               </div>
@@ -494,7 +482,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="flex flex-col gap-8 border-b border-black/15 pb-10 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -511,16 +499,13 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4">
-              {industryLandingPages.map((industry, index) => (
+            <div className="mt-10 grid gap-x-8 gap-y-6 border-t border-black/15 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+              {industryLandingPages.map((industry) => (
                 <Link
                   key={industry.slug}
                   href={`/industries/${industry.slug}`}
-                  className="flex min-h-40 flex-col justify-between border-b border-black/15 p-5 sm:border-r"
+                  className="flex min-h-20 items-end border-b border-black/15 pb-5"
                 >
-                  <span className="text-xs font-bold text-black/25">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                   <span className="text-lg font-semibold">{industry.name}</span>
                 </Link>
               ))}
@@ -542,7 +527,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-black text-white">
-          <Container className="border-x border-white/15 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.68fr_1.32fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/40">
@@ -588,9 +573,9 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 px-0">
+          <Container className="px-0">
             <div className="grid lg:grid-cols-2">
-              <figure className="relative min-h-[28rem] border-b border-black/10 bg-neutral-200 sm:min-h-[38rem] lg:border-b-0 lg:border-r">
+              <figure className="relative min-h-[28rem] bg-neutral-200 sm:min-h-[38rem]">
                 <Image
                   src="/images/gyptiq-in-hand.png"
                   alt="Gyptiq intelligent business operations platform"
@@ -638,7 +623,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-[#ededE7] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.68fr_1.32fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -660,18 +645,13 @@ export default function AboutPage() {
                   Read our privacy policy
                 </Link>
               </div>
-              <div className="grid grid-cols-2 border-l border-t border-black/15">
-                {responsibleControls.map((control, index) => (
+              <div className="grid content-start gap-x-10 gap-y-5 border-t border-black/15 pt-8 sm:grid-cols-2">
+                {responsibleControls.map((control) => (
                   <div
                     key={control}
-                    className="flex min-h-28 flex-col justify-between border-b border-r border-black/15 p-4 sm:p-5"
+                    className="flex gap-3 text-sm font-semibold leading-6"
                   >
-                    <span className="text-xs font-bold text-black/25">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-sm font-semibold leading-6">
-                      {control}
-                    </h3>
+                    <span className="text-[#1f5eff]">•</span><h3>{control}</h3>
                   </div>
                 ))}
               </div>
@@ -680,7 +660,7 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-black text-white">
-          <Container className="border-x border-white/15 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/40">

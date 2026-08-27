@@ -49,15 +49,12 @@ export default function CapabilitiesCarousel() {
         tabIndex={0}
         className="flex snap-x snap-mandatory overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {engineeringCapabilities.map((capability, index) => (
+        {engineeringCapabilities.map((capability) => (
           <article
             key={capability}
-            className="flex min-h-52 basis-[80%] shrink-0 snap-start flex-col justify-between border-y border-r border-black/15 p-6 first:border-l sm:basis-[44%] lg:basis-[28%] xl:basis-[23%]"
+            className="flex min-h-40 basis-[80%] shrink-0 snap-start border-t border-black/15 py-6 pr-8 sm:basis-[44%] lg:basis-[28%] xl:basis-[23%]"
           >
-            <span className="text-xs font-bold text-black/30">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <p className="mt-12 text-xl font-semibold leading-tight tracking-[-0.03em]">
+            <p className="text-xl font-semibold leading-tight tracking-[-0.03em]">
               {capability}
             </p>
           </article>

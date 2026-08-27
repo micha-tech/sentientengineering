@@ -17,7 +17,7 @@ export default function PrivacyPage() {
     <>
       <Navbar />
       <main className="bg-[#f6f6f1] pt-[4.5rem] text-black">
-        <Container className="border-x border-black/10 py-16 sm:py-24">
+        <Container className="py-16 sm:py-24">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
             Legal
           </p>

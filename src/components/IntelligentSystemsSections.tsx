@@ -8,7 +8,6 @@ import TechnicalSystemDiagram from "./TechnicalSystemDiagram";
 
 const domains = [
   {
-    number: "01",
     title: "Business AI Systems",
     copy: "Intelligent systems that improve customer response, revenue execution, internal coordination and management visibility.",
     capabilities: [
@@ -26,7 +25,6 @@ const domains = [
     ],
   },
   {
-    number: "02",
     title: "Scientific and Engineering AI Systems",
     copy: "Systems that interpret images, speech, sound, vibration, sensor measurements, technical documents and scientific data.",
     capabilities: [
@@ -109,7 +107,6 @@ export default function IntelligentSystemsSections() {
             {domains.map((domain) => (
               <article key={domain.title} className="grid gap-10 border-t border-black/15 py-14 sm:py-20 lg:grid-cols-[0.42fr_1.58fr]">
                 <div className="flex items-start gap-4">
-                  <span className="text-xs font-bold text-black/25">{domain.number}</span>
                   <p className="eyebrow text-black/40">Engineering domain</p>
                 </div>
                 <div>
@@ -146,13 +143,13 @@ export default function IntelligentSystemsSections() {
             </div>
             <TechnicalSystemDiagram />
           </div>
-          <ol className="mt-24 grid gap-x-10 gap-y-8 border-t border-white/20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
-            {engineeringLayers.map((layer, index) => (
-              <li key={layer} className="grid grid-cols-[2.5rem_1fr] gap-3 text-sm font-semibold leading-6 text-white/70">
-                <span className="text-xs text-white/25">{String(index + 1).padStart(2, "0")}</span>{layer}
+          <ul className="mt-24 grid gap-x-10 gap-y-8 border-t border-white/20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            {engineeringLayers.map((layer) => (
+              <li key={layer} className="flex gap-3 text-sm font-semibold leading-6 text-white/70">
+                <span className="text-[#83a8ff]">•</span>{layer}
               </li>
             ))}
-          </ol>
+          </ul>
         </Container>
       </section>
 
@@ -163,9 +160,8 @@ export default function IntelligentSystemsSections() {
             <h2 className="max-w-5xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.05em] sm:text-6xl">One engineering partner across software, signals and physical systems.</h2>
           </div>
           <div className="mt-20 border-t border-black/15">
-            {coreCapabilities.map(([title, copy, href], index) => (
-              <Link key={title} href={href} className="group grid gap-5 border-b border-black/15 py-7 sm:grid-cols-[3rem_0.9fr_1.1fr_auto] sm:items-center sm:py-9">
-                <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
+            {coreCapabilities.map(([title, copy, href]) => (
+              <Link key={title} href={href} className="group grid gap-5 border-b border-black/15 py-7 sm:grid-cols-[0.9fr_1.1fr_auto] sm:items-center sm:py-9">
                 <span className="text-xl font-semibold tracking-[-0.025em] transition group-hover:text-[#1f5eff] sm:text-2xl">{title}</span>
                 <span className="max-w-xl text-sm leading-7 text-black/50">{copy}</span>
                 <span className="text-xl transition group-hover:translate-x-1">→</span>
@@ -200,9 +196,9 @@ export default function IntelligentSystemsSections() {
             <Link href="/work" className="w-fit border-b border-black pb-1 text-sm font-bold">View all selected work →</Link>
           </div>
           <div className="mt-20 border-t border-black/15">
-            {workEntries.map((entry, index) => (
+            {workEntries.map((entry) => (
               <article key={entry.id} className="grid gap-7 border-b border-black/15 py-10 lg:grid-cols-[0.3fr_0.75fr_0.95fr] lg:py-14">
-                <div><p className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</p><p className="mt-3 eyebrow text-[#1f5eff]">{entry.category}</p><p className="mt-3 text-xs font-bold uppercase tracking-[0.08em] text-black/45">{entry.status}</p></div>
+                <div><p className="eyebrow text-[#1f5eff]">{entry.category}</p><p className="mt-3 text-xs font-bold uppercase tracking-[0.08em] text-black/45">{entry.status}</p></div>
                 <h3 className="max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl">{entry.title}</h3>
                 <div className="grid gap-6 sm:grid-cols-2"><p className="text-sm leading-7 text-black/55">{entry.system}</p><p className="border-l-2 border-[#1f5eff] pl-4 text-sm font-semibold leading-7">{entry.value}</p></div>
               </article>
@@ -215,10 +211,10 @@ export default function IntelligentSystemsSections() {
         <Container className="py-24 sm:py-36">
           <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr] lg:items-end"><p className="eyebrow text-[#1f5eff]">Industries</p><h2 className="text-balance text-4xl font-medium leading-[1.04] tracking-[-0.05em] sm:text-6xl">Engineering shaped around operating conditions—not industry labels.</h2></div>
           <div className="mt-20 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-            {industries.map((industry, index) => (
+            {industries.map((industry) => (
               <Link key={industry.slug} href={`/industries/${industry.slug}`} className="group">
                 <span className="relative block aspect-[4/5] overflow-hidden bg-neutral-200"><Image src={industry.image} alt={industry.imageAlt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover transition duration-700 group-hover:scale-105" /></span>
-                <span className="mt-5 flex gap-4"><span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span><span><span className="block text-lg font-semibold tracking-[-0.025em]">{industry.name}</span><span className="mt-2 block text-xs leading-6 text-black/50">{industry.examples}</span></span></span>
+                <span className="mt-5 block"><span className="block text-lg font-semibold tracking-[-0.025em]">{industry.name}</span><span className="mt-2 block text-xs leading-6 text-black/50">{industry.examples}</span></span>
               </Link>
             ))}
           </div>
@@ -229,7 +225,7 @@ export default function IntelligentSystemsSections() {
         <Container className="py-24 sm:py-36">
           <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr]"><p className="eyebrow text-[#1f5eff]">Deployment architecture</p><div><h2 className="max-w-4xl text-5xl font-medium leading-none tracking-[-0.05em] sm:text-7xl">Built for where the work happens.</h2><p className="mt-7 max-w-2xl text-base leading-8 text-black/60">Architecture is selected around privacy, latency, connectivity, security, regulation, performance and operating conditions.</p></div></div>
           <div className="mt-20 grid gap-10 border-t border-black/20 pt-10 sm:grid-cols-2 lg:grid-cols-4">
-            {deploymentModes.map(([mode, copy], index) => <article key={mode}><span className="text-xs font-bold text-black/25">0{index + 1}</span><h3 className="mt-8 text-3xl font-semibold tracking-[-0.04em]">{mode}</h3><p className="mt-4 text-sm leading-7 text-black/55">{copy}</p></article>)}
+            {deploymentModes.map(([mode, copy]) => <article key={mode}><h3 className="text-3xl font-semibold tracking-[-0.04em]">{mode}</h3><p className="mt-4 text-sm leading-7 text-black/55">{copy}</p></article>)}
           </div>
         </Container>
       </section>

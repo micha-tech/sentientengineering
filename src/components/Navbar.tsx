@@ -107,8 +107,8 @@ export default function Navbar() {
               <span aria-hidden="true" className="text-[0.65rem] opacity-55">⌄</span>
             </Link>
             <div className="invisible fixed inset-x-0 top-[4.5rem] translate-y-2 border-y border-black/10 bg-[#f6f6f1] text-black opacity-0 shadow-[0_18px_50px_rgba(0,0,0,0.12)] transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              <div className="mx-auto grid max-w-[1440px] grid-cols-[0.8fr_1fr_1fr] border-x border-black/10">
-                <div className="flex flex-col justify-between border-r border-black/10 p-8">
+              <div className="mx-auto grid max-w-[1440px] grid-cols-[0.8fr_1fr_1fr] gap-10 px-8">
+                <div className="flex flex-col justify-between py-8">
                   <div>
                     <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#1f5eff]">Engineering domains</p>
                     <p className="mt-5 max-w-xs text-2xl font-semibold leading-tight tracking-[-0.03em]">
@@ -210,7 +210,7 @@ export default function Navbar() {
 
 function ServiceMenuGroup({ title, links }: { title: string; links: readonly (readonly [string, string])[] }) {
   return (
-    <div className="border-r border-black/10 p-8 last:border-r-0">
+    <div className="py-8">
       <p className="text-[0.68rem] font-bold uppercase tracking-[0.15em] text-black/40">{title}</p>
       <div className="mt-5 grid">
         {links.map(([label, href]) => (

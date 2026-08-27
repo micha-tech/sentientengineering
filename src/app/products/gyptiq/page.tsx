@@ -72,9 +72,9 @@ export default function GyptiqPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <section className="bg-black pt-[4.5rem] text-white">
-          <Container className="border-x border-white/15 px-0">
-            <div className="grid lg:grid-cols-2">
-              <div className="flex min-h-[34rem] flex-col justify-between border-b border-white/15 p-6 py-10 sm:p-10 lg:min-h-[42rem] lg:border-b-0 lg:border-r lg:p-12">
+          <Container>
+            <div className="grid gap-12 py-12 lg:grid-cols-2 lg:items-stretch lg:py-20">
+              <div className="flex min-h-[34rem] flex-col justify-between py-4 lg:min-h-[42rem]">
                 <nav
                   aria-label="Breadcrumb"
                   className="flex gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/45"
@@ -121,7 +121,7 @@ export default function GyptiqPage() {
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -135,16 +135,13 @@ export default function GyptiqPage() {
                 <p className="max-w-2xl text-lg leading-8 text-black/60">
                   {gyptiq.description}
                 </p>
-                <div className="mt-10 grid border-l border-t border-black/15 sm:grid-cols-2">
-                  {gyptiq.capabilities.map((item, index) => (
+                <div className="mt-10 grid gap-x-10 gap-y-6 border-t border-black/15 pt-8 sm:grid-cols-2">
+                  {gyptiq.capabilities.map((item) => (
                     <div
                       key={item}
-                      className="flex min-h-32 flex-col justify-between border-b border-r border-black/15 p-5"
+                      className="flex gap-3 text-sm font-semibold leading-6"
                     >
-                      <span className="text-xs font-bold text-black/25">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <h3 className="font-semibold leading-6">{item}</h3>
+                      <span className="text-[#1f5eff]">•</span><h3>{item}</h3>
                     </div>
                   ))}
                 </div>
@@ -154,7 +151,7 @@ export default function GyptiqPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 py-16">
+          <Container className="py-16">
             <div className="flex flex-col gap-6 border-y border-black/15 py-8 sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-2xl text-2xl font-semibold tracking-[-0.03em]">
                 Need connected AI agents or workflow automation beyond Gyptiq?

@@ -82,16 +82,15 @@ export default function ServicesPage() {
           <Container className="py-24 sm:py-36">
             <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
               <div>
-                <p className="eyebrow text-[#1f5eff]">Domain 01</p>
+                <p className="eyebrow text-[#1f5eff]">Business systems</p>
                 <h2 className="mt-7 text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Business AI Systems</h2>
                 <p className="mt-6 max-w-xl text-base leading-8 text-black/60">
                   Intelligent systems that improve customer response, revenue execution, internal coordination and management visibility—with explicit rules, audit trails and human approval.
                 </p>
               </div>
               <div className="border-t border-black/15">
-                {businessCapabilities.map(([title, copy], index) => (
-                  <article key={title} className="grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[3rem_0.75fr_1.25fr] sm:py-10">
-                    <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
+                {businessCapabilities.map(([title, copy]) => (
+                  <article key={title} className="grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[0.75fr_1.25fr] sm:py-10">
                     <h3 className="text-xl font-semibold leading-7 tracking-[-0.025em]">{title}</h3>
                     <p className="text-sm leading-7 text-black/55">{copy}</p>
                   </article>
@@ -120,7 +119,7 @@ export default function ServicesPage() {
           <Container className="py-24 sm:py-36">
             <div className="grid gap-16 lg:grid-cols-[0.72fr_1.28fr]">
               <div>
-                <p className="eyebrow text-[#83a8ff]">Domain 02</p>
+                <p className="eyebrow text-[#83a8ff]">Engineering systems</p>
                 <h2 className="mt-7 text-5xl font-medium leading-none tracking-[-0.05em] sm:text-6xl">Scientific and Engineering AI Systems</h2>
                 <p className="mt-6 max-w-xl text-base leading-8 text-white/55">
                   Systems that acquire and interpret images, speech, sound, vibration, sensor measurements, technical documents and scientific data under real operating constraints.
@@ -128,9 +127,8 @@ export default function ServicesPage() {
                 <TechnicalSystemDiagram variant="signal" className="mt-10" />
               </div>
               <div className="border-t border-white/20">
-                {engineeringServicePages.map((service, index) => (
-                  <Link key={service.slug} href={`/services/${service.slug}`} className="group grid gap-6 border-b border-white/20 py-8 sm:grid-cols-[3rem_0.8fr_1.2fr] sm:py-10">
-                    <span className="text-xs font-bold opacity-30">{String(index + 1).padStart(2, "0")}</span>
+                {engineeringServicePages.map((service) => (
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="group grid gap-6 border-b border-white/20 py-8 sm:grid-cols-[0.8fr_1.2fr] sm:py-10">
                     <h3 className="text-xl font-semibold leading-7 tracking-[-0.025em]">{service.shortTitle}</h3>
                     <span>
                       <span className="block text-sm leading-7 opacity-55">{service.description}</span>

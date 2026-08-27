@@ -161,9 +161,9 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         />
 
         <section className="bg-black pt-[4.5rem] text-white">
-          <Container className="border-x border-white/15 px-0">
-            <div className="grid min-h-[calc(88svh-4.5rem)] lg:grid-cols-2">
-              <div className="flex flex-col justify-between border-b border-white/15 p-6 py-10 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
+          <Container>
+            <div className="grid min-h-[calc(88svh-4.5rem)] gap-12 py-12 lg:grid-cols-2 lg:items-stretch lg:py-20">
+              <div className="flex flex-col justify-between py-4">
                 <nav
                   aria-label="Breadcrumb"
                   className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/45"
@@ -210,7 +210,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </section>
 
         <section className="bg-[#f6f6f1] text-black">
-          <Container className="border-x border-black/10 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
@@ -228,46 +228,42 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 px-0">
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="border-b border-black/10 p-6 py-16 sm:p-10 sm:py-20 lg:border-b-0 lg:border-r">
+          <Container className="py-20 sm:py-28">
+            <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+              <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
                   Systems we can implement
                 </p>
                 <h2 className="mt-7 text-4xl font-medium tracking-[-0.04em]">
                   Applied to the work that matters
                 </h2>
-                <ol className="mt-10 border-t border-black/15">
-                  {industry.solutions.map((item, index) => (
+                <ul className="mt-10 border-t border-black/15">
+                  {industry.solutions.map((item) => (
                     <li
                       key={item}
-                      className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-black/15 py-5 text-sm font-semibold leading-6"
+                      className="flex gap-3 border-b border-black/15 py-5 text-sm font-semibold leading-6"
                     >
-                      <span className="text-black/30">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                      <span className="text-[#1f5eff]">•</span>
                       {item}
                     </li>
                   ))}
-                </ol>
+                </ul>
               </div>
 
-              <div className="bg-black p-6 py-16 text-white sm:p-10 sm:py-20">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/40">
+              <div className="border-t border-black/15 pt-10">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/45">
                   Commercial value
                 </p>
                 <h2 className="mt-7 text-4xl font-medium tracking-[-0.04em]">
                   Designed around measurable improvement
                 </h2>
-                <div className="mt-10 border-t border-white/15">
-                  {industry.value.map((item, index) => (
+                <div className="mt-10 border-t border-black/15">
+                  {industry.value.map((item) => (
                     <div
                       key={item}
-                      className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-white/15 py-6"
+                      className="flex gap-3 border-b border-black/15 py-6"
                     >
-                      <span className="text-xs font-bold text-white/25">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                      <span className="text-[#1f5eff]">•</span>
                       <p className="font-semibold">{item}</p>
                     </div>
                   ))}
@@ -278,7 +274,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </section>
 
         <section className="bg-[#ededE7] text-black">
-          <Container className="border-x border-black/10 py-16">
+          <Container className="py-16">
             <div className="grid gap-8 border-y border-black/15 py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-black/45">

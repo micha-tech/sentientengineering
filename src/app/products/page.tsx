@@ -125,9 +125,8 @@ export default function ProductsPage() {
               <div><h2 className="text-5xl font-medium tracking-[-0.05em] sm:text-6xl">Reusable foundations, configured for the operation.</h2><p className="mt-6 max-w-3xl text-base leading-8 text-black/55">These are engineering starting points—not claims of standalone shipped products. Each requires scoped implementation, integration and validation.</p></div>
             </div>
             <div className="mt-20 border-t border-black/15">
-              {accelerators.map(([title, copy], index) => (
-                <article key={title} className="grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[3rem_0.9fr_1.1fr_auto] sm:items-center sm:py-10">
-                  <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
+              {accelerators.map(([title, copy]) => (
+                <article key={title} className="grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[0.9fr_1.1fr_auto] sm:items-center sm:py-10">
                   <h3 className="text-2xl font-semibold tracking-[-0.03em]">{title}</h3><p className="max-w-xl text-sm leading-7 text-black/55">{copy}</p><Link href="/contact" className="inline-flex w-fit border-b border-black pb-1 text-xs font-bold">Discuss →</Link>
                 </article>
               ))}

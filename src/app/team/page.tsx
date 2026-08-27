@@ -84,8 +84,8 @@ export default function TeamPage() {
               </h2>
             </div>
 
-            <div className="mt-20 grid gap-x-10 gap-y-16 md:grid-cols-2">
-              {teamMembers.map((member, index) => (
+            <div className="mt-20 grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+              {teamMembers.map((member) => (
                 <article key={member.slug}>
                   <Link href={`/team/${member.slug}`} className="group block">
                     <span className="relative block aspect-[4/5] overflow-hidden bg-neutral-200">
@@ -93,14 +93,13 @@ export default function TeamPage() {
                         src={member.image}
                         alt={member.imageAlt}
                         fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="object-cover object-top transition duration-700 group-hover:scale-[1.025]"
                       />
                     </span>
-                    <span className="mt-7 grid gap-5 border-t border-black/15 pt-6 sm:grid-cols-[3rem_1fr]">
-                      <span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="mt-7 block border-t border-black/15 pt-6">
                       <span>
-                        <span className="block text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">{member.name}</span>
+                        <span className="block text-3xl font-semibold leading-tight tracking-[-0.04em]">{member.name}</span>
                         <span className="mt-3 block text-sm font-semibold text-black/50">{member.role}</span>
                         <span className="mt-5 block max-w-xl text-sm leading-7 text-black/55">{member.shortBio}</span>
                         <span className="mt-6 inline-flex border-b border-black pb-1 text-sm font-bold transition group-hover:border-[#1f5eff] group-hover:text-[#1f5eff]">Read full profile →</span>

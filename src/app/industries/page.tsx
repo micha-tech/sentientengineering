@@ -41,7 +41,7 @@ export default function IndustriesPage() {
         />
 
         <section className="bg-black pt-[4.5rem] text-white">
-          <Container className="border-x border-white/15 py-20 sm:py-28">
+          <Container className="py-20 sm:py-28">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
               Industries
             </p>
@@ -57,14 +57,12 @@ export default function IndustriesPage() {
         </section>
 
         <section className="bg-white text-black">
-          <Container className="border-x border-black/10 px-0">
-            <div className="grid md:grid-cols-2">
-              {industryLandingPages.map((industry, index) => (
+          <Container className="py-20 sm:py-28">
+            <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
+              {industryLandingPages.map((industry) => (
                 <article
                   key={industry.slug}
-                  className={`border-b border-black/10 p-6 py-10 sm:p-10 ${
-                    index % 2 === 0 ? "md:border-r" : ""
-                  }`}
+                  className="border-t border-black/15 pt-8"
                 >
                   <Link
                     href={`/industries/${industry.slug}`}
@@ -78,9 +76,6 @@ export default function IndustriesPage() {
                         sizes="(min-width: 768px) 50vw, 100vw"
                         className="object-cover transition duration-700 group-hover:scale-[1.025]"
                       />
-                      <span className="absolute left-4 top-4 bg-black px-3 py-2 text-xs font-bold text-white">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
                     </figure>
                     <h2 className="mt-7 text-3xl font-semibold tracking-[-0.04em]">
                       {industry.name}

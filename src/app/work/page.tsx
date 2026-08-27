@@ -55,7 +55,7 @@ export default function WorkPage() {
               <div className="border-t border-white/20 pt-8">
                 <p className="eyebrow text-white/35">Our reporting sequence</p>
                 <ol className="mt-8 grid gap-5 sm:grid-cols-2">
-                  {["Problem", "System", "Status", "Value"].map((item, index) => <li key={item} className="flex gap-4 text-lg font-semibold"><span className="text-xs text-white/25">0{index + 1}</span>{item}</li>)}
+                  {["Problem", "System", "Status", "Value"].map((item) => <li key={item} className="flex gap-3 text-lg font-semibold"><span className="text-[#83a8ff]">•</span>{item}</li>)}
                 </ol>
               </div>
             </div>
@@ -64,11 +64,11 @@ export default function WorkPage() {
 
         <section className="bg-[#f6f6f1] text-black">
           <Container className="py-10 sm:py-16">
-            {workEntries.map((entry, index) => (
+            {workEntries.map((entry) => (
               <article key={entry.id} id={entry.id} className="scroll-mt-24 border-b border-black/15 py-14 sm:py-20">
                 <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
                   <div>
-                    <div className="flex flex-wrap items-center justify-between gap-4"><p className="eyebrow text-[#1f5eff]">{entry.category}</p><span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span></div>
+                    <p className="eyebrow text-[#1f5eff]">{entry.category}</p>
                     <h2 className="mt-8 text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">{entry.title}</h2>
                     <span className="mt-7 inline-flex text-[0.62rem] font-bold uppercase tracking-[0.09em] text-black/50">{entry.status}</span>
                   </div>

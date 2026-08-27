@@ -118,19 +118,17 @@ export default function CustomAISystemsSection() {
       id="custom-ai-systems"
       className="scroll-mt-20 bg-black text-white"
     >
-      <Container className="border-x border-white/15 px-0">
-        <div className="grid border-b border-white/15 lg:grid-cols-[0.64fr_1.36fr]">
-          <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+      <Container className="py-24 sm:py-32">
+        <div className="grid gap-14 border-b border-white/15 pb-20 lg:grid-cols-[0.64fr_1.36fr]">
+          <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#83a8ff]">
               Systems we have engineered
             </p>
-            <div className="mt-16 grid grid-cols-2 border-y border-white/15">
-              {deploymentModes.map((mode, index) => (
+            <div className="mt-16 grid grid-cols-2 gap-4 border-t border-white/15 pt-6">
+              {deploymentModes.map((mode) => (
                 <p
                   key={mode}
-                  className={`px-3 py-4 text-xs font-semibold text-white/60 ${
-                    index % 2 === 0 ? "border-r border-white/15" : ""
-                  } ${index < 2 ? "border-b border-white/15" : ""}`}
+                  className="text-xs font-semibold text-white/60"
                 >
                   {mode}
                 </p>
@@ -142,7 +140,7 @@ export default function CustomAISystemsSection() {
             </p>
           </div>
 
-          <div className="p-6 sm:p-10 lg:p-14">
+          <div>
             <p className="max-w-3xl text-sm font-semibold leading-7 text-white/55">
               Custom Applied AI engineering for ambitious businesses
             </p>
@@ -164,8 +162,8 @@ export default function CustomAISystemsSection() {
           </div>
         </div>
 
-        <div className="grid border-b border-white/15 lg:grid-cols-2">
-          <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+        <div className="grid gap-14 border-b border-white/15 py-20 lg:grid-cols-2">
+          <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/35">
               Our specialty
             </p>
@@ -173,7 +171,7 @@ export default function CustomAISystemsSection() {
               We do not force businesses into generic AI products.
             </h3>
           </div>
-          <div className="p-6 sm:p-10">
+          <div>
             <p className="max-w-2xl text-base leading-8 text-white/65">
               We engineer intelligent systems around the way each business
               actually works. Solutions can support internal operations,
@@ -183,7 +181,7 @@ export default function CustomAISystemsSection() {
           </div>
         </div>
 
-        <div className="px-6 py-16 sm:px-10 sm:py-20">
+        <div className="py-20">
           <div className="flex flex-col gap-6 border-b border-white/15 pb-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#83a8ff]">
@@ -200,11 +198,11 @@ export default function CustomAISystemsSection() {
             </p>
           </div>
 
-          <div className="grid border-l border-t border-white/15 lg:grid-cols-2">
+          <div className="grid gap-x-12 lg:grid-cols-2">
             {projectSystems.map((project, index) => (
               <article
                 key={project.id}
-                className={`flex flex-col border-b border-r border-white/15 p-6 sm:p-8 ${
+                className={`flex flex-col border-t border-white/15 py-10 ${
                   index === projectSystems.length - 1
                     ? "lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-12"
                     : ""
@@ -215,9 +213,6 @@ export default function CustomAISystemsSection() {
                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#83a8ff]">
                       {project.eyebrow}
                     </p>
-                    <span className="text-xs font-bold text-white/25">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                   </div>
                   <h4 className="mt-8 text-2xl font-semibold leading-tight tracking-[-0.03em] sm:text-3xl">
                     {project.title}
@@ -272,8 +267,8 @@ export default function CustomAISystemsSection() {
         </div>
 
         <div className="border-t border-white/15 bg-[#f6f6f1] text-black">
-          <div className="grid border-b border-black/10 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="border-b border-black/10 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+          <div className="grid gap-14 border-b border-black/10 py-20 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-black/40">
                 From internal intelligence to enterprise AI infrastructure
               </p>
@@ -288,17 +283,13 @@ export default function CustomAISystemsSection() {
               </p>
             </div>
 
-            <ul className="grid grid-cols-2">
-              {systemScope.map((item, index) => (
+            <ul className="grid content-start grid-cols-2 gap-x-8 gap-y-5 border-t border-black/15 pt-6">
+              {systemScope.map((item) => (
                 <li
                   key={item}
-                  className={`flex min-h-24 items-start gap-3 p-4 text-sm font-semibold leading-6 ${
-                    index % 2 === 0 ? "border-r border-black/10" : ""
-                  } ${index < systemScope.length - 2 ? "border-b border-black/10" : ""}`}
+                  className="flex items-start gap-3 text-sm font-semibold leading-6"
                 >
-                  <span className="mt-1 text-[0.62rem] text-black/30">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <span className="text-[#1f5eff]">•</span>
                   {item}
                 </li>
               ))}

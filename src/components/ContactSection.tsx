@@ -6,7 +6,7 @@ import ProjectEnquiryForm from "./ProjectEnquiryForm";
 export default function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-20 bg-black text-white">
-      <Container className="border-x border-white/15 py-20 sm:py-28">
+      <Container className="py-20 sm:py-28">
         <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">

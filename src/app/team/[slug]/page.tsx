@@ -86,7 +86,6 @@ export default async function TeamProfilePage({ params }: TeamProfileProps) {
             <div className="grid min-h-[35rem] gap-12 pt-16 lg:grid-cols-[0.58fr_1.42fr] lg:items-end">
               <div>
                 <p className="eyebrow text-[#83a8ff]">{member.eyebrow}</p>
-                <p className="mt-6 text-xs font-bold text-white/25">{String(memberIndex + 1).padStart(2, "0")} / {String(teamMembers.length).padStart(2, "0")}</p>
               </div>
               <div>
                 <h1 className="max-w-5xl text-balance text-[3.4rem] font-medium leading-[0.96] tracking-[-0.06em] sm:text-7xl lg:text-[6rem]">{member.name}</h1>
@@ -129,9 +128,9 @@ export default async function TeamProfilePage({ params }: TeamProfileProps) {
           <Container className="py-24 sm:py-32">
             <div className="grid gap-10 lg:grid-cols-[0.58fr_1.42fr]">
               <div><p className="eyebrow text-[#1f5eff]">Areas of focus</p><h2 className="mt-7 text-4xl font-medium tracking-[-0.045em] sm:text-5xl">Where {member.name.split(" ")[0]} leads.</h2></div>
-              <ol className="grid gap-x-12 gap-y-7 border-t border-black/15 pt-8 sm:grid-cols-2">
-                {member.focusAreas.map((area, index) => <li key={area} className="grid grid-cols-[2.5rem_1fr] gap-3 text-sm font-semibold leading-6"><span className="text-xs text-black/25">{String(index + 1).padStart(2, "0")}</span>{area}</li>)}
-              </ol>
+              <ul className="grid gap-x-12 gap-y-7 border-t border-black/15 pt-8 sm:grid-cols-2">
+                {member.focusAreas.map((area) => <li key={area} className="flex gap-3 text-sm font-semibold leading-6"><span className="text-[#1f5eff]">•</span>{area}</li>)}
+              </ul>
             </div>
             <div className="mt-20 flex flex-col gap-6 border-t border-black/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
               <Link href="/team" className="inline-flex w-fit border-b border-black pb-1 text-sm font-bold">← Meet the full team</Link>

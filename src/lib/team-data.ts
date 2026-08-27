@@ -78,6 +78,40 @@ export const teamMembers: readonly TeamMember[] = [
       "Long-term customer relationships",
     ],
   },
+  {
+    slug: "aiyevbekpen-divine-otasowie",
+    name: "Aiyevbekpen Divine Otasowie",
+    role: "Software Engineer & IT Professional",
+    eyebrow: "Software and infrastructure engineering",
+    image: "/images/aiyevbekpen-divine-otasowie.png",
+    imageAlt:
+      "Aiyevbekpen Divine Otasowie, Software Engineer and IT Professional at Sentient Engineering",
+    shortBio:
+      "Divine contributes full-stack software, backend services, cloud infrastructure and AI-powered applications with a focus on reliability, security and maintainable delivery.",
+    introduction:
+      "Aiyevbekpen Divine Otasowie is a Software Engineer and IT professional with over four years of experience designing, developing and supporting scalable web applications, backend services, cloud infrastructure and AI-powered digital solutions.",
+    biography: [
+      "Divine brings a practical, end-to-end understanding of modern software engineering. This includes translating business and user requirements into technical specifications, designing application architecture, developing frontend and backend systems, integrating databases and external services, deploying applications to cloud environments and maintaining systems after release.",
+      "With experience across full-stack development, Divine is capable of working across the different layers of a software product. This broad technical perspective supports the development of applications that are functional, secure, maintainable and prepared to scale as organisational requirements evolve.",
+      "Divine’s experience in backend engineering includes building and maintaining the services, APIs, data flows and application logic that power modern digital products. Particular attention is given to system reliability, performance, data integrity, security and the quality of communication between interconnected services.",
+      "In addition to conventional software systems, Divine contributes to the development of AI-powered applications that use intelligent models and data-driven capabilities to automate processes, improve decision-making, enhance user experiences and solve practical business problems. This work reflects an understanding that artificial intelligence must be thoughtfully integrated into dependable software infrastructure to deliver meaningful value.",
+      "Divine also brings valuable knowledge of IT systems and cloud infrastructure management. This combination of software-development and information-technology experience supports a more complete approach to engineering—one that considers not only how an application is built, but also how it is deployed, secured, monitored, supported and maintained throughout its operational life.",
+      "At Sentient Engineering, Divine contributes to the delivery of intelligent and purpose-built systems for business, scientific and engineering applications. Working within multidisciplinary project environments, Divine helps transform product requirements and technical designs into reliable software solutions that address real operational needs.",
+      "A strong problem-solver, Divine approaches technical challenges with analytical thinking, attention to detail and a commitment to continuous improvement. Whether investigating system behaviour, resolving application issues, improving an existing codebase or developing a new capability, Divine focuses on identifying the underlying problem and implementing a solution that is both technically sound and practically sustainable.",
+      "Divine is also experienced in agile working environments where collaboration, adaptability, clear communication and consistent delivery are essential. This includes working with technical and non-technical stakeholders, responding constructively to feedback, managing changing requirements and contributing effectively throughout the software-development lifecycle.",
+      "Driven by professional growth and a commitment to engineering excellence, Divine continues to deepen expertise across software development, cloud technologies, artificial intelligence and modern IT infrastructure. The objective remains clear: to build dependable technology that solves meaningful problems, supports organisational growth and delivers lasting value.",
+    ],
+    quote:
+      "Build dependable technology that solves meaningful problems and delivers lasting value.",
+    focusAreas: [
+      "Full-stack application development",
+      "Backend services and APIs",
+      "Cloud infrastructure and deployment",
+      "AI-powered application integration",
+      "System reliability and security",
+      "Agile delivery and technical support",
+    ],
+  },
 ] as const;
 
 export function getTeamMember(slug: string) {

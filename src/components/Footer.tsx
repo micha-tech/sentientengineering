@@ -18,9 +18,9 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-black/10 bg-[#f6f6f1] text-black">
-      <Container className="border-x border-black/10 px-0">
+      <Container className="px-0">
         <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
-          <div className="border-b border-black/10 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+          <div className="border-b border-black/10 p-6 sm:p-10 lg:border-b-0">
             <Link
               href="/"
               className="relative block h-14 w-56"
@@ -72,16 +72,13 @@ export default function Footer() {
             aria-label="Footer"
             className="grid content-start sm:grid-cols-2"
           >
-            {footerLinks.map((link, index) => (
+            {footerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="flex min-h-16 items-center justify-between border-b border-black/10 px-6 text-sm font-semibold transition hover:bg-black hover:text-white sm:px-8"
               >
-                {link.label}
-                <span className="text-xs opacity-35">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                {link.label}<span className="text-xs opacity-35">→</span>
               </Link>
             ))}
           </nav>

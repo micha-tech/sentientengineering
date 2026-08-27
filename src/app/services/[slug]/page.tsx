@@ -120,11 +120,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <div>
                 <p className="eyebrow text-[#83a8ff]">Engineering sequence</p>
                 <h2 className="mt-7 text-4xl font-medium tracking-[-0.045em] sm:text-5xl">From raw evidence to an accountable decision.</h2>
-                <ol className="mt-10 border-t border-white/20">
-                  {service.pipeline.map((step, index) => (
-                    <li key={step} className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-white/20 py-5 text-sm font-semibold leading-6"><span className="text-white/25">{String(index + 1).padStart(2, "0")}</span>{step}</li>
+                <ul className="mt-10 border-t border-white/20">
+                  {service.pipeline.map((step) => (
+                    <li key={step} className="flex gap-3 border-b border-white/20 py-5 text-sm font-semibold leading-6"><span className="text-[#83a8ff]">•</span>{step}</li>
                   ))}
-                </ol>
+                </ul>
               </div>
               <TechnicalSystemDiagram variant={service.slug === "vibration-signal-analysis" || service.slug === "speech-audio-intelligence" ? "signal" : "system"} />
             </div>
@@ -138,11 +138,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <p className="eyebrow text-[#1f5eff]">Applications</p>
                 <h2 className="mt-7 text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">Where this capability becomes useful.</h2>
               </div>
-              <ol className="grid gap-x-12 gap-y-7 border-t border-black/15 pt-8 sm:grid-cols-2">
-                {service.useCases.map((item, index) => (
-                  <li key={item} className="grid grid-cols-[2.5rem_1fr] gap-3 text-sm font-semibold leading-6"><span className="text-xs font-bold text-black/25">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></li>
+              <ul className="grid gap-x-12 gap-y-7 border-t border-black/15 pt-8 sm:grid-cols-2">
+                {service.useCases.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm font-semibold leading-6"><span className="text-[#1f5eff]">•</span><span>{item}</span></li>
                 ))}
-              </ol>
+              </ul>
             </div>
           </Container>
         </section>
@@ -152,13 +152,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <Container className="py-24 sm:py-32">
               <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr]">
                 <div>
-                  <p className="eyebrow text-[#1f5eff]">Capability {String(index + 1).padStart(2, "0")}</p>
+                  <p className="eyebrow text-[#1f5eff]">Capability focus</p>
                   <h2 className="mt-7 text-4xl font-medium leading-tight tracking-[-0.045em] sm:text-5xl">{section.title}</h2>
                   <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">{section.copy}</p>
                 </div>
                 <ul className="grid content-start gap-x-12 gap-y-7 border-t border-black/15 pt-8 sm:grid-cols-2">
-                  {section.items.map((item, itemIndex) => (
-                    <li key={item} className="flex items-start gap-4"><span className="text-xs font-bold text-black/25">{String(itemIndex + 1).padStart(2, "0")}</span><span className="text-sm font-semibold leading-6">{item}</span></li>
+                  {section.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3"><span className="text-[#1f5eff]">•</span><span className="text-sm font-semibold leading-6">{item}</span></li>
                   ))}
                 </ul>
               </div>
@@ -185,7 +185,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <div>
                 <p className="eyebrow text-[#1f5eff]">Intended value</p>
                 <div className="mt-8 border-t border-black/15">
-                  {service.outcomes.map((item, index) => <div key={item} className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-black/15 py-5"><span className="text-xs font-bold text-black/25">0{index + 1}</span><p className="text-sm font-semibold leading-6">{item}</p></div>)}
+                  {service.outcomes.map((item) => <div key={item} className="flex gap-3 border-b border-black/15 py-5"><span className="text-[#1f5eff]">•</span><p className="text-sm font-semibold leading-6">{item}</p></div>)}
                 </div>
               </div>
             </div>
