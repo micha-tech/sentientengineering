@@ -112,6 +112,37 @@ export const teamMembers: readonly TeamMember[] = [
       "Agile delivery and technical support",
     ],
   },
+  {
+    slug: "emmanuel-ayodelebami",
+    name: "Emmanuel Ayodelebami",
+    role: "Brand Identity Designer & Visual Communication Specialist",
+    eyebrow: "Brand and visual communication",
+    image: "/images/emmanuel-ayodelebami.png",
+    imageAlt:
+      "Emmanuel Ayodelebami, Brand Identity Designer and Visual Communication Specialist",
+    shortBio:
+      "Emmanuel develops distinctive brand identities and cohesive visual systems that help organisations communicate purpose, build recognition and support sustainable growth.",
+    introduction:
+      "Emmanuel Ayodelebami is a skilled Brand Identity Designer and Visual Communication Specialist with expertise in developing distinctive brand identities and translating business ideas into clear, compelling and memorable visual experiences.",
+    biography: [
+      "He has successfully created more than 10 brand identities, helping businesses establish stronger market presence, improve brand recognition and communicate more effectively with their target audiences. His work extends beyond creating attractive visuals; it involves understanding the purpose, values, personality and strategic objectives of each organisation and expressing them through a cohesive visual identity.",
+      "Emmanuel’s approach combines creative thinking with strategic communication. He understands that an effective brand identity must be visually distinctive while remaining relevant to the organisation it represents. His design process is therefore focused on creating identities that communicate purpose, inspire confidence and remain adaptable as a business grows.",
+      "His core competencies include brand identity design, logo design, graphic design, typography, colour-system development, visual storytelling, brand guidelines, marketing collateral and the creation of supporting brand assets. He is proficient in industry-standard tools, including Adobe Illustrator and Adobe Photoshop, which he uses to transform concepts into refined and professionally executed designs.",
+      "Emmanuel is particularly attentive to brand consistency. He works to ensure that logos, colours, typography, imagery, digital assets and communication materials present a unified identity across every customer touchpoint. This consistency helps businesses appear more professional, build familiarity with their audiences and develop stronger long-term brand equity.",
+      "He also understands the commercial importance of effective visual communication. Every design decision is made with careful consideration of the audience, intended message, competitive environment and wider business objective. This ensures that his work is not only creative but also purposeful, practical and aligned with the organisation’s market positioning and growth strategy.",
+      "Through his combination of creativity, strategic thinking and technical design expertise, Emmanuel helps organisations move from an abstract business idea to a complete and recognisable brand identity—one that communicates effectively, connects meaningfully with its audience and supports sustainable growth and expansion.",
+    ],
+    quote:
+      "A strong identity communicates purpose, inspires confidence and grows with the business.",
+    focusAreas: [
+      "Brand identity systems",
+      "Logo and graphic design",
+      "Typography and colour systems",
+      "Visual storytelling",
+      "Brand guidelines and consistency",
+      "Marketing and communication assets",
+    ],
+  },
 ] as const;
 
 export function getTeamMember(slug: string) {

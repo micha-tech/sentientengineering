@@ -84,7 +84,7 @@ export default function TeamPage() {
               </h2>
             </div>
 
-            <div className="mt-20 grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-20 grid gap-x-10 gap-y-16 md:grid-cols-2">
               {teamMembers.map((member) => (
                 <article key={member.slug}>
                   <Link href={`/team/${member.slug}`} className="group block">
@@ -93,7 +93,7 @@ export default function TeamPage() {
                         src={member.image}
                         alt={member.imageAlt}
                         fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        sizes="(min-width: 768px) 50vw, 100vw"
                         className="object-cover object-top transition duration-700 group-hover:scale-[1.025]"
                       />
                     </span>
