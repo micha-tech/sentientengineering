@@ -105,7 +105,6 @@ export default function SentientCoLabPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <TechnicalSystemDiagram variant="collaboration" />
-                <p className="mt-5 text-xs leading-6 text-white/35">Product screenshots were not available in the repository. This architecture view explains the system without inventing a product interface.</p>
               </div>
             </div>
           </Container>

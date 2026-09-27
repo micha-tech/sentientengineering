@@ -87,8 +87,7 @@ export default function WorkPage() {
               </article>
             ))}
             <div className="py-16 sm:py-20">
-              <div className="grid gap-8 border-y border-black/15 py-8 lg:grid-cols-[0.65fr_1.35fr]"><p className="eyebrow text-[#1f5eff]">Evidence boundary</p><div><h2 className="text-3xl font-semibold tracking-[-0.04em]">No invented metrics, clients or deployment claims.</h2><p className="mt-4 max-w-3xl text-sm leading-7 text-black/55">Where deployment details or measured outcomes are not publicly supported by repository content, this page says so. Owner-approved screenshots, status and outcomes can be added when supplied.</p></div></div>
-              <Link href="/contact" className="mt-10 inline-flex min-h-12 items-center bg-black px-5 text-sm font-bold text-white">Discuss a similar problem</Link>
+              <Link href="/contact" className="inline-flex min-h-12 items-center bg-black px-5 text-sm font-bold text-white">Discuss a similar problem</Link>
             </div>
           </Container>
         </section>

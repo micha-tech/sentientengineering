@@ -131,7 +131,6 @@ export default function ProductsPage() {
                 </article>
               ))}
             </div>
-            <p className="mt-10 max-w-4xl border-l-2 border-[#1f5eff] pl-5 text-sm leading-7 text-black/55">Anywork365 and TrustPoint are not linked here because no verified public URLs or owner-approved platform details are present in the repository. They can be added as shipped platforms once those details are supplied and verified.</p>
           </Container>
         </section>
         <ContactSection />
